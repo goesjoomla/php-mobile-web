@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+/**
+ * F6 Liquidus CSS framework plugins demo.
+ *
+ * F6 Liquidus CSS framework is the combination of several well-known CSS frameworks. The 960 Grid
+ * System, the Blueprint and the Emastic CSS Framework to name a few. So, why need another CSS
+ * framework? F6 Liquidus CSS framework is created to inherit the pros of existing frameworks while
+ * trying to limit their cons to minimal. Besides that, F6 Liquidus CSS framework also contains
+ * many build-from-scratch proprietary styles.
+ *
+ * @copyright   Copyright (c) 2011 Manh-Cuong Nguyen
+ * @author      Manh-Cuong Nguyen [nmc] <cuongnm@f6studio.com>
+ * @license     http://f6studio.com/license
+ *
+ * @package     Liquidus
+ * @subpackage  CSS Framework
+ * @link        http://f6studio.com/Liquidus
+ *
+ * @version     1.0.0
+ */
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr" >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>F6 Liquidus CSS Framework &raquo; Demo &raquo; Plugins</title>
+	<meta name="author" content="The F6 Studio Group">
+	<link rel="stylesheet" href="../reset.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../typography.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../grids/960gs.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/message.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/layout.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/silk-sprite.css" type="text/css" media="screen, projection" />
+
+	<!--[if lte IE 7]><link rel="stylesheet" href="../typography.ie7.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/messages.ie7.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/layout.ie7.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/silk-sprite.ie7.css" type="text/css" media="screen, projection" /><![endif]-->
+
+	<!--[if lte IE 6]><link rel="stylesheet" href="../plugins/silk-sprite.ie6.css" type="text/css" media="screen, projection" /><![endif]-->
+
+	<style type="text/css">
+		h1 { text-shadow: 2px 2px 2px #999; }
+
+		/* navigation */
+		ul#nav, ul#nav ul { margin: -.333em 0 1.333em; border: 1px solid #c6d880; border-width: .25em 0; -webkit-box-shadow: 3px 3px 3px #999; -moz-box-shadow: 3px 3px 3px #999; box-shadow: 3px 3px 3px #999; padding: 0 0 0 1.5em; background: #e6efc2; color: #264409; list-style: none; }
+		ul#nav ul { margin: .75em 0 0 -1.1em; border-width: 0 .25em .25em; padding: 0 .5em .5em 0; }
+		ul#nav li ul ul { position: static; left: auto; margin: 0 0 0 1.25em; border: 0; padding: 0; width: 13em; -webkit-box-shadow: 0; -moz-box-shadow: 0; box-shadow: 0; list-style: circle outside; }
+		ul#nav li { padding: .75em 0; }
+		ul#nav li li { margin-left: .833em !important; padding: 0; }
+		ul#nav li a { padding: 0; }
+
+		/* grids */
+		.grid-lines { background: url(../images/grid_line.png); }
+
+		/* page nav */
+		span.next, span.prev { line-height: 1.25em; vertical-align: top; }
+
+		/* layout demo */
+		.layout-demo { margin-top: 0 !important; margin-bottom: 1.5em !important; border: 0 !important; padding: 0 !important; font-weight: bold; text-align: center; }
+	</style>
+</head>
+<body>
+	<div class="container_12 grid-lines">
+		<br />
+		<h1>F6 Liquidus CSS framework</h1>
+		<ul id="nav" class="sf-menu">
+			<li>
+				<a href="typography.html">Typography</a>
+				<ul>
+					<li><a href="typography.html#paragraph">Paragraph</a></li>
+					<li><a href="typography.html#lists">Lists</a></li>
+					<li><a href="typography.html#blockquotes">Blockquotes</a></li>
+					<li><a href="typography.html#tables">Tables</a></li>
+					<li><a href="typography.html#preformatted-text">Preformatted text</a></li>
+					<li><a href="typography.html#other-elements">Other elements</a></li>
+				</ul>
+			</li>
+			<li class="active">
+				<a href="plugins.html">Plugins</a>
+				<ul>
+					<li><a href="plugins.html#font">font.css</a></li>
+					<li><a href="plugins.html#semantic">semantic.css</a></li>
+					<li><a href="plugins.html#color">color.css</a></li>
+					<li><a href="plugins.html#message">message.css</a></li>
+					<li><a href="plugins-form.html#form">form.css</a></li>
+					<li><a href="plugins-form.html#button">button.css</a></li>
+					<li><a href="plugins-layout.html#layout">layout.css</a></li>
+					<li><a href="plugins-silk-sprite.html#silk-sprite">silk-sprite.css</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="grids.html">Grids</a>
+				<ul>
+					<li>
+						<a href="grids.html#960-grid-system">960 grid system</a>
+						<ul>
+							<li><a href="grids.html#960-grid-system-12-columns-grid">12 columns grid</a></li>
+							<li><a href="grids.html#960-grid-system-16-columns-grid">16 columns grid</a></li>
+							<li><a href="grids.html#960-grid-system-24-columns-grid">24 columns grid</a></li>
+						</ul>
+					</li>
+					<li><a href="grids.html#emastic-grid">Emastic grid</a></li>
+				</ul>
+			</li>
+		</ul>
+		<h2>Plugins</h2>
+		<h3 id="layout">layout.css</h3>
+		<ul class="notice ui-silk ui-silk-plugin">
+			<li>The <abbr title="plugins/layout.css">layout.css</abbr> plugin declare following additional layout styles.</li>
+		</ul>
+		<h4 id="layout-simple-tableless-table">Simple tableless table</h4>
+		<div class="notice layout-demo split-2 clearfix">
+			<br />&lt;div class=&quot;split-2 clearfix&quot;&gt;<br /><br />
+			<div class="success layout-demo fl"><br />&lt;div class=&quot;fl&quot;&gt;<br /><br /></div>
+			<div class="error layout-demo fr"><br />&lt;div class=&quot;fr&quot;&gt;<br /><br /></div>
+		</div>
+		<div class="notice layout-demo split-2 clearfix">
+			<br />&lt;div class=&quot;split-2 clearfix&quot;&gt;<br /><br />
+			<div class="success layout-demo fl w10p"><br /><abbr title="&lt;div class=&quot;fl w10p&quot;&gt;">fl w10p</abbr><br /><br /></div>
+			<div class="error layout-demo fr w90p"><br />&lt;div class=&quot;fr w90p&quot;&gt;<br /><br /></div>
+		</div>
+		<div class="notice layout-demo split-2 clearfix">
+			<br />&lt;div class=&quot;split-2 clearfix&quot;&gt;<br /><br />
+			<div class="success layout-demo fl w20p"><br />&lt;div class=&quot;fl w20p&quot;&gt;<br /><br /></div>
+			<div class="error layout-demo fr w80p"><br />&lt;div class=&quot;fr w80p&quot;&gt;<br /><br /></div>
+		</div>
+		<div class="notice layout-demo split-2 clearfix">
+			<br />&lt;div class=&quot;split-2 clearfix&quot;&gt;<br /><br />
+			<div class="success layout-demo fl w30p"><br />&lt;div class=&quot;fl w30p&quot;&gt;<br /><br /></div>
+			<div class="error layout-demo fr w70p"><br />&lt;div class=&quot;fr w70p&quot;&gt;<br /><br /></div>
+		</div>
+		<div class="notice layout-demo split-2 clearfix">
+			<br />&lt;div class=&quot;split-2 clearfix&quot;&gt;<br /><br />
+			<div class="success layout-demo fl w40p"><br />&lt;div class=&quot;fl w40p&quot;&gt;<br /><br /></div>
+			<div class="error layout-demo fr w60p"><br />&lt;div class=&quot;fr w60p&quot;&gt;<br /><br /></div>
+		</div>
+		<div class="notice layout-demo split-2 clearfix">
+			<br />&lt;div class=&quot;split-2 clearfix&quot;&gt;<br /><br />
+			<div class="success layout-demo fl w50p"><br />&lt;div class=&quot;fl w50p&quot;&gt;<br /><br /></div>
+			<div class="error layout-demo fr w50p"><br />&lt;div class=&quot;fr w50p&quot;&gt;<br /><br /></div>
+		</div>
+		<div class="notice layout-demo split-3 clearfix">
+			<br />&lt;div class=&quot;split-3 clearfix&quot;&gt;<br /><br />
+			<div class="success layout-demo fl"><br />&lt;div class=&quot;fl&quot;&gt;<br /><br /></div>
+			<div class="error layout-demo fl"><br />&lt;div class=&quot;fl&quot;&gt;<br /><br /></div>
+			<div class="success layout-demo fr"><br />&lt;div class=&quot;fr&quot;&gt;<br /><br /></div>
+		</div>
+		<div class="notice layout-demo split-3 clearfix">
+			<br />&lt;div class=&quot;split-3 clearfix&quot;&gt;<br /><br />
+			<div class="success layout-demo fl w30p"><br />&lt;div class=&quot;fl w30p&quot;&gt;<br /><br /></div>
+			<div class="error layout-demo fl w30p"><br />&lt;div class=&quot;fl w30p&quot;&gt;<br /><br /></div>
+			<div class="success layout-demo fr w40p"><br />&lt;div class=&quot;fr w40p&quot;&gt;<br /><br /></div>
+		</div>
+		<div class="notice layout-demo split-4 clearfix">
+			<br />&lt;div class=&quot;split-4 clearfix&quot;&gt;<br /><br />
+			<div class="success layout-demo fl"><br />&lt;div class=&quot;fl&quot;&gt;<br /><br /></div>
+			<div class="error layout-demo fl"><br />&lt;div class=&quot;fl&quot;&gt;<br /><br /></div>
+			<div class="success layout-demo fl"><br />&lt;div class=&quot;fl&quot;&gt;<br /><br /></div>
+			<div class="error layout-demo fr"><br />&lt;div class=&quot;fr&quot;&gt;<br /><br /></div>
+		</div>
+		<div class="notice layout-demo split-4 clearfix">
+			<br />&lt;div class=&quot;split-4 clearfix&quot;&gt;<br /><br />
+			<div class="success layout-demo fl w20p"><br />&lt;div class=&quot;fl w20p&quot;&gt;<br /><br /></div>
+			<div class="error layout-demo fl w20p"><br />&lt;div class=&quot;fl w20p&quot;&gt;<br /><br /></div>
+			<div class="success layout-demo fl w30p"><br />&lt;div class=&quot;fl w30p&quot;&gt;<br /><br /></div>
+			<div class="error layout-demo fr w30p"><br />&lt;div class=&quot;fr w30p&quot;&gt;<br /><br /></div>
+		</div>
+		<div class="notice layout-demo split-5 clearfix">
+			<br />&lt;div class=&quot;split-5 clearfix&quot;&gt;<br /><br />
+			<div class="success layout-demo fl"><br />&lt;div class=&quot;fl&quot;&gt;<br /><br /></div>
+			<div class="error layout-demo fl"><br />&lt;div class=&quot;fl&quot;&gt;<br /><br /></div>
+			<div class="success layout-demo fl"><br />&lt;div class=&quot;fl&quot;&gt;<br /><br /></div>
+			<div class="error layout-demo fl"><br />&lt;div class=&quot;fl&quot;&gt;<br /><br /></div>
+			<div class="success layout-demo fr"><br />&lt;div class=&quot;fr&quot;&gt;<br /><br /></div>
+		</div>
+		<div class="notice layout-demo split-5 clearfix">
+			<br />&lt;div class=&quot;split-5 clearfix&quot;&gt;<br /><br />
+			<div class="success layout-demo fl w10p"><br /><abbr title="&lt;div class=&quot;fl w10p&quot;&gt;">fl w10p</abbr><br /><br /></div>
+			<div class="error layout-demo fl w20p"><br />&lt;div class=&quot;fl w20p&quot;&gt;<br /><br /></div>
+			<div class="success layout-demo fl w20p"><br />&lt;div class=&quot;fl w20p&quot;&gt;<br /><br /></div>
+			<div class="error layout-demo fl w30p"><br />&lt;div class=&quot;fl w30p&quot;&gt;<br /><br /></div>
+			<div class="success layout-demo fr w20p"><br />&lt;div class=&quot;fr w20p&quot;&gt;<br /><br /></div>
+		</div>
+		<h4 id="layout-hover-menu">Hover menu</h4>
+		<div class="container_12" style="margin-bottom:1.5em;background:#fff">
+			<div class="grid_6 grid_first grid-lines">
+				<script type="text/javascript">
+					function setActive(e) {
+						var s = e.parentNode.firstChild;
+						do {
+							typeof s.className == 'undefined' || (s.className = s.className.replace(' active', ''));
+						} while (s = s.nextSibling);
+
+						typeof e.className != 'undefined' || (e.className = '');
+						e.className.match(/\bactive\b/) || (e.className += ' active');
+					}
+				</script>
+				<p>Below is an <strong>&lt;ul class=&quot;hover-menu&quot;&gt;</strong>:</p>
+				<ul class="hover-menu" style="z-index:9999">
+					<li>Hover me please!</li>
+					<li><a href="#layout-simple-tableless-table" title="Click me please!" onclick="setActive(this.parentNode);">Simple tableless table</a></li>
+					<li><a href="#layout-hover-menu" title="Click me please!" onclick="setActive(this.parentNode);">Hover menu</a></li>
+					<li><a href="#layout-suckerfish-dropdown-menu" title="Click me please!" onclick="setActive(this.parentNode);">Suckerfish dropdown menu</a></li>
+					<li><a href="#layout-ie6-fallback" title="Click me please!" onclick="setActive(this.parentNode);">IE6 fallback</a></li>
+				</ul>
+			</div>
+			<div class="grid_6 grid_last f-right grid-lines">
+				<p>Below is a <strong>&lt;dl class=&quot;hover-menu&quot;&gt;</strong>:</p>
+				<dl class="hover-menu">
+					<dt>I am a <strong>&lt;dt&gt;</strong></dt>
+					<dd style="z-index:9999">
+						<p>I am a <strong>&lt;dd&gt;</strong>.</p>
+						<p>You can put anything inside me, even it is plain text, an image gallery or a complex web form.</p>
+					</dd>
+				</dt>
+			</div>
+		</div>
+		<h4 id="layout-suckerfish-dropdown-menu">Suckerfish dropdown menu</h4>
+		<div class="container_12" style="margin-bottom:1.5em;background:#fff">
+			<div class="grid_6 grid_first grid-lines">
+				<p>Below is an <strong>&lt;ul class=&quot;sf-menu&quot;&gt;</strong> with several nested <strong>&lt;ul&gt;</strong>:</p>
+				<ul class="sf-menu" style="z-index:999">
+					<li>
+						<a href="typography.html">Typography</a>
+						<ul style="z-index:999">
+							<li><a href="typography.html#paragraph">Paragraph</a></li>
+							<li><a href="typography.html#lists">Lists</a></li>
+							<li><a href="typography.html#blockquotes">Blockquotes</a></li>
+							<li><a href="typography.html#tables">Tables</a></li>
+							<li><a href="typography.html#preformatted-text">Preformatted text</a></li>
+							<li><a href="typography.html#other-elements">Other elements</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="plugins.html">Plugins</a>
+						<ul style="z-index:999">
+							<li><a href="plugins.html#font">font.css</a></li>
+							<li><a href="plugins.html#semantic">semantic.css</a></li>
+							<li><a href="plugins.html#color">color.css</a></li>
+							<li><a href="plugins.html#message">message.css</a></li>
+							<li><a href="plugins.html#form">form.css</a></li>
+							<li><a href="plugins.html#button">button.css</a></li>
+							<li><a href="plugins.html#layout">layout.css</a></li>
+							<li><a href="plugins.html#silk-sprite">silk-sprite.css</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="grids.html">Grids</a>
+						<ul style="z-index:999">
+							<li>
+								<a href="grids.html#960-grid-system">960 grid system</a>
+								<ul style="z-index:999">
+									<li><a href="grids.html#960-grid-system-12-columns-grid">12 columns grid</a></li>
+									<li><a href="grids.html#960-grid-system-16-columns-grid">16 columns grid</a></li>
+									<li><a href="grids.html#960-grid-system-24-columns-grid">24 columns grid</a></li>
+								</ul>
+							</li>
+							<li><a href="grids.html#emastic-grid">Emastic grid</a></li>
+						</ul>
+					</li>
+				</ul>
+				<br /><br />
+			</div>
+			<div class="grid_6 grid_last f-right grid-lines">
+				<p>Below is an <strong>&lt;ul class=&quot;sf-menu vertical&quot;&gt;</strong>:</p>
+				<ul class="sf-menu vertical" style="z-index:999">
+					<li>
+						<a href="typography.html">Typography</a>
+						<ul style="z-index:999">
+							<li><a href="typography.html#paragraph">Paragraph</a></li>
+							<li><a href="typography.html#lists">Lists</a></li>
+							<li><a href="typography.html#blockquotes">Blockquotes</a></li>
+							<li><a href="typography.html#tables">Tables</a></li>
+							<li><a href="typography.html#preformatted-text">Preformatted text</a></li>
+							<li><a href="typography.html#other-elements">Other elements</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="plugins.html">Plugins</a>
+						<ul style="z-index:999">
+							<li><a href="plugins.html#font">font.css</a></li>
+							<li><a href="plugins.html#semantic">semantic.css</a></li>
+							<li><a href="plugins.html#color">color.css</a></li>
+							<li><a href="plugins.html#message">message.css</a></li>
+							<li><a href="plugins.html#form">form.css</a></li>
+							<li><a href="plugins.html#button">button.css</a></li>
+							<li><a href="plugins.html#layout">layout.css</a></li>
+							<li><a href="plugins.html#silk-sprite">silk-sprite.css</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="grids.html">Grids</a>
+						<ul style="z-index:999">
+							<li>
+								<a href="grids.html#960-grid-system">960 grid system</a>
+								<ul style="z-index:999">
+									<li><a href="grids.html#960-grid-system-12-columns-grid">12 columns grid</a></li>
+									<li><a href="grids.html#960-grid-system-16-columns-grid">16 columns grid</a></li>
+									<li><a href="grids.html#960-grid-system-24-columns-grid">24 columns grid</a></li>
+								</ul>
+							</li>
+							<li><a href="grids.html#emastic-grid">Emastic grid</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<p>Below is an <strong>&lt;ul class=&quot;sf-menu drop-line&quot;&gt;</strong>:</p>
+		<ul class="sf-menu drop-line">
+			<li>
+				<a href="typography.html">Typography</a>
+				<ul>
+					<li><a href="typography.html#paragraph">Paragraph</a></li>
+					<li><a href="typography.html#lists">Lists</a></li>
+					<li><a href="typography.html#blockquotes">Blockquotes</a></li>
+					<li><a href="typography.html#tables">Tables</a></li>
+					<li><a href="typography.html#preformatted-text">Preformatted text</a></li>
+					<li><a href="typography.html#other-elements">Other elements</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="plugins.html">Plugins</a>
+				<ul>
+					<li><a href="plugins.html#font">font.css</a></li>
+					<li><a href="plugins.html#semantic">semantic.css</a></li>
+					<li><a href="plugins.html#color">color.css</a></li>
+					<li><a href="plugins.html#message">message.css</a></li>
+					<li><a href="plugins.html#form">form.css</a></li>
+					<li><a href="plugins.html#button">button.css</a></li>
+					<li><a href="plugins.html#layout">layout.css</a></li>
+					<li><a href="plugins.html#silk-sprite">silk-sprite.css</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="grids.html">Grids</a>
+				<ul>
+					<li>
+						<a href="grids.html#960-grid-system">960 grid system</a>
+						<ul>
+							<li><a href="grids.html#960-grid-system-12-columns-grid">12 columns grid</a></li>
+							<li><a href="grids.html#960-grid-system-16-columns-grid">16 columns grid</a></li>
+							<li><a href="grids.html#960-grid-system-24-columns-grid">24 columns grid</a></li>
+						</ul>
+					</li>
+					<li><a href="grids.html#emastic-grid">Emastic grid</a></li>
+				</ul>
+			</li>
+		</ul>
+		<br />
+		<script type="text/javascript">
+			for (var t in {ul: '', dl: ''}) {
+				var lists = document.getElementsByTagName(t);
+				for (var i = 0; i < lists.length; i++) {
+					if (lists[i].className.match(/\bhover-menu\b/)) {
+						lists[i].onmouseover = function() { this.className += ' mouseover'; };
+						lists[i].onmouseout = function() { this.className = this.className.replace(' mouseover', ''); };
+					} else if (lists[i].className.match(/\bsf-menu\b/)) {
+						var items = lists[i].getElementsByTagName('li');
+						for (var j = 0; j < items.length; j++) {
+							items[j].onmouseover = function() { this.className += ' mouseover'; };
+							items[j].onmouseout = function() { this.className = this.className.replace(' mouseover', ''); };
+						}
+					}
+				}
+			}
+		</script>
+		<h4 id="layout-ie6-fallback">IE6 fallback</h4>
+		<p>You might already know that IE6 does not support the <strong>:hover</strong> dynamic pseudo-class selector for any HTML element other than <strong>&lt;a&gt;</strong>. This problem causes our <strong>hover menu</strong> and <strong>Suckerfish dropdown menu</strong> never working as expected in IE6 without a proper fix. Below is the Javascript fallback to make these menus working like a champ in IE6. You simply need to put the following code snippet right before the <strong>&lt;/body&gt;</strong> tag.</p>
+		<code>&lt;script type=&quot;text/javascript&quot;&gt;
+for (var t in {ul: '', dl: ''}) {
+	var lists = document.getElementsByTagName(t);
+	for (var i = 0; i &lt; lists.length; i++) {
+		if (lists[i].className.match(/\bhover-menu\b/)) {
+			lists[i].onmouseover = function() { this.className += ' mouseover'; };
+			lists[i].onmouseout = function() { this.className = this.className.replace(' mouseover', ''); };
+		} else if (lists[i].className.match(/\bsf-menu\b/)) {
+			var items = lists[i].getElementsByTagName('li');
+			for (var j = 0; j &lt; items.length; j++) {
+				items[j].onmouseover = function() { this.className += ' mouseover'; };
+				items[j].onmouseout = function() { this.className = this.className.replace(' mouseover', ''); };
+			}
+		}
+	}
+}
+&lt;/script&gt;</code>
+		<hr />
+		<p class="clearfix" style="margin-bottom:1.5em">
+			<a class="f-left" href="plugins-form.html#form" title="Plugins: form.css, button.css"><span class="prev">&laquo;</span> Plugins: form.css, button.css</a>
+			<a class="f-right" href="plugins-silk-sprite.html#silk-sprite" title="Plugins: silk-sprite.css">Plugins: silk-sprite.css <span class="next">&raquo;</span></a>
+		</p>
+	</div>
+</body>
+</html>

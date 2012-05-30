@@ -1,0 +1,5106 @@
+/**
+ * F6 Liquidus's CSS framework.
+ *
+ * F6 Liquidus's CSS framework is the combination of several well-known CSS
+ * frameworks. The 960 Grid System, the Blueprint and the Emastic CSS Framework
+ * to name a few. So, why need another CSS framework? F6 Liquidus's CSS
+ * framework is created to inherit the pros of existing frameworks while
+ * trying to limit their cons to minimal. Besides that, F6 Liquidus's CSS
+ * framework also contains many build-from-scratch proprietary styles.
+ *
+ * @copyright   Copyright (c) 2011 Manh-Cuong Nguyen
+ * @author      Manh-Cuong Nguyen [nmc] <cuongnm@f6studio.com>
+ * @license     http://f6studio.com/license
+ *
+ * @package     Liquidus
+ * @subpackage  CSS Framework
+ * @link        http://f6studio.com/Liquidus
+ *
+ * @version     1.0.0
+ */
+
+/*
+	Silk Sprites
+	http://xheo.com/silk?icons=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,300,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,348,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,366,367,368,369,370,371,372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,398,399,400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437,438,439,440,441,442,443,444,445,446,447,448,449,450,451,452,453,454,455,456,457,458,459,460,461,462,463,464,465,466,467,468,469,470,471,472,473,474,475,476,477,478,479,480,481,482,483,484,485,486,487,488,489,490,491,492,493,494,495,496,497,498,499,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,523,524,525,526,527,528,529,530,531,532,533,534,535,536,537,538,539,540,541,542,543,544,545,546,547,548,549,550,551,552,553,554,555,556,557,558,559,560,561,562,563,564,565,566,567,568,569,570,571,572,573,574,575,576,577,578,579,580,581,582,583,584,585,586,587,588,589,590,591,592,593,594,595,596,597,598,599,600,601,602,603,604,605,606,607,608,609,610,611,612,613,614,615,616,617,618,619,620,621,622,623,624,625,626,627,628,629,630,631,632,633,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648,649,650,651,652,653,654,655,656,657,658,659,660,661,662,663,664,665,666,667,668,669,670,671,672,673,674,675,676,677,678,679,680,681,682,683,684,685,686,687,688,689,690,691,692,693,694,695,696,697,698,699,700,701,702,703,704,705,706,707,708,709,710,711,712,713,714,715,716,717,718,719,720,721,722,723,724,725,726,727,728,729,730,731,732,733,734,735,736,737,738,739,740,741,742,743,744,745,746,747,748,749,750,751,752,753,754,755,756,757,758,759,760,761,762,763,764,765,766,767,768,769,770,771,772,773,774,775,776,777,778,779,780,781,782,783,784,785,786,787,788,789,790,791,792,793,794,795,796,797,798,799,800,801,802,803,804,805,806,807,808,809,810,811,812,813,814,815,816,817,818,819,820,821,822,823,824,825,826,827,828,829,830,831,832,833,834,835,836,837,838,839,840,841,842,843,844,845,846,847,848,849,850,851,852,853,854,855,856,857,858,859,860,861,862,863,864,865,866,867,868,869,870,871,872,873,874,875,876,877,878,879,880,881,882,883,884,885,886,887,888,889,890,891,892,893,894,895,896,897,898,899,900,901,902,903,904,905,906,907,908,909,910,911,912,913,914,915,916,917,918,919,920,921,922,923,924,925,926,927,928,929,930,931,932,933,934,935,936,937,938,939,940,941,942,943,944,945,946,947,948,949,950,951,952,953,954,955,956,957,958,959,960,961,962,963,964,965,966,967,968,969,970,971,972,973,974,975,976,977,978,979,980,981,982,983,984,985,986,987,988,989,990,991,992,993,994,995,996,997,998,999&size=16
+*/
+
+/* Common
+-----------------------------------------------------------------------------------------------*/
+
+.ui-silk {
+	display: block;
+	margin: 1px;
+	width: 16px;
+	height: 16px;
+	overflow: hidden;
+	background: url(silk-sprite/silk-sprite.png) no-repeat;
+	text-indent: -999em;
+}
+.ui-silk.gray, .ui-silk.hover {
+	background-image: url(silk-sprite-gray.png);
+}
+.ui-silk.hover:hover {
+	background-image: url(silk-sprite/silk-sprite.png);
+}
+a.ui-silk, span.ui-silk, label.ui-silk, input.ui-silk {
+	display: inline-block;
+	outline: 0;
+	margin: 0;
+	border: 0;
+	vertical-align: text-bottom;
+}
+@media screen and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {
+	/* Opera */
+	:root * > a.ui-silk, :root * > span.ui-silk, :root * > label.ui-silk, :root * > input.ui-silk {
+		vertical-align: middle;
+	}
+}
+h1 a.ui-silk, h2 a.ui-silk, h3 a.ui-silk, h4 a.ui-silk, h5 a.ui-silk, h6 a.ui-silk,
+h1 span.ui-silk, h2 span.ui-silk, h3 span.ui-silk, h4 span.ui-silk, h5 span.ui-silk, h6 span.ui-silk,
+.byline a.ui-silk, .byline span.ui-silk {
+	vertical-align: top;
+}
+
+/* Unordered List
+-----------------------------------------------------------------------------------------------*/
+
+ul.ui-silk { /* list */
+	list-style: none;
+	margin: 0 0 1.5em;
+	width: auto;
+	height: auto;
+	overflow: visible;
+	background: none;
+	text-indent: 0;
+}
+ul.ui-silk:last-child {
+	margin-bottom: 0;
+}
+
+ul.ui-silk ul { /* nested list */
+	margin-left: 1.583em;
+}
+
+ul.ui-silk li { /* list item */
+	margin-left: 0;
+}
+ul.ui-silk > li:before {
+	display: inline-block;
+	margin-right: 3px;
+	width: 16px;
+	height: 16px;
+	background: url(silk-sprite/silk-sprite.png) no-repeat;
+	content: " ";
+	text-indent: -999em;
+	vertical-align: text-bottom;
+}
+@media screen and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {
+	/* Opera */
+	:root * > ul.ui-silk > li:before {
+		vertical-align: middle;
+	}
+}
+
+/* Icon Sprites
+-----------------------------------------------------------------------------------------------*/
+
+.ui-silk-accept,
+ul.ui-silk-accept > li:before,
+ul.ui-silk > li.ui-silk-accept:before {
+	background-position: 0 0;
+}
+.ui-silk-add,
+ul.ui-silk-add > li:before,
+ul.ui-silk > li.ui-silk-add:before {
+	background-position: -16px 0;
+}
+.ui-silk-anchor,
+ul.ui-silk-anchor > li:before,
+ul.ui-silk > li.ui-silk-anchor:before {
+	background-position: -32px 0;
+}
+.ui-silk-application,
+ul.ui-silk-application > li:before,
+ul.ui-silk > li.ui-silk-application:before {
+	background-position: -48px 0;
+}
+.ui-silk-application-add,
+ul.ui-silk-application-add > li:before,
+ul.ui-silk > li.ui-silk-application-add:before {
+	background-position: -64px 0;
+}
+.ui-silk-application-cascade,
+ul.ui-silk-application-cascade > li:before,
+ul.ui-silk > li.ui-silk-application-cascade:before {
+	background-position: -80px 0;
+}
+.ui-silk-application-delete,
+ul.ui-silk-application-delete > li:before,
+ul.ui-silk > li.ui-silk-application-delete:before {
+	background-position: -96px 0;
+}
+.ui-silk-application-double,
+ul.ui-silk-application-double > li:before,
+ul.ui-silk > li.ui-silk-application-double:before {
+	background-position: -112px 0;
+}
+.ui-silk-application-edit,
+ul.ui-silk-application-edit > li:before,
+ul.ui-silk > li.ui-silk-application-edit:before {
+	background-position: -128px 0;
+}
+.ui-silk-application-error,
+ul.ui-silk-application-error > li:before,
+ul.ui-silk > li.ui-silk-application-error:before {
+	background-position: -144px 0;
+}
+.ui-silk-application-form,
+ul.ui-silk-application-form > li:before,
+ul.ui-silk > li.ui-silk-application-form:before {
+	background-position: -160px 0;
+}
+.ui-silk-application-form-add,
+ul.ui-silk-application-form-add > li:before,
+ul.ui-silk > li.ui-silk-application-form-add:before {
+	background-position: -176px 0;
+}
+.ui-silk-application-form-delete,
+ul.ui-silk-application-form-delete > li:before,
+ul.ui-silk > li.ui-silk-application-form-delete:before {
+	background-position: -192px 0;
+}
+.ui-silk-application-form-edit,
+ul.ui-silk-application-form-edit > li:before,
+ul.ui-silk > li.ui-silk-application-form-edit:before {
+	background-position: -208px 0;
+}
+.ui-silk-application-form-magnify,
+ul.ui-silk-application-form-magnify > li:before,
+ul.ui-silk > li.ui-silk-application-form-magnify:before {
+	background-position: -224px 0;
+}
+.ui-silk-application-get,
+ul.ui-silk-application-get > li:before,
+ul.ui-silk > li.ui-silk-application-get:before {
+	background-position: -240px 0;
+}
+.ui-silk-application-go,
+ul.ui-silk-application-go > li:before,
+ul.ui-silk > li.ui-silk-application-go:before {
+	background-position: -256px 0;
+}
+.ui-silk-application-home,
+ul.ui-silk-application-home > li:before,
+ul.ui-silk > li.ui-silk-application-home:before {
+	background-position: -272px 0;
+}
+.ui-silk-application-key,
+ul.ui-silk-application-key > li:before,
+ul.ui-silk > li.ui-silk-application-key:before {
+	background-position: -288px 0;
+}
+.ui-silk-application-lightning,
+ul.ui-silk-application-lightning > li:before,
+ul.ui-silk > li.ui-silk-application-lightning:before {
+	background-position: -304px 0;
+}
+.ui-silk-application-link,
+ul.ui-silk-application-link > li:before,
+ul.ui-silk > li.ui-silk-application-link:before {
+	background-position: -320px 0;
+}
+.ui-silk-application-osx,
+ul.ui-silk-application-osx > li:before,
+ul.ui-silk > li.ui-silk-application-osx:before {
+	background-position: -336px 0;
+}
+.ui-silk-application-osx-terminal,
+ul.ui-silk-application-osx-terminal > li:before,
+ul.ui-silk > li.ui-silk-application-osx-terminal:before {
+	background-position: -352px 0;
+}
+.ui-silk-application-put,
+ul.ui-silk-application-put > li:before,
+ul.ui-silk > li.ui-silk-application-put:before {
+	background-position: -368px 0;
+}
+.ui-silk-application-side-boxes,
+ul.ui-silk-application-side-boxes > li:before,
+ul.ui-silk > li.ui-silk-application-side-boxes:before {
+	background-position: -384px 0;
+}
+.ui-silk-application-side-contract,
+ul.ui-silk-application-side-contract > li:before,
+ul.ui-silk > li.ui-silk-application-side-contract:before {
+	background-position: -400px 0;
+}
+.ui-silk-application-side-expand,
+ul.ui-silk-application-side-expand > li:before,
+ul.ui-silk > li.ui-silk-application-side-expand:before {
+	background-position: -416px 0;
+}
+.ui-silk-application-side-list,
+ul.ui-silk-application-side-list > li:before,
+ul.ui-silk > li.ui-silk-application-side-list:before {
+	background-position: -432px 0;
+}
+.ui-silk-application-side-tree,
+ul.ui-silk-application-side-tree > li:before,
+ul.ui-silk > li.ui-silk-application-side-tree:before {
+	background-position: -448px 0;
+}
+.ui-silk-application-split,
+ul.ui-silk-application-split > li:before,
+ul.ui-silk > li.ui-silk-application-split:before {
+	background-position: -464px 0;
+}
+.ui-silk-application-tile-horizontal,
+ul.ui-silk-application-tile-horizontal > li:before,
+ul.ui-silk > li.ui-silk-application-tile-horizontal:before {
+	background-position: -480px 0;
+}
+.ui-silk-application-tile-vertical,
+ul.ui-silk-application-tile-vertical > li:before,
+ul.ui-silk > li.ui-silk-application-tile-vertical:before {
+	background-position: -496px 0;
+}
+.ui-silk-application-view-columns,
+ul.ui-silk-application-view-columns > li:before,
+ul.ui-silk > li.ui-silk-application-view-columns:before {
+	background-position: 0 -16px;
+}
+.ui-silk-application-view-detail,
+ul.ui-silk-application-view-detail > li:before,
+ul.ui-silk > li.ui-silk-application-view-detail:before {
+	background-position: -16px -16px;
+}
+.ui-silk-application-view-gallery,
+ul.ui-silk-application-view-gallery > li:before,
+ul.ui-silk > li.ui-silk-application-view-gallery:before {
+	background-position: -32px -16px;
+}
+.ui-silk-application-view-icons,
+ul.ui-silk-application-view-icons > li:before,
+ul.ui-silk > li.ui-silk-application-view-icons:before {
+	background-position: -48px -16px;
+}
+.ui-silk-application-view-list,
+ul.ui-silk-application-view-list > li:before,
+ul.ui-silk > li.ui-silk-application-view-list:before {
+	background-position: -64px -16px;
+}
+.ui-silk-application-view-tile,
+ul.ui-silk-application-view-tile > li:before,
+ul.ui-silk > li.ui-silk-application-view-tile:before {
+	background-position: -80px -16px;
+}
+.ui-silk-application-xp,
+ul.ui-silk-application-xp > li:before,
+ul.ui-silk > li.ui-silk-application-xp:before {
+	background-position: -96px -16px;
+}
+.ui-silk-application-xp-terminal,
+ul.ui-silk-application-xp-terminal > li:before,
+ul.ui-silk > li.ui-silk-application-xp-terminal:before {
+	background-position: -112px -16px;
+}
+.ui-silk-arrow-branch,
+ul.ui-silk-arrow-branch > li:before,
+ul.ui-silk > li.ui-silk-arrow-branch:before {
+	background-position: -128px -16px;
+}
+.ui-silk-arrow-divide,
+ul.ui-silk-arrow-divide > li:before,
+ul.ui-silk > li.ui-silk-arrow-divide:before {
+	background-position: -144px -16px;
+}
+.ui-silk-arrow-down,
+ul.ui-silk-arrow-down > li:before,
+ul.ui-silk > li.ui-silk-arrow-down:before {
+	background-position: -160px -16px;
+}
+.ui-silk-arrow-in,
+ul.ui-silk-arrow-in > li:before,
+ul.ui-silk > li.ui-silk-arrow-in:before {
+	background-position: -176px -16px;
+}
+.ui-silk-arrow-inout,
+ul.ui-silk-arrow-inout > li:before,
+ul.ui-silk > li.ui-silk-arrow-inout:before {
+	background-position: -192px -16px;
+}
+.ui-silk-arrow-join,
+ul.ui-silk-arrow-join > li:before,
+ul.ui-silk > li.ui-silk-arrow-join:before {
+	background-position: -208px -16px;
+}
+.ui-silk-arrow-left,
+ul.ui-silk-arrow-left > li:before,
+ul.ui-silk > li.ui-silk-arrow-left:before {
+	background-position: -224px -16px;
+}
+.ui-silk-arrow-merge,
+ul.ui-silk-arrow-merge > li:before,
+ul.ui-silk > li.ui-silk-arrow-merge:before {
+	background-position: -240px -16px;
+}
+.ui-silk-arrow-out,
+ul.ui-silk-arrow-out > li:before,
+ul.ui-silk > li.ui-silk-arrow-out:before {
+	background-position: -256px -16px;
+}
+.ui-silk-arrow-redo,
+ul.ui-silk-arrow-redo > li:before,
+ul.ui-silk > li.ui-silk-arrow-redo:before {
+	background-position: -272px -16px;
+}
+.ui-silk-arrow-refresh,
+ul.ui-silk-arrow-refresh > li:before,
+ul.ui-silk > li.ui-silk-arrow-refresh:before {
+	background-position: -288px -16px;
+}
+.ui-silk-arrow-refresh-small,
+ul.ui-silk-arrow-refresh-small > li:before,
+ul.ui-silk > li.ui-silk-arrow-refresh-small:before {
+	background-position: -304px -16px;
+}
+.ui-silk-arrow-right,
+ul.ui-silk-arrow-right > li:before,
+ul.ui-silk > li.ui-silk-arrow-right:before {
+	background-position: -320px -16px;
+}
+.ui-silk-arrow-rotate-anticlockwise,
+ul.ui-silk-arrow-rotate-anticlockwise > li:before,
+ul.ui-silk > li.ui-silk-arrow-rotate-anticlockwise:before {
+	background-position: -336px -16px;
+}
+.ui-silk-arrow-rotate-clockwise,
+ul.ui-silk-arrow-rotate-clockwise > li:before,
+ul.ui-silk > li.ui-silk-arrow-rotate-clockwise:before {
+	background-position: -352px -16px;
+}
+.ui-silk-arrow-switch,
+ul.ui-silk-arrow-switch > li:before,
+ul.ui-silk > li.ui-silk-arrow-switch:before {
+	background-position: -368px -16px;
+}
+.ui-silk-arrow-turn-left,
+ul.ui-silk-arrow-turn-left > li:before,
+ul.ui-silk > li.ui-silk-arrow-turn-left:before {
+	background-position: -384px -16px;
+}
+.ui-silk-arrow-turn-right,
+ul.ui-silk-arrow-turn-right > li:before,
+ul.ui-silk > li.ui-silk-arrow-turn-right:before {
+	background-position: -400px -16px;
+}
+.ui-silk-arrow-undo,
+ul.ui-silk-arrow-undo > li:before,
+ul.ui-silk > li.ui-silk-arrow-undo:before {
+	background-position: -416px -16px;
+}
+.ui-silk-arrow-up,
+ul.ui-silk-arrow-up > li:before,
+ul.ui-silk > li.ui-silk-arrow-up:before {
+	background-position: -432px -16px;
+}
+.ui-silk-asterisk-orange,
+ul.ui-silk-asterisk-orange > li:before,
+ul.ui-silk > li.ui-silk-asterisk-orange:before {
+	background-position: -448px -16px;
+}
+.ui-silk-asterisk-yellow,
+ul.ui-silk-asterisk-yellow > li:before,
+ul.ui-silk > li.ui-silk-asterisk-yellow:before {
+	background-position: -464px -16px;
+}
+.ui-silk-attach,
+ul.ui-silk-attach > li:before,
+ul.ui-silk > li.ui-silk-attach:before {
+	background-position: -480px -16px;
+}
+.ui-silk-award-star-add,
+ul.ui-silk-award-star-add > li:before,
+ul.ui-silk > li.ui-silk-award-star-add:before {
+	background-position: -496px -16px;
+}
+.ui-silk-award-star-bronze-1,
+ul.ui-silk-award-star-bronze-1 > li:before,
+ul.ui-silk > li.ui-silk-award-star-bronze-1:before {
+	background-position: 0 -32px;
+}
+.ui-silk-award-star-bronze-2,
+ul.ui-silk-award-star-bronze-2 > li:before,
+ul.ui-silk > li.ui-silk-award-star-bronze-2:before {
+	background-position: -16px -32px;
+}
+.ui-silk-award-star-bronze-3,
+ul.ui-silk-award-star-bronze-3 > li:before,
+ul.ui-silk > li.ui-silk-award-star-bronze-3:before {
+	background-position: -32px -32px;
+}
+.ui-silk-award-star-delete,
+ul.ui-silk-award-star-delete > li:before,
+ul.ui-silk > li.ui-silk-award-star-delete:before {
+	background-position: -48px -32px;
+}
+.ui-silk-award-star-gold-1,
+ul.ui-silk-award-star-gold-1 > li:before,
+ul.ui-silk > li.ui-silk-award-star-gold-1:before {
+	background-position: -64px -32px;
+}
+.ui-silk-award-star-gold-2,
+ul.ui-silk-award-star-gold-2 > li:before,
+ul.ui-silk > li.ui-silk-award-star-gold-2:before {
+	background-position: -80px -32px;
+}
+.ui-silk-award-star-gold-3,
+ul.ui-silk-award-star-gold-3 > li:before,
+ul.ui-silk > li.ui-silk-award-star-gold-3:before {
+	background-position: -96px -32px;
+}
+.ui-silk-award-star-silver-1,
+ul.ui-silk-award-star-silver-1 > li:before,
+ul.ui-silk > li.ui-silk-award-star-silver-1:before {
+	background-position: -112px -32px;
+}
+.ui-silk-award-star-silver-2,
+ul.ui-silk-award-star-silver-2 > li:before,
+ul.ui-silk > li.ui-silk-award-star-silver-2:before {
+	background-position: -128px -32px;
+}
+.ui-silk-award-star-silver-3,
+ul.ui-silk-award-star-silver-3 > li:before,
+ul.ui-silk > li.ui-silk-award-star-silver-3:before {
+	background-position: -144px -32px;
+}
+.ui-silk-basket,
+ul.ui-silk-basket > li:before,
+ul.ui-silk > li.ui-silk-basket:before {
+	background-position: -160px -32px;
+}
+.ui-silk-basket-add,
+ul.ui-silk-basket-add > li:before,
+ul.ui-silk > li.ui-silk-basket-add:before {
+	background-position: -176px -32px;
+}
+.ui-silk-basket-delete,
+ul.ui-silk-basket-delete > li:before,
+ul.ui-silk > li.ui-silk-basket-delete:before {
+	background-position: -192px -32px;
+}
+.ui-silk-basket-edit,
+ul.ui-silk-basket-edit > li:before,
+ul.ui-silk > li.ui-silk-basket-edit:before {
+	background-position: -208px -32px;
+}
+.ui-silk-basket-error,
+ul.ui-silk-basket-error > li:before,
+ul.ui-silk > li.ui-silk-basket-error:before {
+	background-position: -224px -32px;
+}
+.ui-silk-basket-go,
+ul.ui-silk-basket-go > li:before,
+ul.ui-silk > li.ui-silk-basket-go:before {
+	background-position: -240px -32px;
+}
+.ui-silk-basket-put,
+ul.ui-silk-basket-put > li:before,
+ul.ui-silk > li.ui-silk-basket-put:before {
+	background-position: -256px -32px;
+}
+.ui-silk-basket-remove,
+ul.ui-silk-basket-remove > li:before,
+ul.ui-silk > li.ui-silk-basket-remove:before {
+	background-position: -272px -32px;
+}
+.ui-silk-bell,
+ul.ui-silk-bell > li:before,
+ul.ui-silk > li.ui-silk-bell:before {
+	background-position: -288px -32px;
+}
+.ui-silk-bell-add,
+ul.ui-silk-bell-add > li:before,
+ul.ui-silk > li.ui-silk-bell-add:before {
+	background-position: -304px -32px;
+}
+.ui-silk-bell-delete,
+ul.ui-silk-bell-delete > li:before,
+ul.ui-silk > li.ui-silk-bell-delete:before {
+	background-position: -320px -32px;
+}
+.ui-silk-bell-error,
+ul.ui-silk-bell-error > li:before,
+ul.ui-silk > li.ui-silk-bell-error:before {
+	background-position: -336px -32px;
+}
+.ui-silk-bell-go,
+ul.ui-silk-bell-go > li:before,
+ul.ui-silk > li.ui-silk-bell-go:before {
+	background-position: -352px -32px;
+}
+.ui-silk-bell-link,
+ul.ui-silk-bell-link > li:before,
+ul.ui-silk > li.ui-silk-bell-link:before {
+	background-position: -368px -32px;
+}
+.ui-silk-bin,
+ul.ui-silk-bin > li:before,
+ul.ui-silk > li.ui-silk-bin:before {
+	background-position: -384px -32px;
+}
+.ui-silk-bin-closed,
+ul.ui-silk-bin-closed > li:before,
+ul.ui-silk > li.ui-silk-bin-closed:before {
+	background-position: -400px -32px;
+}
+.ui-silk-bin-empty,
+ul.ui-silk-bin-empty > li:before,
+ul.ui-silk > li.ui-silk-bin-empty:before {
+	background-position: -416px -32px;
+}
+.ui-silk-bomb,
+ul.ui-silk-bomb > li:before,
+ul.ui-silk > li.ui-silk-bomb:before {
+	background-position: -432px -32px;
+}
+.ui-silk-book,
+ul.ui-silk-book > li:before,
+ul.ui-silk > li.ui-silk-book:before {
+	background-position: -448px -32px;
+}
+.ui-silk-book-add,
+ul.ui-silk-book-add > li:before,
+ul.ui-silk > li.ui-silk-book-add:before {
+	background-position: -464px -32px;
+}
+.ui-silk-book-addresses,
+ul.ui-silk-book-addresses > li:before,
+ul.ui-silk > li.ui-silk-book-addresses:before {
+	background-position: -480px -32px;
+}
+.ui-silk-book-delete,
+ul.ui-silk-book-delete > li:before,
+ul.ui-silk > li.ui-silk-book-delete:before {
+	background-position: -496px -32px;
+}
+.ui-silk-book-edit,
+ul.ui-silk-book-edit > li:before,
+ul.ui-silk > li.ui-silk-book-edit:before {
+	background-position: 0 -48px;
+}
+.ui-silk-book-error,
+ul.ui-silk-book-error > li:before,
+ul.ui-silk > li.ui-silk-book-error:before {
+	background-position: -16px -48px;
+}
+.ui-silk-book-go,
+ul.ui-silk-book-go > li:before,
+ul.ui-silk > li.ui-silk-book-go:before {
+	background-position: -32px -48px;
+}
+.ui-silk-book-key,
+ul.ui-silk-book-key > li:before,
+ul.ui-silk > li.ui-silk-book-key:before {
+	background-position: -48px -48px;
+}
+.ui-silk-book-link,
+ul.ui-silk-book-link > li:before,
+ul.ui-silk > li.ui-silk-book-link:before {
+	background-position: -64px -48px;
+}
+.ui-silk-book-next,
+ul.ui-silk-book-next > li:before,
+ul.ui-silk > li.ui-silk-book-next:before {
+	background-position: -80px -48px;
+}
+.ui-silk-book-open,
+ul.ui-silk-book-open > li:before,
+ul.ui-silk > li.ui-silk-book-open:before {
+	background-position: -96px -48px;
+}
+.ui-silk-book-previous,
+ul.ui-silk-book-previous > li:before,
+ul.ui-silk > li.ui-silk-book-previous:before {
+	background-position: -112px -48px;
+}
+.ui-silk-box,
+ul.ui-silk-box > li:before,
+ul.ui-silk > li.ui-silk-box:before {
+	background-position: -128px -48px;
+}
+.ui-silk-brick,
+ul.ui-silk-brick > li:before,
+ul.ui-silk > li.ui-silk-brick:before {
+	background-position: -144px -48px;
+}
+.ui-silk-bricks,
+ul.ui-silk-bricks > li:before,
+ul.ui-silk > li.ui-silk-bricks:before {
+	background-position: -160px -48px;
+}
+.ui-silk-brick-add,
+ul.ui-silk-brick-add > li:before,
+ul.ui-silk > li.ui-silk-brick-add:before {
+	background-position: -176px -48px;
+}
+.ui-silk-brick-delete,
+ul.ui-silk-brick-delete > li:before,
+ul.ui-silk > li.ui-silk-brick-delete:before {
+	background-position: -192px -48px;
+}
+.ui-silk-brick-edit,
+ul.ui-silk-brick-edit > li:before,
+ul.ui-silk > li.ui-silk-brick-edit:before {
+	background-position: -208px -48px;
+}
+.ui-silk-brick-error,
+ul.ui-silk-brick-error > li:before,
+ul.ui-silk > li.ui-silk-brick-error:before {
+	background-position: -224px -48px;
+}
+.ui-silk-brick-go,
+ul.ui-silk-brick-go > li:before,
+ul.ui-silk > li.ui-silk-brick-go:before {
+	background-position: -240px -48px;
+}
+.ui-silk-brick-link,
+ul.ui-silk-brick-link > li:before,
+ul.ui-silk > li.ui-silk-brick-link:before {
+	background-position: -256px -48px;
+}
+.ui-silk-briefcase,
+ul.ui-silk-briefcase > li:before,
+ul.ui-silk > li.ui-silk-briefcase:before {
+	background-position: -272px -48px;
+}
+.ui-silk-bug,
+ul.ui-silk-bug > li:before,
+ul.ui-silk > li.ui-silk-bug:before {
+	background-position: -288px -48px;
+}
+.ui-silk-bug-add,
+ul.ui-silk-bug-add > li:before,
+ul.ui-silk > li.ui-silk-bug-add:before {
+	background-position: -304px -48px;
+}
+.ui-silk-bug-delete,
+ul.ui-silk-bug-delete > li:before,
+ul.ui-silk > li.ui-silk-bug-delete:before {
+	background-position: -320px -48px;
+}
+.ui-silk-bug-edit,
+ul.ui-silk-bug-edit > li:before,
+ul.ui-silk > li.ui-silk-bug-edit:before {
+	background-position: -336px -48px;
+}
+.ui-silk-bug-error,
+ul.ui-silk-bug-error > li:before,
+ul.ui-silk > li.ui-silk-bug-error:before {
+	background-position: -352px -48px;
+}
+.ui-silk-bug-go,
+ul.ui-silk-bug-go > li:before,
+ul.ui-silk > li.ui-silk-bug-go:before {
+	background-position: -368px -48px;
+}
+.ui-silk-bug-link,
+ul.ui-silk-bug-link > li:before,
+ul.ui-silk > li.ui-silk-bug-link:before {
+	background-position: -384px -48px;
+}
+.ui-silk-building,
+ul.ui-silk-building > li:before,
+ul.ui-silk > li.ui-silk-building:before {
+	background-position: -400px -48px;
+}
+.ui-silk-building-add,
+ul.ui-silk-building-add > li:before,
+ul.ui-silk > li.ui-silk-building-add:before {
+	background-position: -416px -48px;
+}
+.ui-silk-building-delete,
+ul.ui-silk-building-delete > li:before,
+ul.ui-silk > li.ui-silk-building-delete:before {
+	background-position: -432px -48px;
+}
+.ui-silk-building-edit,
+ul.ui-silk-building-edit > li:before,
+ul.ui-silk > li.ui-silk-building-edit:before {
+	background-position: -448px -48px;
+}
+.ui-silk-building-error,
+ul.ui-silk-building-error > li:before,
+ul.ui-silk > li.ui-silk-building-error:before {
+	background-position: -464px -48px;
+}
+.ui-silk-building-go,
+ul.ui-silk-building-go > li:before,
+ul.ui-silk > li.ui-silk-building-go:before {
+	background-position: -480px -48px;
+}
+.ui-silk-building-key,
+ul.ui-silk-building-key > li:before,
+ul.ui-silk > li.ui-silk-building-key:before {
+	background-position: -496px -48px;
+}
+.ui-silk-building-link,
+ul.ui-silk-building-link > li:before,
+ul.ui-silk > li.ui-silk-building-link:before {
+	background-position: 0 -64px;
+}
+.ui-silk-bullet-add,
+ul.ui-silk-bullet-add > li:before,
+ul.ui-silk > li.ui-silk-bullet-add:before {
+	background-position: -16px -64px;
+}
+.ui-silk-bullet-arrow-bottom,
+ul.ui-silk-bullet-arrow-bottom > li:before,
+ul.ui-silk > li.ui-silk-bullet-arrow-bottom:before {
+	background-position: -32px -64px;
+}
+.ui-silk-bullet-arrow-down,
+ul.ui-silk-bullet-arrow-down > li:before,
+ul.ui-silk > li.ui-silk-bullet-arrow-down:before {
+	background-position: -48px -64px;
+}
+.ui-silk-bullet-arrow-top,
+ul.ui-silk-bullet-arrow-top > li:before,
+ul.ui-silk > li.ui-silk-bullet-arrow-top:before {
+	background-position: -64px -64px;
+}
+.ui-silk-bullet-arrow-up,
+ul.ui-silk-bullet-arrow-up > li:before,
+ul.ui-silk > li.ui-silk-bullet-arrow-up:before {
+	background-position: -80px -64px;
+}
+.ui-silk-bullet-black,
+ul.ui-silk-bullet-black > li:before,
+ul.ui-silk > li.ui-silk-bullet-black:before {
+	background-position: -96px -64px;
+}
+.ui-silk-bullet-blue,
+ul.ui-silk-bullet-blue > li:before,
+ul.ui-silk > li.ui-silk-bullet-blue:before {
+	background-position: -112px -64px;
+}
+.ui-silk-bullet-delete,
+ul.ui-silk-bullet-delete > li:before,
+ul.ui-silk > li.ui-silk-bullet-delete:before {
+	background-position: -128px -64px;
+}
+.ui-silk-bullet-disk,
+ul.ui-silk-bullet-disk > li:before,
+ul.ui-silk > li.ui-silk-bullet-disk:before {
+	background-position: -144px -64px;
+}
+.ui-silk-bullet-error,
+ul.ui-silk-bullet-error > li:before,
+ul.ui-silk > li.ui-silk-bullet-error:before {
+	background-position: -160px -64px;
+}
+.ui-silk-bullet-feed,
+ul.ui-silk-bullet-feed > li:before,
+ul.ui-silk > li.ui-silk-bullet-feed:before {
+	background-position: -176px -64px;
+}
+.ui-silk-bullet-go,
+ul.ui-silk-bullet-go > li:before,
+ul.ui-silk > li.ui-silk-bullet-go:before {
+	background-position: -192px -64px;
+}
+.ui-silk-bullet-green,
+ul.ui-silk-bullet-green > li:before,
+ul.ui-silk > li.ui-silk-bullet-green:before {
+	background-position: -208px -64px;
+}
+.ui-silk-bullet-key,
+ul.ui-silk-bullet-key > li:before,
+ul.ui-silk > li.ui-silk-bullet-key:before {
+	background-position: -224px -64px;
+}
+.ui-silk-bullet-orange,
+ul.ui-silk-bullet-orange > li:before,
+ul.ui-silk > li.ui-silk-bullet-orange:before {
+	background-position: -240px -64px;
+}
+.ui-silk-bullet-picture,
+ul.ui-silk-bullet-picture > li:before,
+ul.ui-silk > li.ui-silk-bullet-picture:before {
+	background-position: -256px -64px;
+}
+.ui-silk-bullet-pink,
+ul.ui-silk-bullet-pink > li:before,
+ul.ui-silk > li.ui-silk-bullet-pink:before {
+	background-position: -272px -64px;
+}
+.ui-silk-bullet-purple,
+ul.ui-silk-bullet-purple > li:before,
+ul.ui-silk > li.ui-silk-bullet-purple:before {
+	background-position: -288px -64px;
+}
+.ui-silk-bullet-red,
+ul.ui-silk-bullet-red > li:before,
+ul.ui-silk > li.ui-silk-bullet-red:before {
+	background-position: -304px -64px;
+}
+.ui-silk-bullet-star,
+ul.ui-silk-bullet-star > li:before,
+ul.ui-silk > li.ui-silk-bullet-star:before {
+	background-position: -320px -64px;
+}
+.ui-silk-bullet-toggle-minus,
+ul.ui-silk-bullet-toggle-minus > li:before,
+ul.ui-silk > li.ui-silk-bullet-toggle-minus:before {
+	background-position: -336px -64px;
+}
+.ui-silk-bullet-toggle-plus,
+ul.ui-silk-bullet-toggle-plus > li:before,
+ul.ui-silk > li.ui-silk-bullet-toggle-plus:before {
+	background-position: -352px -64px;
+}
+.ui-silk-bullet-white,
+ul.ui-silk-bullet-white > li:before,
+ul.ui-silk > li.ui-silk-bullet-white:before {
+	background-position: -368px -64px;
+}
+.ui-silk-bullet-wrench,
+ul.ui-silk-bullet-wrench > li:before,
+ul.ui-silk > li.ui-silk-bullet-wrench:before {
+	background-position: -384px -64px;
+}
+.ui-silk-bullet-yellow,
+ul.ui-silk-bullet-yellow > li:before,
+ul.ui-silk > li.ui-silk-bullet-yellow:before {
+	background-position: -400px -64px;
+}
+.ui-silk-cake,
+ul.ui-silk-cake > li:before,
+ul.ui-silk > li.ui-silk-cake:before {
+	background-position: -416px -64px;
+}
+.ui-silk-calculator,
+ul.ui-silk-calculator > li:before,
+ul.ui-silk > li.ui-silk-calculator:before {
+	background-position: -432px -64px;
+}
+.ui-silk-calculator-add,
+ul.ui-silk-calculator-add > li:before,
+ul.ui-silk > li.ui-silk-calculator-add:before {
+	background-position: -448px -64px;
+}
+.ui-silk-calculator-delete,
+ul.ui-silk-calculator-delete > li:before,
+ul.ui-silk > li.ui-silk-calculator-delete:before {
+	background-position: -464px -64px;
+}
+.ui-silk-calculator-edit,
+ul.ui-silk-calculator-edit > li:before,
+ul.ui-silk > li.ui-silk-calculator-edit:before {
+	background-position: -480px -64px;
+}
+.ui-silk-calculator-error,
+ul.ui-silk-calculator-error > li:before,
+ul.ui-silk > li.ui-silk-calculator-error:before {
+	background-position: -496px -64px;
+}
+.ui-silk-calculator-link,
+ul.ui-silk-calculator-link > li:before,
+ul.ui-silk > li.ui-silk-calculator-link:before {
+	background-position: 0 -80px;
+}
+.ui-silk-calendar,
+ul.ui-silk-calendar > li:before,
+ul.ui-silk > li.ui-silk-calendar:before {
+	background-position: -16px -80px;
+}
+.ui-silk-calendar-add,
+ul.ui-silk-calendar-add > li:before,
+ul.ui-silk > li.ui-silk-calendar-add:before {
+	background-position: -32px -80px;
+}
+.ui-silk-calendar-delete,
+ul.ui-silk-calendar-delete > li:before,
+ul.ui-silk > li.ui-silk-calendar-delete:before {
+	background-position: -48px -80px;
+}
+.ui-silk-calendar-edit,
+ul.ui-silk-calendar-edit > li:before,
+ul.ui-silk > li.ui-silk-calendar-edit:before {
+	background-position: -64px -80px;
+}
+.ui-silk-calendar-link,
+ul.ui-silk-calendar-link > li:before,
+ul.ui-silk > li.ui-silk-calendar-link:before {
+	background-position: -80px -80px;
+}
+.ui-silk-calendar-view-day,
+ul.ui-silk-calendar-view-day > li:before,
+ul.ui-silk > li.ui-silk-calendar-view-day:before {
+	background-position: -96px -80px;
+}
+.ui-silk-calendar-view-month,
+ul.ui-silk-calendar-view-month > li:before,
+ul.ui-silk > li.ui-silk-calendar-view-month:before {
+	background-position: -112px -80px;
+}
+.ui-silk-calendar-view-week,
+ul.ui-silk-calendar-view-week > li:before,
+ul.ui-silk > li.ui-silk-calendar-view-week:before {
+	background-position: -128px -80px;
+}
+.ui-silk-camera,
+ul.ui-silk-camera > li:before,
+ul.ui-silk > li.ui-silk-camera:before {
+	background-position: -144px -80px;
+}
+.ui-silk-camera-add,
+ul.ui-silk-camera-add > li:before,
+ul.ui-silk > li.ui-silk-camera-add:before {
+	background-position: -160px -80px;
+}
+.ui-silk-camera-delete,
+ul.ui-silk-camera-delete > li:before,
+ul.ui-silk > li.ui-silk-camera-delete:before {
+	background-position: -176px -80px;
+}
+.ui-silk-camera-edit,
+ul.ui-silk-camera-edit > li:before,
+ul.ui-silk > li.ui-silk-camera-edit:before {
+	background-position: -192px -80px;
+}
+.ui-silk-camera-error,
+ul.ui-silk-camera-error > li:before,
+ul.ui-silk > li.ui-silk-camera-error:before {
+	background-position: -208px -80px;
+}
+.ui-silk-camera-go,
+ul.ui-silk-camera-go > li:before,
+ul.ui-silk > li.ui-silk-camera-go:before {
+	background-position: -224px -80px;
+}
+.ui-silk-camera-link,
+ul.ui-silk-camera-link > li:before,
+ul.ui-silk > li.ui-silk-camera-link:before {
+	background-position: -240px -80px;
+}
+.ui-silk-camera-small,
+ul.ui-silk-camera-small > li:before,
+ul.ui-silk > li.ui-silk-camera-small:before {
+	background-position: -256px -80px;
+}
+.ui-silk-cancel,
+ul.ui-silk-cancel > li:before,
+ul.ui-silk > li.ui-silk-cancel:before {
+	background-position: -272px -80px;
+}
+.ui-silk-car,
+ul.ui-silk-car > li:before,
+ul.ui-silk > li.ui-silk-car:before {
+	background-position: -288px -80px;
+}
+.ui-silk-cart,
+ul.ui-silk-cart > li:before,
+ul.ui-silk > li.ui-silk-cart:before {
+	background-position: -304px -80px;
+}
+.ui-silk-cart-add,
+ul.ui-silk-cart-add > li:before,
+ul.ui-silk > li.ui-silk-cart-add:before {
+	background-position: -320px -80px;
+}
+.ui-silk-cart-delete,
+ul.ui-silk-cart-delete > li:before,
+ul.ui-silk > li.ui-silk-cart-delete:before {
+	background-position: -336px -80px;
+}
+.ui-silk-cart-edit,
+ul.ui-silk-cart-edit > li:before,
+ul.ui-silk > li.ui-silk-cart-edit:before {
+	background-position: -352px -80px;
+}
+.ui-silk-cart-error,
+ul.ui-silk-cart-error > li:before,
+ul.ui-silk > li.ui-silk-cart-error:before {
+	background-position: -368px -80px;
+}
+.ui-silk-cart-go,
+ul.ui-silk-cart-go > li:before,
+ul.ui-silk > li.ui-silk-cart-go:before {
+	background-position: -384px -80px;
+}
+.ui-silk-cart-put,
+ul.ui-silk-cart-put > li:before,
+ul.ui-silk > li.ui-silk-cart-put:before {
+	background-position: -400px -80px;
+}
+.ui-silk-cart-remove,
+ul.ui-silk-cart-remove > li:before,
+ul.ui-silk > li.ui-silk-cart-remove:before {
+	background-position: -416px -80px;
+}
+.ui-silk-car-add,
+ul.ui-silk-car-add > li:before,
+ul.ui-silk > li.ui-silk-car-add:before {
+	background-position: -432px -80px;
+}
+.ui-silk-car-delete,
+ul.ui-silk-car-delete > li:before,
+ul.ui-silk > li.ui-silk-car-delete:before {
+	background-position: -448px -80px;
+}
+.ui-silk-cd,
+ul.ui-silk-cd > li:before,
+ul.ui-silk > li.ui-silk-cd:before {
+	background-position: -464px -80px;
+}
+.ui-silk-cd-add,
+ul.ui-silk-cd-add > li:before,
+ul.ui-silk > li.ui-silk-cd-add:before {
+	background-position: -480px -80px;
+}
+.ui-silk-cd-burn,
+ul.ui-silk-cd-burn > li:before,
+ul.ui-silk > li.ui-silk-cd-burn:before {
+	background-position: -496px -80px;
+}
+.ui-silk-cd-delete,
+ul.ui-silk-cd-delete > li:before,
+ul.ui-silk > li.ui-silk-cd-delete:before {
+	background-position: 0 -96px;
+}
+.ui-silk-cd-edit,
+ul.ui-silk-cd-edit > li:before,
+ul.ui-silk > li.ui-silk-cd-edit:before {
+	background-position: -16px -96px;
+}
+.ui-silk-cd-eject,
+ul.ui-silk-cd-eject > li:before,
+ul.ui-silk > li.ui-silk-cd-eject:before {
+	background-position: -32px -96px;
+}
+.ui-silk-cd-go,
+ul.ui-silk-cd-go > li:before,
+ul.ui-silk > li.ui-silk-cd-go:before {
+	background-position: -48px -96px;
+}
+.ui-silk-chart-bar,
+ul.ui-silk-chart-bar > li:before,
+ul.ui-silk > li.ui-silk-chart-bar:before {
+	background-position: -64px -96px;
+}
+.ui-silk-chart-bar-add,
+ul.ui-silk-chart-bar-add > li:before,
+ul.ui-silk > li.ui-silk-chart-bar-add:before {
+	background-position: -80px -96px;
+}
+.ui-silk-chart-bar-delete,
+ul.ui-silk-chart-bar-delete > li:before,
+ul.ui-silk > li.ui-silk-chart-bar-delete:before {
+	background-position: -96px -96px;
+}
+.ui-silk-chart-bar-edit,
+ul.ui-silk-chart-bar-edit > li:before,
+ul.ui-silk > li.ui-silk-chart-bar-edit:before {
+	background-position: -112px -96px;
+}
+.ui-silk-chart-bar-error,
+ul.ui-silk-chart-bar-error > li:before,
+ul.ui-silk > li.ui-silk-chart-bar-error:before {
+	background-position: -128px -96px;
+}
+.ui-silk-chart-bar-link,
+ul.ui-silk-chart-bar-link > li:before,
+ul.ui-silk > li.ui-silk-chart-bar-link:before {
+	background-position: -144px -96px;
+}
+.ui-silk-chart-curve,
+ul.ui-silk-chart-curve > li:before,
+ul.ui-silk > li.ui-silk-chart-curve:before {
+	background-position: -160px -96px;
+}
+.ui-silk-chart-curve-add,
+ul.ui-silk-chart-curve-add > li:before,
+ul.ui-silk > li.ui-silk-chart-curve-add:before {
+	background-position: -176px -96px;
+}
+.ui-silk-chart-curve-delete,
+ul.ui-silk-chart-curve-delete > li:before,
+ul.ui-silk > li.ui-silk-chart-curve-delete:before {
+	background-position: -192px -96px;
+}
+.ui-silk-chart-curve-edit,
+ul.ui-silk-chart-curve-edit > li:before,
+ul.ui-silk > li.ui-silk-chart-curve-edit:before {
+	background-position: -208px -96px;
+}
+.ui-silk-chart-curve-error,
+ul.ui-silk-chart-curve-error > li:before,
+ul.ui-silk > li.ui-silk-chart-curve-error:before {
+	background-position: -224px -96px;
+}
+.ui-silk-chart-curve-go,
+ul.ui-silk-chart-curve-go > li:before,
+ul.ui-silk > li.ui-silk-chart-curve-go:before {
+	background-position: -240px -96px;
+}
+.ui-silk-chart-curve-link,
+ul.ui-silk-chart-curve-link > li:before,
+ul.ui-silk > li.ui-silk-chart-curve-link:before {
+	background-position: -256px -96px;
+}
+.ui-silk-chart-line,
+ul.ui-silk-chart-line > li:before,
+ul.ui-silk > li.ui-silk-chart-line:before {
+	background-position: -272px -96px;
+}
+.ui-silk-chart-line-add,
+ul.ui-silk-chart-line-add > li:before,
+ul.ui-silk > li.ui-silk-chart-line-add:before {
+	background-position: -288px -96px;
+}
+.ui-silk-chart-line-delete,
+ul.ui-silk-chart-line-delete > li:before,
+ul.ui-silk > li.ui-silk-chart-line-delete:before {
+	background-position: -304px -96px;
+}
+.ui-silk-chart-line-edit,
+ul.ui-silk-chart-line-edit > li:before,
+ul.ui-silk > li.ui-silk-chart-line-edit:before {
+	background-position: -320px -96px;
+}
+.ui-silk-chart-line-error,
+ul.ui-silk-chart-line-error > li:before,
+ul.ui-silk > li.ui-silk-chart-line-error:before {
+	background-position: -336px -96px;
+}
+.ui-silk-chart-line-link,
+ul.ui-silk-chart-line-link > li:before,
+ul.ui-silk > li.ui-silk-chart-line-link:before {
+	background-position: -352px -96px;
+}
+.ui-silk-chart-organisation,
+ul.ui-silk-chart-organisation > li:before,
+ul.ui-silk > li.ui-silk-chart-organisation:before {
+	background-position: -368px -96px;
+}
+.ui-silk-chart-organisation-add,
+ul.ui-silk-chart-organisation-add > li:before,
+ul.ui-silk > li.ui-silk-chart-organisation-add:before {
+	background-position: -384px -96px;
+}
+.ui-silk-chart-organisation-delete,
+ul.ui-silk-chart-organisation-delete > li:before,
+ul.ui-silk > li.ui-silk-chart-organisation-delete:before {
+	background-position: -400px -96px;
+}
+.ui-silk-chart-pie,
+ul.ui-silk-chart-pie > li:before,
+ul.ui-silk > li.ui-silk-chart-pie:before {
+	background-position: -416px -96px;
+}
+.ui-silk-chart-pie-add,
+ul.ui-silk-chart-pie-add > li:before,
+ul.ui-silk > li.ui-silk-chart-pie-add:before {
+	background-position: -432px -96px;
+}
+.ui-silk-chart-pie-delete,
+ul.ui-silk-chart-pie-delete > li:before,
+ul.ui-silk > li.ui-silk-chart-pie-delete:before {
+	background-position: -448px -96px;
+}
+.ui-silk-chart-pie-edit,
+ul.ui-silk-chart-pie-edit > li:before,
+ul.ui-silk > li.ui-silk-chart-pie-edit:before {
+	background-position: -464px -96px;
+}
+.ui-silk-chart-pie-error,
+ul.ui-silk-chart-pie-error > li:before,
+ul.ui-silk > li.ui-silk-chart-pie-error:before {
+	background-position: -480px -96px;
+}
+.ui-silk-chart-pie-link,
+ul.ui-silk-chart-pie-link > li:before,
+ul.ui-silk > li.ui-silk-chart-pie-link:before {
+	background-position: -496px -96px;
+}
+.ui-silk-clock,
+ul.ui-silk-clock > li:before,
+ul.ui-silk > li.ui-silk-clock:before {
+	background-position: 0 -112px;
+}
+.ui-silk-clock-add,
+ul.ui-silk-clock-add > li:before,
+ul.ui-silk > li.ui-silk-clock-add:before {
+	background-position: -16px -112px;
+}
+.ui-silk-clock-delete,
+ul.ui-silk-clock-delete > li:before,
+ul.ui-silk > li.ui-silk-clock-delete:before {
+	background-position: -32px -112px;
+}
+.ui-silk-clock-edit,
+ul.ui-silk-clock-edit > li:before,
+ul.ui-silk > li.ui-silk-clock-edit:before {
+	background-position: -48px -112px;
+}
+.ui-silk-clock-error,
+ul.ui-silk-clock-error > li:before,
+ul.ui-silk > li.ui-silk-clock-error:before {
+	background-position: -64px -112px;
+}
+.ui-silk-clock-go,
+ul.ui-silk-clock-go > li:before,
+ul.ui-silk > li.ui-silk-clock-go:before {
+	background-position: -80px -112px;
+}
+.ui-silk-clock-link,
+ul.ui-silk-clock-link > li:before,
+ul.ui-silk > li.ui-silk-clock-link:before {
+	background-position: -96px -112px;
+}
+.ui-silk-clock-pause,
+ul.ui-silk-clock-pause > li:before,
+ul.ui-silk > li.ui-silk-clock-pause:before {
+	background-position: -112px -112px;
+}
+.ui-silk-clock-play,
+ul.ui-silk-clock-play > li:before,
+ul.ui-silk > li.ui-silk-clock-play:before {
+	background-position: -128px -112px;
+}
+.ui-silk-clock-red,
+ul.ui-silk-clock-red > li:before,
+ul.ui-silk > li.ui-silk-clock-red:before {
+	background-position: -144px -112px;
+}
+.ui-silk-clock-stop,
+ul.ui-silk-clock-stop > li:before,
+ul.ui-silk > li.ui-silk-clock-stop:before {
+	background-position: -160px -112px;
+}
+.ui-silk-cog,
+ul.ui-silk-cog > li:before,
+ul.ui-silk > li.ui-silk-cog:before {
+	background-position: -176px -112px;
+}
+.ui-silk-cog-add,
+ul.ui-silk-cog-add > li:before,
+ul.ui-silk > li.ui-silk-cog-add:before {
+	background-position: -192px -112px;
+}
+.ui-silk-cog-delete,
+ul.ui-silk-cog-delete > li:before,
+ul.ui-silk > li.ui-silk-cog-delete:before {
+	background-position: -208px -112px;
+}
+.ui-silk-cog-edit,
+ul.ui-silk-cog-edit > li:before,
+ul.ui-silk > li.ui-silk-cog-edit:before {
+	background-position: -224px -112px;
+}
+.ui-silk-cog-error,
+ul.ui-silk-cog-error > li:before,
+ul.ui-silk > li.ui-silk-cog-error:before {
+	background-position: -240px -112px;
+}
+.ui-silk-cog-go,
+ul.ui-silk-cog-go > li:before,
+ul.ui-silk > li.ui-silk-cog-go:before {
+	background-position: -256px -112px;
+}
+.ui-silk-coins,
+ul.ui-silk-coins > li:before,
+ul.ui-silk > li.ui-silk-coins:before {
+	background-position: -272px -112px;
+}
+.ui-silk-coins-add,
+ul.ui-silk-coins-add > li:before,
+ul.ui-silk > li.ui-silk-coins-add:before {
+	background-position: -288px -112px;
+}
+.ui-silk-coins-delete,
+ul.ui-silk-coins-delete > li:before,
+ul.ui-silk > li.ui-silk-coins-delete:before {
+	background-position: -304px -112px;
+}
+.ui-silk-color-swatch,
+ul.ui-silk-color-swatch > li:before,
+ul.ui-silk > li.ui-silk-color-swatch:before {
+	background-position: -320px -112px;
+}
+.ui-silk-color-wheel,
+ul.ui-silk-color-wheel > li:before,
+ul.ui-silk > li.ui-silk-color-wheel:before {
+	background-position: -336px -112px;
+}
+.ui-silk-comment,
+ul.ui-silk-comment > li:before,
+ul.ui-silk > li.ui-silk-comment:before {
+	background-position: -352px -112px;
+}
+.ui-silk-comments,
+ul.ui-silk-comments > li:before,
+ul.ui-silk > li.ui-silk-comments:before {
+	background-position: -368px -112px;
+}
+.ui-silk-comments-add,
+ul.ui-silk-comments-add > li:before,
+ul.ui-silk > li.ui-silk-comments-add:before {
+	background-position: -384px -112px;
+}
+.ui-silk-comments-delete,
+ul.ui-silk-comments-delete > li:before,
+ul.ui-silk > li.ui-silk-comments-delete:before {
+	background-position: -400px -112px;
+}
+.ui-silk-comment-add,
+ul.ui-silk-comment-add > li:before,
+ul.ui-silk > li.ui-silk-comment-add:before {
+	background-position: -416px -112px;
+}
+.ui-silk-comment-delete,
+ul.ui-silk-comment-delete > li:before,
+ul.ui-silk > li.ui-silk-comment-delete:before {
+	background-position: -432px -112px;
+}
+.ui-silk-comment-edit,
+ul.ui-silk-comment-edit > li:before,
+ul.ui-silk > li.ui-silk-comment-edit:before {
+	background-position: -448px -112px;
+}
+.ui-silk-compress,
+ul.ui-silk-compress > li:before,
+ul.ui-silk > li.ui-silk-compress:before {
+	background-position: -464px -112px;
+}
+.ui-silk-computer,
+ul.ui-silk-computer > li:before,
+ul.ui-silk > li.ui-silk-computer:before {
+	background-position: -480px -112px;
+}
+.ui-silk-computer-add,
+ul.ui-silk-computer-add > li:before,
+ul.ui-silk > li.ui-silk-computer-add:before {
+	background-position: -496px -112px;
+}
+.ui-silk-computer-delete,
+ul.ui-silk-computer-delete > li:before,
+ul.ui-silk > li.ui-silk-computer-delete:before {
+	background-position: 0 -128px;
+}
+.ui-silk-computer-edit,
+ul.ui-silk-computer-edit > li:before,
+ul.ui-silk > li.ui-silk-computer-edit:before {
+	background-position: -16px -128px;
+}
+.ui-silk-computer-error,
+ul.ui-silk-computer-error > li:before,
+ul.ui-silk > li.ui-silk-computer-error:before {
+	background-position: -32px -128px;
+}
+.ui-silk-computer-go,
+ul.ui-silk-computer-go > li:before,
+ul.ui-silk > li.ui-silk-computer-go:before {
+	background-position: -48px -128px;
+}
+.ui-silk-computer-key,
+ul.ui-silk-computer-key > li:before,
+ul.ui-silk > li.ui-silk-computer-key:before {
+	background-position: -64px -128px;
+}
+.ui-silk-computer-link,
+ul.ui-silk-computer-link > li:before,
+ul.ui-silk > li.ui-silk-computer-link:before {
+	background-position: -80px -128px;
+}
+.ui-silk-connect,
+ul.ui-silk-connect > li:before,
+ul.ui-silk > li.ui-silk-connect:before {
+	background-position: -96px -128px;
+}
+.ui-silk-contrast,
+ul.ui-silk-contrast > li:before,
+ul.ui-silk > li.ui-silk-contrast:before {
+	background-position: -112px -128px;
+}
+.ui-silk-contrast-decrease,
+ul.ui-silk-contrast-decrease > li:before,
+ul.ui-silk > li.ui-silk-contrast-decrease:before {
+	background-position: -128px -128px;
+}
+.ui-silk-contrast-high,
+ul.ui-silk-contrast-high > li:before,
+ul.ui-silk > li.ui-silk-contrast-high:before {
+	background-position: -144px -128px;
+}
+.ui-silk-contrast-increase,
+ul.ui-silk-contrast-increase > li:before,
+ul.ui-silk > li.ui-silk-contrast-increase:before {
+	background-position: -160px -128px;
+}
+.ui-silk-contrast-low,
+ul.ui-silk-contrast-low > li:before,
+ul.ui-silk > li.ui-silk-contrast-low:before {
+	background-position: -176px -128px;
+}
+.ui-silk-controller,
+ul.ui-silk-controller > li:before,
+ul.ui-silk > li.ui-silk-controller:before {
+	background-position: -192px -128px;
+}
+.ui-silk-controller-add,
+ul.ui-silk-controller-add > li:before,
+ul.ui-silk > li.ui-silk-controller-add:before {
+	background-position: -208px -128px;
+}
+.ui-silk-controller-delete,
+ul.ui-silk-controller-delete > li:before,
+ul.ui-silk > li.ui-silk-controller-delete:before {
+	background-position: -224px -128px;
+}
+.ui-silk-controller-error,
+ul.ui-silk-controller-error > li:before,
+ul.ui-silk > li.ui-silk-controller-error:before {
+	background-position: -240px -128px;
+}
+.ui-silk-control-eject,
+ul.ui-silk-control-eject > li:before,
+ul.ui-silk > li.ui-silk-control-eject:before {
+	background-position: -256px -128px;
+}
+.ui-silk-control-eject-blue,
+ul.ui-silk-control-eject-blue > li:before,
+ul.ui-silk > li.ui-silk-control-eject-blue:before {
+	background-position: -272px -128px;
+}
+.ui-silk-control-end,
+ul.ui-silk-control-end > li:before,
+ul.ui-silk > li.ui-silk-control-end:before {
+	background-position: -288px -128px;
+}
+.ui-silk-control-end-blue,
+ul.ui-silk-control-end-blue > li:before,
+ul.ui-silk > li.ui-silk-control-end-blue:before {
+	background-position: -304px -128px;
+}
+.ui-silk-control-equalizer,
+ul.ui-silk-control-equalizer > li:before,
+ul.ui-silk > li.ui-silk-control-equalizer:before {
+	background-position: -320px -128px;
+}
+.ui-silk-control-equalizer-blue,
+ul.ui-silk-control-equalizer-blue > li:before,
+ul.ui-silk > li.ui-silk-control-equalizer-blue:before {
+	background-position: -336px -128px;
+}
+.ui-silk-control-fastforward,
+ul.ui-silk-control-fastforward > li:before,
+ul.ui-silk > li.ui-silk-control-fastforward:before {
+	background-position: -352px -128px;
+}
+.ui-silk-control-fastforward-blue,
+ul.ui-silk-control-fastforward-blue > li:before,
+ul.ui-silk > li.ui-silk-control-fastforward-blue:before {
+	background-position: -368px -128px;
+}
+.ui-silk-control-pause,
+ul.ui-silk-control-pause > li:before,
+ul.ui-silk > li.ui-silk-control-pause:before {
+	background-position: -384px -128px;
+}
+.ui-silk-control-pause-blue,
+ul.ui-silk-control-pause-blue > li:before,
+ul.ui-silk > li.ui-silk-control-pause-blue:before {
+	background-position: -400px -128px;
+}
+.ui-silk-control-play,
+ul.ui-silk-control-play > li:before,
+ul.ui-silk > li.ui-silk-control-play:before {
+	background-position: -416px -128px;
+}
+.ui-silk-control-play-blue,
+ul.ui-silk-control-play-blue > li:before,
+ul.ui-silk > li.ui-silk-control-play-blue:before {
+	background-position: -432px -128px;
+}
+.ui-silk-control-repeat,
+ul.ui-silk-control-repeat > li:before,
+ul.ui-silk > li.ui-silk-control-repeat:before {
+	background-position: -448px -128px;
+}
+.ui-silk-control-repeat-blue,
+ul.ui-silk-control-repeat-blue > li:before,
+ul.ui-silk > li.ui-silk-control-repeat-blue:before {
+	background-position: -464px -128px;
+}
+.ui-silk-control-rewind,
+ul.ui-silk-control-rewind > li:before,
+ul.ui-silk > li.ui-silk-control-rewind:before {
+	background-position: -480px -128px;
+}
+.ui-silk-control-rewind-blue,
+ul.ui-silk-control-rewind-blue > li:before,
+ul.ui-silk > li.ui-silk-control-rewind-blue:before {
+	background-position: -496px -128px;
+}
+.ui-silk-control-start,
+ul.ui-silk-control-start > li:before,
+ul.ui-silk > li.ui-silk-control-start:before {
+	background-position: 0 -144px;
+}
+.ui-silk-control-start-blue,
+ul.ui-silk-control-start-blue > li:before,
+ul.ui-silk > li.ui-silk-control-start-blue:before {
+	background-position: -16px -144px;
+}
+.ui-silk-control-stop,
+ul.ui-silk-control-stop > li:before,
+ul.ui-silk > li.ui-silk-control-stop:before {
+	background-position: -32px -144px;
+}
+.ui-silk-control-stop-blue,
+ul.ui-silk-control-stop-blue > li:before,
+ul.ui-silk > li.ui-silk-control-stop-blue:before {
+	background-position: -48px -144px;
+}
+.ui-silk-creditcards,
+ul.ui-silk-creditcards > li:before,
+ul.ui-silk > li.ui-silk-creditcards:before {
+	background-position: -64px -144px;
+}
+.ui-silk-cross,
+ul.ui-silk-cross > li:before,
+ul.ui-silk > li.ui-silk-cross:before {
+	background-position: -80px -144px;
+}
+.ui-silk-css,
+ul.ui-silk-css > li:before,
+ul.ui-silk > li.ui-silk-css:before {
+	background-position: -96px -144px;
+}
+.ui-silk-css-add,
+ul.ui-silk-css-add > li:before,
+ul.ui-silk > li.ui-silk-css-add:before {
+	background-position: -112px -144px;
+}
+.ui-silk-css-delete,
+ul.ui-silk-css-delete > li:before,
+ul.ui-silk > li.ui-silk-css-delete:before {
+	background-position: -128px -144px;
+}
+.ui-silk-css-go,
+ul.ui-silk-css-go > li:before,
+ul.ui-silk > li.ui-silk-css-go:before {
+	background-position: -144px -144px;
+}
+.ui-silk-css-valid,
+ul.ui-silk-css-valid > li:before,
+ul.ui-silk > li.ui-silk-css-valid:before {
+	background-position: -160px -144px;
+}
+.ui-silk-cup,
+ul.ui-silk-cup > li:before,
+ul.ui-silk > li.ui-silk-cup:before {
+	background-position: -176px -144px;
+}
+.ui-silk-cup-add,
+ul.ui-silk-cup-add > li:before,
+ul.ui-silk > li.ui-silk-cup-add:before {
+	background-position: -192px -144px;
+}
+.ui-silk-cup-delete,
+ul.ui-silk-cup-delete > li:before,
+ul.ui-silk > li.ui-silk-cup-delete:before {
+	background-position: -208px -144px;
+}
+.ui-silk-cup-edit,
+ul.ui-silk-cup-edit > li:before,
+ul.ui-silk > li.ui-silk-cup-edit:before {
+	background-position: -224px -144px;
+}
+.ui-silk-cup-error,
+ul.ui-silk-cup-error > li:before,
+ul.ui-silk > li.ui-silk-cup-error:before {
+	background-position: -240px -144px;
+}
+.ui-silk-cup-go,
+ul.ui-silk-cup-go > li:before,
+ul.ui-silk > li.ui-silk-cup-go:before {
+	background-position: -256px -144px;
+}
+.ui-silk-cup-key,
+ul.ui-silk-cup-key > li:before,
+ul.ui-silk > li.ui-silk-cup-key:before {
+	background-position: -272px -144px;
+}
+.ui-silk-cup-link,
+ul.ui-silk-cup-link > li:before,
+ul.ui-silk > li.ui-silk-cup-link:before {
+	background-position: -288px -144px;
+}
+.ui-silk-cursor,
+ul.ui-silk-cursor > li:before,
+ul.ui-silk > li.ui-silk-cursor:before {
+	background-position: -304px -144px;
+}
+.ui-silk-cut,
+ul.ui-silk-cut > li:before,
+ul.ui-silk > li.ui-silk-cut:before {
+	background-position: -320px -144px;
+}
+.ui-silk-cut-red,
+ul.ui-silk-cut-red > li:before,
+ul.ui-silk > li.ui-silk-cut-red:before {
+	background-position: -336px -144px;
+}
+.ui-silk-database,
+ul.ui-silk-database > li:before,
+ul.ui-silk > li.ui-silk-database:before {
+	background-position: -352px -144px;
+}
+.ui-silk-database-add,
+ul.ui-silk-database-add > li:before,
+ul.ui-silk > li.ui-silk-database-add:before {
+	background-position: -368px -144px;
+}
+.ui-silk-database-connect,
+ul.ui-silk-database-connect > li:before,
+ul.ui-silk > li.ui-silk-database-connect:before {
+	background-position: -384px -144px;
+}
+.ui-silk-database-delete,
+ul.ui-silk-database-delete > li:before,
+ul.ui-silk > li.ui-silk-database-delete:before {
+	background-position: -400px -144px;
+}
+.ui-silk-database-edit,
+ul.ui-silk-database-edit > li:before,
+ul.ui-silk > li.ui-silk-database-edit:before {
+	background-position: -416px -144px;
+}
+.ui-silk-database-error,
+ul.ui-silk-database-error > li:before,
+ul.ui-silk > li.ui-silk-database-error:before {
+	background-position: -432px -144px;
+}
+.ui-silk-database-gear,
+ul.ui-silk-database-gear > li:before,
+ul.ui-silk > li.ui-silk-database-gear:before {
+	background-position: -448px -144px;
+}
+.ui-silk-database-go,
+ul.ui-silk-database-go > li:before,
+ul.ui-silk > li.ui-silk-database-go:before {
+	background-position: -464px -144px;
+}
+.ui-silk-database-key,
+ul.ui-silk-database-key > li:before,
+ul.ui-silk > li.ui-silk-database-key:before {
+	background-position: -480px -144px;
+}
+.ui-silk-database-lightning,
+ul.ui-silk-database-lightning > li:before,
+ul.ui-silk > li.ui-silk-database-lightning:before {
+	background-position: -496px -144px;
+}
+.ui-silk-database-link,
+ul.ui-silk-database-link > li:before,
+ul.ui-silk > li.ui-silk-database-link:before {
+	background-position: 0 -160px;
+}
+.ui-silk-database-refresh,
+ul.ui-silk-database-refresh > li:before,
+ul.ui-silk > li.ui-silk-database-refresh:before {
+	background-position: -16px -160px;
+}
+.ui-silk-database-save,
+ul.ui-silk-database-save > li:before,
+ul.ui-silk > li.ui-silk-database-save:before {
+	background-position: -32px -160px;
+}
+.ui-silk-database-table,
+ul.ui-silk-database-table > li:before,
+ul.ui-silk > li.ui-silk-database-table:before {
+	background-position: -48px -160px;
+}
+.ui-silk-date,
+ul.ui-silk-date > li:before,
+ul.ui-silk > li.ui-silk-date:before {
+	background-position: -64px -160px;
+}
+.ui-silk-date-add,
+ul.ui-silk-date-add > li:before,
+ul.ui-silk > li.ui-silk-date-add:before {
+	background-position: -80px -160px;
+}
+.ui-silk-date-delete,
+ul.ui-silk-date-delete > li:before,
+ul.ui-silk > li.ui-silk-date-delete:before {
+	background-position: -96px -160px;
+}
+.ui-silk-date-edit,
+ul.ui-silk-date-edit > li:before,
+ul.ui-silk > li.ui-silk-date-edit:before {
+	background-position: -112px -160px;
+}
+.ui-silk-date-error,
+ul.ui-silk-date-error > li:before,
+ul.ui-silk > li.ui-silk-date-error:before {
+	background-position: -128px -160px;
+}
+.ui-silk-date-go,
+ul.ui-silk-date-go > li:before,
+ul.ui-silk > li.ui-silk-date-go:before {
+	background-position: -144px -160px;
+}
+.ui-silk-date-link,
+ul.ui-silk-date-link > li:before,
+ul.ui-silk > li.ui-silk-date-link:before {
+	background-position: -160px -160px;
+}
+.ui-silk-date-magnify,
+ul.ui-silk-date-magnify > li:before,
+ul.ui-silk > li.ui-silk-date-magnify:before {
+	background-position: -176px -160px;
+}
+.ui-silk-date-next,
+ul.ui-silk-date-next > li:before,
+ul.ui-silk > li.ui-silk-date-next:before {
+	background-position: -192px -160px;
+}
+.ui-silk-date-previous,
+ul.ui-silk-date-previous > li:before,
+ul.ui-silk > li.ui-silk-date-previous:before {
+	background-position: -208px -160px;
+}
+.ui-silk-delete,
+ul.ui-silk-delete > li:before,
+ul.ui-silk > li.ui-silk-delete:before {
+	background-position: -224px -160px;
+}
+.ui-silk-disconnect,
+ul.ui-silk-disconnect > li:before,
+ul.ui-silk > li.ui-silk-disconnect:before {
+	background-position: -240px -160px;
+}
+.ui-silk-disk,
+ul.ui-silk-disk > li:before,
+ul.ui-silk > li.ui-silk-disk:before {
+	background-position: -256px -160px;
+}
+.ui-silk-disk-multiple,
+ul.ui-silk-disk-multiple > li:before,
+ul.ui-silk > li.ui-silk-disk-multiple:before {
+	background-position: -272px -160px;
+}
+.ui-silk-door,
+ul.ui-silk-door > li:before,
+ul.ui-silk > li.ui-silk-door:before {
+	background-position: -288px -160px;
+}
+.ui-silk-door-in,
+ul.ui-silk-door-in > li:before,
+ul.ui-silk > li.ui-silk-door-in:before {
+	background-position: -304px -160px;
+}
+.ui-silk-door-open,
+ul.ui-silk-door-open > li:before,
+ul.ui-silk > li.ui-silk-door-open:before {
+	background-position: -320px -160px;
+}
+.ui-silk-door-out,
+ul.ui-silk-door-out > li:before,
+ul.ui-silk > li.ui-silk-door-out:before {
+	background-position: -336px -160px;
+}
+.ui-silk-drink,
+ul.ui-silk-drink > li:before,
+ul.ui-silk > li.ui-silk-drink:before {
+	background-position: -352px -160px;
+}
+.ui-silk-drink-empty,
+ul.ui-silk-drink-empty > li:before,
+ul.ui-silk > li.ui-silk-drink-empty:before {
+	background-position: -368px -160px;
+}
+.ui-silk-drive,
+ul.ui-silk-drive > li:before,
+ul.ui-silk > li.ui-silk-drive:before {
+	background-position: -384px -160px;
+}
+.ui-silk-drive-add,
+ul.ui-silk-drive-add > li:before,
+ul.ui-silk > li.ui-silk-drive-add:before {
+	background-position: -400px -160px;
+}
+.ui-silk-drive-burn,
+ul.ui-silk-drive-burn > li:before,
+ul.ui-silk > li.ui-silk-drive-burn:before {
+	background-position: -416px -160px;
+}
+.ui-silk-drive-cd,
+ul.ui-silk-drive-cd > li:before,
+ul.ui-silk > li.ui-silk-drive-cd:before {
+	background-position: -432px -160px;
+}
+.ui-silk-drive-cd-empty,
+ul.ui-silk-drive-cd-empty > li:before,
+ul.ui-silk > li.ui-silk-drive-cd-empty:before {
+	background-position: -448px -160px;
+}
+.ui-silk-drive-delete,
+ul.ui-silk-drive-delete > li:before,
+ul.ui-silk > li.ui-silk-drive-delete:before {
+	background-position: -464px -160px;
+}
+.ui-silk-drive-disk,
+ul.ui-silk-drive-disk > li:before,
+ul.ui-silk > li.ui-silk-drive-disk:before {
+	background-position: -480px -160px;
+}
+.ui-silk-drive-edit,
+ul.ui-silk-drive-edit > li:before,
+ul.ui-silk > li.ui-silk-drive-edit:before {
+	background-position: -496px -160px;
+}
+.ui-silk-drive-error,
+ul.ui-silk-drive-error > li:before,
+ul.ui-silk > li.ui-silk-drive-error:before {
+	background-position: 0 -176px;
+}
+.ui-silk-drive-go,
+ul.ui-silk-drive-go > li:before,
+ul.ui-silk > li.ui-silk-drive-go:before {
+	background-position: -16px -176px;
+}
+.ui-silk-drive-key,
+ul.ui-silk-drive-key > li:before,
+ul.ui-silk > li.ui-silk-drive-key:before {
+	background-position: -32px -176px;
+}
+.ui-silk-drive-link,
+ul.ui-silk-drive-link > li:before,
+ul.ui-silk > li.ui-silk-drive-link:before {
+	background-position: -48px -176px;
+}
+.ui-silk-drive-magnify,
+ul.ui-silk-drive-magnify > li:before,
+ul.ui-silk > li.ui-silk-drive-magnify:before {
+	background-position: -64px -176px;
+}
+.ui-silk-drive-network,
+ul.ui-silk-drive-network > li:before,
+ul.ui-silk > li.ui-silk-drive-network:before {
+	background-position: -80px -176px;
+}
+.ui-silk-drive-rename,
+ul.ui-silk-drive-rename > li:before,
+ul.ui-silk > li.ui-silk-drive-rename:before {
+	background-position: -96px -176px;
+}
+.ui-silk-drive-user,
+ul.ui-silk-drive-user > li:before,
+ul.ui-silk > li.ui-silk-drive-user:before {
+	background-position: -112px -176px;
+}
+.ui-silk-drive-web,
+ul.ui-silk-drive-web > li:before,
+ul.ui-silk > li.ui-silk-drive-web:before {
+	background-position: -128px -176px;
+}
+.ui-silk-dvd,
+ul.ui-silk-dvd > li:before,
+ul.ui-silk > li.ui-silk-dvd:before {
+	background-position: -144px -176px;
+}
+.ui-silk-dvd-add,
+ul.ui-silk-dvd-add > li:before,
+ul.ui-silk > li.ui-silk-dvd-add:before {
+	background-position: -160px -176px;
+}
+.ui-silk-dvd-delete,
+ul.ui-silk-dvd-delete > li:before,
+ul.ui-silk > li.ui-silk-dvd-delete:before {
+	background-position: -176px -176px;
+}
+.ui-silk-dvd-edit,
+ul.ui-silk-dvd-edit > li:before,
+ul.ui-silk > li.ui-silk-dvd-edit:before {
+	background-position: -192px -176px;
+}
+.ui-silk-dvd-error,
+ul.ui-silk-dvd-error > li:before,
+ul.ui-silk > li.ui-silk-dvd-error:before {
+	background-position: -208px -176px;
+}
+.ui-silk-dvd-go,
+ul.ui-silk-dvd-go > li:before,
+ul.ui-silk > li.ui-silk-dvd-go:before {
+	background-position: -224px -176px;
+}
+.ui-silk-dvd-key,
+ul.ui-silk-dvd-key > li:before,
+ul.ui-silk > li.ui-silk-dvd-key:before {
+	background-position: -240px -176px;
+}
+.ui-silk-dvd-link,
+ul.ui-silk-dvd-link > li:before,
+ul.ui-silk > li.ui-silk-dvd-link:before {
+	background-position: -256px -176px;
+}
+.ui-silk-email,
+ul.ui-silk-email > li:before,
+ul.ui-silk > li.ui-silk-email:before {
+	background-position: -272px -176px;
+}
+.ui-silk-email-add,
+ul.ui-silk-email-add > li:before,
+ul.ui-silk > li.ui-silk-email-add:before {
+	background-position: -288px -176px;
+}
+.ui-silk-email-attach,
+ul.ui-silk-email-attach > li:before,
+ul.ui-silk > li.ui-silk-email-attach:before {
+	background-position: -304px -176px;
+}
+.ui-silk-email-delete,
+ul.ui-silk-email-delete > li:before,
+ul.ui-silk > li.ui-silk-email-delete:before {
+	background-position: -320px -176px;
+}
+.ui-silk-email-edit,
+ul.ui-silk-email-edit > li:before,
+ul.ui-silk > li.ui-silk-email-edit:before {
+	background-position: -336px -176px;
+}
+.ui-silk-email-error,
+ul.ui-silk-email-error > li:before,
+ul.ui-silk > li.ui-silk-email-error:before {
+	background-position: -352px -176px;
+}
+.ui-silk-email-go,
+ul.ui-silk-email-go > li:before,
+ul.ui-silk > li.ui-silk-email-go:before {
+	background-position: -368px -176px;
+}
+.ui-silk-email-link,
+ul.ui-silk-email-link > li:before,
+ul.ui-silk > li.ui-silk-email-link:before {
+	background-position: -384px -176px;
+}
+.ui-silk-email-open,
+ul.ui-silk-email-open > li:before,
+ul.ui-silk > li.ui-silk-email-open:before {
+	background-position: -400px -176px;
+}
+.ui-silk-email-open-image,
+ul.ui-silk-email-open-image > li:before,
+ul.ui-silk > li.ui-silk-email-open-image:before {
+	background-position: -416px -176px;
+}
+.ui-silk-emoticon-evilgrin,
+ul.ui-silk-emoticon-evilgrin > li:before,
+ul.ui-silk > li.ui-silk-emoticon-evilgrin:before {
+	background-position: -432px -176px;
+}
+.ui-silk-emoticon-grin,
+ul.ui-silk-emoticon-grin > li:before,
+ul.ui-silk > li.ui-silk-emoticon-grin:before {
+	background-position: -448px -176px;
+}
+.ui-silk-emoticon-happy,
+ul.ui-silk-emoticon-happy > li:before,
+ul.ui-silk > li.ui-silk-emoticon-happy:before {
+	background-position: -464px -176px;
+}
+.ui-silk-emoticon-smile,
+ul.ui-silk-emoticon-smile > li:before,
+ul.ui-silk > li.ui-silk-emoticon-smile:before {
+	background-position: -480px -176px;
+}
+.ui-silk-emoticon-surprised,
+ul.ui-silk-emoticon-surprised > li:before,
+ul.ui-silk > li.ui-silk-emoticon-surprised:before {
+	background-position: -496px -176px;
+}
+.ui-silk-emoticon-tongue,
+ul.ui-silk-emoticon-tongue > li:before,
+ul.ui-silk > li.ui-silk-emoticon-tongue:before {
+	background-position: 0 -192px;
+}
+.ui-silk-emoticon-unhappy,
+ul.ui-silk-emoticon-unhappy > li:before,
+ul.ui-silk > li.ui-silk-emoticon-unhappy:before {
+	background-position: -16px -192px;
+}
+.ui-silk-emoticon-waii,
+ul.ui-silk-emoticon-waii > li:before,
+ul.ui-silk > li.ui-silk-emoticon-waii:before {
+	background-position: -32px -192px;
+}
+.ui-silk-emoticon-wink,
+ul.ui-silk-emoticon-wink > li:before,
+ul.ui-silk > li.ui-silk-emoticon-wink:before {
+	background-position: -48px -192px;
+}
+.ui-silk-error,
+ul.ui-silk-error > li:before,
+ul.ui-silk > li.ui-silk-error:before {
+	background-position: -64px -192px;
+}
+.ui-silk-error-add,
+ul.ui-silk-error-add > li:before,
+ul.ui-silk > li.ui-silk-error-add:before {
+	background-position: -80px -192px;
+}
+.ui-silk-error-delete,
+ul.ui-silk-error-delete > li:before,
+ul.ui-silk > li.ui-silk-error-delete:before {
+	background-position: -96px -192px;
+}
+.ui-silk-error-go,
+ul.ui-silk-error-go > li:before,
+ul.ui-silk > li.ui-silk-error-go:before {
+	background-position: -112px -192px;
+}
+.ui-silk-exclamation,
+ul.ui-silk-exclamation > li:before,
+ul.ui-silk > li.ui-silk-exclamation:before {
+	background-position: -128px -192px;
+}
+.ui-silk-eye,
+ul.ui-silk-eye > li:before,
+ul.ui-silk > li.ui-silk-eye:before {
+	background-position: -144px -192px;
+}
+.ui-silk-feed,
+ul.ui-silk-feed > li:before,
+ul.ui-silk > li.ui-silk-feed:before {
+	background-position: -160px -192px;
+}
+.ui-silk-feed-add,
+ul.ui-silk-feed-add > li:before,
+ul.ui-silk > li.ui-silk-feed-add:before {
+	background-position: -176px -192px;
+}
+.ui-silk-feed-delete,
+ul.ui-silk-feed-delete > li:before,
+ul.ui-silk > li.ui-silk-feed-delete:before {
+	background-position: -192px -192px;
+}
+.ui-silk-feed-disk,
+ul.ui-silk-feed-disk > li:before,
+ul.ui-silk > li.ui-silk-feed-disk:before {
+	background-position: -208px -192px;
+}
+.ui-silk-feed-edit,
+ul.ui-silk-feed-edit > li:before,
+ul.ui-silk > li.ui-silk-feed-edit:before {
+	background-position: -224px -192px;
+}
+.ui-silk-feed-error,
+ul.ui-silk-feed-error > li:before,
+ul.ui-silk > li.ui-silk-feed-error:before {
+	background-position: -240px -192px;
+}
+.ui-silk-feed-go,
+ul.ui-silk-feed-go > li:before,
+ul.ui-silk > li.ui-silk-feed-go:before {
+	background-position: -256px -192px;
+}
+.ui-silk-feed-key,
+ul.ui-silk-feed-key > li:before,
+ul.ui-silk > li.ui-silk-feed-key:before {
+	background-position: -272px -192px;
+}
+.ui-silk-feed-link,
+ul.ui-silk-feed-link > li:before,
+ul.ui-silk > li.ui-silk-feed-link:before {
+	background-position: -288px -192px;
+}
+.ui-silk-feed-magnify,
+ul.ui-silk-feed-magnify > li:before,
+ul.ui-silk > li.ui-silk-feed-magnify:before {
+	background-position: -304px -192px;
+}
+.ui-silk-female,
+ul.ui-silk-female > li:before,
+ul.ui-silk > li.ui-silk-female:before {
+	background-position: -320px -192px;
+}
+.ui-silk-film,
+ul.ui-silk-film > li:before,
+ul.ui-silk > li.ui-silk-film:before {
+	background-position: -336px -192px;
+}
+.ui-silk-film-add,
+ul.ui-silk-film-add > li:before,
+ul.ui-silk > li.ui-silk-film-add:before {
+	background-position: -352px -192px;
+}
+.ui-silk-film-delete,
+ul.ui-silk-film-delete > li:before,
+ul.ui-silk > li.ui-silk-film-delete:before {
+	background-position: -368px -192px;
+}
+.ui-silk-film-edit,
+ul.ui-silk-film-edit > li:before,
+ul.ui-silk > li.ui-silk-film-edit:before {
+	background-position: -384px -192px;
+}
+.ui-silk-film-error,
+ul.ui-silk-film-error > li:before,
+ul.ui-silk > li.ui-silk-film-error:before {
+	background-position: -400px -192px;
+}
+.ui-silk-film-go,
+ul.ui-silk-film-go > li:before,
+ul.ui-silk > li.ui-silk-film-go:before {
+	background-position: -416px -192px;
+}
+.ui-silk-film-key,
+ul.ui-silk-film-key > li:before,
+ul.ui-silk > li.ui-silk-film-key:before {
+	background-position: -432px -192px;
+}
+.ui-silk-film-link,
+ul.ui-silk-film-link > li:before,
+ul.ui-silk > li.ui-silk-film-link:before {
+	background-position: -448px -192px;
+}
+.ui-silk-film-save,
+ul.ui-silk-film-save > li:before,
+ul.ui-silk > li.ui-silk-film-save:before {
+	background-position: -464px -192px;
+}
+.ui-silk-find,
+ul.ui-silk-find > li:before,
+ul.ui-silk > li.ui-silk-find:before {
+	background-position: -480px -192px;
+}
+.ui-silk-flag-blue,
+ul.ui-silk-flag-blue > li:before,
+ul.ui-silk > li.ui-silk-flag-blue:before {
+	background-position: -496px -192px;
+}
+.ui-silk-flag-green,
+ul.ui-silk-flag-green > li:before,
+ul.ui-silk > li.ui-silk-flag-green:before {
+	background-position: 0 -208px;
+}
+.ui-silk-flag-orange,
+ul.ui-silk-flag-orange > li:before,
+ul.ui-silk > li.ui-silk-flag-orange:before {
+	background-position: -16px -208px;
+}
+.ui-silk-flag-pink,
+ul.ui-silk-flag-pink > li:before,
+ul.ui-silk > li.ui-silk-flag-pink:before {
+	background-position: -32px -208px;
+}
+.ui-silk-flag-purple,
+ul.ui-silk-flag-purple > li:before,
+ul.ui-silk > li.ui-silk-flag-purple:before {
+	background-position: -48px -208px;
+}
+.ui-silk-flag-red,
+ul.ui-silk-flag-red > li:before,
+ul.ui-silk > li.ui-silk-flag-red:before {
+	background-position: -64px -208px;
+}
+.ui-silk-flag-yellow,
+ul.ui-silk-flag-yellow > li:before,
+ul.ui-silk > li.ui-silk-flag-yellow:before {
+	background-position: -80px -208px;
+}
+.ui-silk-folder,
+ul.ui-silk-folder > li:before,
+ul.ui-silk > li.ui-silk-folder:before {
+	background-position: -96px -208px;
+}
+.ui-silk-folder-add,
+ul.ui-silk-folder-add > li:before,
+ul.ui-silk > li.ui-silk-folder-add:before {
+	background-position: -112px -208px;
+}
+.ui-silk-folder-bell,
+ul.ui-silk-folder-bell > li:before,
+ul.ui-silk > li.ui-silk-folder-bell:before {
+	background-position: -128px -208px;
+}
+.ui-silk-folder-brick,
+ul.ui-silk-folder-brick > li:before,
+ul.ui-silk > li.ui-silk-folder-brick:before {
+	background-position: -144px -208px;
+}
+.ui-silk-folder-bug,
+ul.ui-silk-folder-bug > li:before,
+ul.ui-silk > li.ui-silk-folder-bug:before {
+	background-position: -160px -208px;
+}
+.ui-silk-folder-camera,
+ul.ui-silk-folder-camera > li:before,
+ul.ui-silk > li.ui-silk-folder-camera:before {
+	background-position: -176px -208px;
+}
+.ui-silk-folder-database,
+ul.ui-silk-folder-database > li:before,
+ul.ui-silk > li.ui-silk-folder-database:before {
+	background-position: -192px -208px;
+}
+.ui-silk-folder-delete,
+ul.ui-silk-folder-delete > li:before,
+ul.ui-silk > li.ui-silk-folder-delete:before {
+	background-position: -208px -208px;
+}
+.ui-silk-folder-edit,
+ul.ui-silk-folder-edit > li:before,
+ul.ui-silk > li.ui-silk-folder-edit:before {
+	background-position: -224px -208px;
+}
+.ui-silk-folder-error,
+ul.ui-silk-folder-error > li:before,
+ul.ui-silk > li.ui-silk-folder-error:before {
+	background-position: -240px -208px;
+}
+.ui-silk-folder-explore,
+ul.ui-silk-folder-explore > li:before,
+ul.ui-silk > li.ui-silk-folder-explore:before {
+	background-position: -256px -208px;
+}
+.ui-silk-folder-feed,
+ul.ui-silk-folder-feed > li:before,
+ul.ui-silk > li.ui-silk-folder-feed:before {
+	background-position: -272px -208px;
+}
+.ui-silk-folder-find,
+ul.ui-silk-folder-find > li:before,
+ul.ui-silk > li.ui-silk-folder-find:before {
+	background-position: -288px -208px;
+}
+.ui-silk-folder-go,
+ul.ui-silk-folder-go > li:before,
+ul.ui-silk > li.ui-silk-folder-go:before {
+	background-position: -304px -208px;
+}
+.ui-silk-folder-heart,
+ul.ui-silk-folder-heart > li:before,
+ul.ui-silk > li.ui-silk-folder-heart:before {
+	background-position: -320px -208px;
+}
+.ui-silk-folder-image,
+ul.ui-silk-folder-image > li:before,
+ul.ui-silk > li.ui-silk-folder-image:before {
+	background-position: -336px -208px;
+}
+.ui-silk-folder-key,
+ul.ui-silk-folder-key > li:before,
+ul.ui-silk > li.ui-silk-folder-key:before {
+	background-position: -352px -208px;
+}
+.ui-silk-folder-lightbulb,
+ul.ui-silk-folder-lightbulb > li:before,
+ul.ui-silk > li.ui-silk-folder-lightbulb:before {
+	background-position: -368px -208px;
+}
+.ui-silk-folder-link,
+ul.ui-silk-folder-link > li:before,
+ul.ui-silk > li.ui-silk-folder-link:before {
+	background-position: -384px -208px;
+}
+.ui-silk-folder-magnify,
+ul.ui-silk-folder-magnify > li:before,
+ul.ui-silk > li.ui-silk-folder-magnify:before {
+	background-position: -400px -208px;
+}
+.ui-silk-folder-page,
+ul.ui-silk-folder-page > li:before,
+ul.ui-silk > li.ui-silk-folder-page:before {
+	background-position: -416px -208px;
+}
+.ui-silk-folder-page-white,
+ul.ui-silk-folder-page-white > li:before,
+ul.ui-silk > li.ui-silk-folder-page-white:before {
+	background-position: -432px -208px;
+}
+.ui-silk-folder-palette,
+ul.ui-silk-folder-palette > li:before,
+ul.ui-silk > li.ui-silk-folder-palette:before {
+	background-position: -448px -208px;
+}
+.ui-silk-folder-picture,
+ul.ui-silk-folder-picture > li:before,
+ul.ui-silk > li.ui-silk-folder-picture:before {
+	background-position: -464px -208px;
+}
+.ui-silk-folder-star,
+ul.ui-silk-folder-star > li:before,
+ul.ui-silk > li.ui-silk-folder-star:before {
+	background-position: -480px -208px;
+}
+.ui-silk-folder-table,
+ul.ui-silk-folder-table > li:before,
+ul.ui-silk > li.ui-silk-folder-table:before {
+	background-position: -496px -208px;
+}
+.ui-silk-folder-user,
+ul.ui-silk-folder-user > li:before,
+ul.ui-silk > li.ui-silk-folder-user:before {
+	background-position: 0 -224px;
+}
+.ui-silk-folder-wrench,
+ul.ui-silk-folder-wrench > li:before,
+ul.ui-silk > li.ui-silk-folder-wrench:before {
+	background-position: -16px -224px;
+}
+.ui-silk-font,
+ul.ui-silk-font > li:before,
+ul.ui-silk > li.ui-silk-font:before {
+	background-position: -32px -224px;
+}
+.ui-silk-font-add,
+ul.ui-silk-font-add > li:before,
+ul.ui-silk > li.ui-silk-font-add:before {
+	background-position: -48px -224px;
+}
+.ui-silk-font-delete,
+ul.ui-silk-font-delete > li:before,
+ul.ui-silk > li.ui-silk-font-delete:before {
+	background-position: -64px -224px;
+}
+.ui-silk-font-go,
+ul.ui-silk-font-go > li:before,
+ul.ui-silk > li.ui-silk-font-go:before {
+	background-position: -80px -224px;
+}
+.ui-silk-group,
+ul.ui-silk-group > li:before,
+ul.ui-silk > li.ui-silk-group:before {
+	background-position: -96px -224px;
+}
+.ui-silk-group-add,
+ul.ui-silk-group-add > li:before,
+ul.ui-silk > li.ui-silk-group-add:before {
+	background-position: -112px -224px;
+}
+.ui-silk-group-delete,
+ul.ui-silk-group-delete > li:before,
+ul.ui-silk > li.ui-silk-group-delete:before {
+	background-position: -128px -224px;
+}
+.ui-silk-group-edit,
+ul.ui-silk-group-edit > li:before,
+ul.ui-silk > li.ui-silk-group-edit:before {
+	background-position: -144px -224px;
+}
+.ui-silk-group-error,
+ul.ui-silk-group-error > li:before,
+ul.ui-silk > li.ui-silk-group-error:before {
+	background-position: -160px -224px;
+}
+.ui-silk-group-gear,
+ul.ui-silk-group-gear > li:before,
+ul.ui-silk > li.ui-silk-group-gear:before {
+	background-position: -176px -224px;
+}
+.ui-silk-group-go,
+ul.ui-silk-group-go > li:before,
+ul.ui-silk > li.ui-silk-group-go:before {
+	background-position: -192px -224px;
+}
+.ui-silk-group-key,
+ul.ui-silk-group-key > li:before,
+ul.ui-silk > li.ui-silk-group-key:before {
+	background-position: -208px -224px;
+}
+.ui-silk-group-link,
+ul.ui-silk-group-link > li:before,
+ul.ui-silk > li.ui-silk-group-link:before {
+	background-position: -224px -224px;
+}
+.ui-silk-heart,
+ul.ui-silk-heart > li:before,
+ul.ui-silk > li.ui-silk-heart:before {
+	background-position: -240px -224px;
+}
+.ui-silk-heart-add,
+ul.ui-silk-heart-add > li:before,
+ul.ui-silk > li.ui-silk-heart-add:before {
+	background-position: -256px -224px;
+}
+.ui-silk-heart-delete,
+ul.ui-silk-heart-delete > li:before,
+ul.ui-silk > li.ui-silk-heart-delete:before {
+	background-position: -272px -224px;
+}
+.ui-silk-help,
+ul.ui-silk-help > li:before,
+ul.ui-silk > li.ui-silk-help:before {
+	background-position: -288px -224px;
+}
+.ui-silk-hourglass,
+ul.ui-silk-hourglass > li:before,
+ul.ui-silk > li.ui-silk-hourglass:before {
+	background-position: -304px -224px;
+}
+.ui-silk-hourglass-add,
+ul.ui-silk-hourglass-add > li:before,
+ul.ui-silk > li.ui-silk-hourglass-add:before {
+	background-position: -320px -224px;
+}
+.ui-silk-hourglass-delete,
+ul.ui-silk-hourglass-delete > li:before,
+ul.ui-silk > li.ui-silk-hourglass-delete:before {
+	background-position: -336px -224px;
+}
+.ui-silk-hourglass-go,
+ul.ui-silk-hourglass-go > li:before,
+ul.ui-silk > li.ui-silk-hourglass-go:before {
+	background-position: -352px -224px;
+}
+.ui-silk-hourglass-link,
+ul.ui-silk-hourglass-link > li:before,
+ul.ui-silk > li.ui-silk-hourglass-link:before {
+	background-position: -368px -224px;
+}
+.ui-silk-house,
+ul.ui-silk-house > li:before,
+ul.ui-silk > li.ui-silk-house:before {
+	background-position: -384px -224px;
+}
+.ui-silk-house-go,
+ul.ui-silk-house-go > li:before,
+ul.ui-silk > li.ui-silk-house-go:before {
+	background-position: -400px -224px;
+}
+.ui-silk-house-link,
+ul.ui-silk-house-link > li:before,
+ul.ui-silk > li.ui-silk-house-link:before {
+	background-position: -416px -224px;
+}
+.ui-silk-html,
+ul.ui-silk-html > li:before,
+ul.ui-silk > li.ui-silk-html:before {
+	background-position: -432px -224px;
+}
+.ui-silk-html-add,
+ul.ui-silk-html-add > li:before,
+ul.ui-silk > li.ui-silk-html-add:before {
+	background-position: -448px -224px;
+}
+.ui-silk-html-delete,
+ul.ui-silk-html-delete > li:before,
+ul.ui-silk > li.ui-silk-html-delete:before {
+	background-position: -464px -224px;
+}
+.ui-silk-html-go,
+ul.ui-silk-html-go > li:before,
+ul.ui-silk > li.ui-silk-html-go:before {
+	background-position: -480px -224px;
+}
+.ui-silk-html-valid,
+ul.ui-silk-html-valid > li:before,
+ul.ui-silk > li.ui-silk-html-valid:before {
+	background-position: -496px -224px;
+}
+.ui-silk-image,
+ul.ui-silk-image > li:before,
+ul.ui-silk > li.ui-silk-image:before {
+	background-position: 0 -240px;
+}
+.ui-silk-images,
+ul.ui-silk-images > li:before,
+ul.ui-silk > li.ui-silk-images:before {
+	background-position: -16px -240px;
+}
+.ui-silk-image-add,
+ul.ui-silk-image-add > li:before,
+ul.ui-silk > li.ui-silk-image-add:before {
+	background-position: -32px -240px;
+}
+.ui-silk-image-delete,
+ul.ui-silk-image-delete > li:before,
+ul.ui-silk > li.ui-silk-image-delete:before {
+	background-position: -48px -240px;
+}
+.ui-silk-image-edit,
+ul.ui-silk-image-edit > li:before,
+ul.ui-silk > li.ui-silk-image-edit:before {
+	background-position: -64px -240px;
+}
+.ui-silk-image-link,
+ul.ui-silk-image-link > li:before,
+ul.ui-silk > li.ui-silk-image-link:before {
+	background-position: -80px -240px;
+}
+.ui-silk-information,
+ul.ui-silk-information > li:before,
+ul.ui-silk > li.ui-silk-information:before {
+	background-position: -96px -240px;
+}
+.ui-silk-ipod,
+ul.ui-silk-ipod > li:before,
+ul.ui-silk > li.ui-silk-ipod:before {
+	background-position: -112px -240px;
+}
+.ui-silk-ipod-cast,
+ul.ui-silk-ipod-cast > li:before,
+ul.ui-silk > li.ui-silk-ipod-cast:before {
+	background-position: -128px -240px;
+}
+.ui-silk-ipod-cast-add,
+ul.ui-silk-ipod-cast-add > li:before,
+ul.ui-silk > li.ui-silk-ipod-cast-add:before {
+	background-position: -144px -240px;
+}
+.ui-silk-ipod-cast-delete,
+ul.ui-silk-ipod-cast-delete > li:before,
+ul.ui-silk > li.ui-silk-ipod-cast-delete:before {
+	background-position: -160px -240px;
+}
+.ui-silk-ipod-sound,
+ul.ui-silk-ipod-sound > li:before,
+ul.ui-silk > li.ui-silk-ipod-sound:before {
+	background-position: -176px -240px;
+}
+.ui-silk-joystick,
+ul.ui-silk-joystick > li:before,
+ul.ui-silk > li.ui-silk-joystick:before {
+	background-position: -192px -240px;
+}
+.ui-silk-joystick-add,
+ul.ui-silk-joystick-add > li:before,
+ul.ui-silk > li.ui-silk-joystick-add:before {
+	background-position: -208px -240px;
+}
+.ui-silk-joystick-delete,
+ul.ui-silk-joystick-delete > li:before,
+ul.ui-silk > li.ui-silk-joystick-delete:before {
+	background-position: -224px -240px;
+}
+.ui-silk-joystick-error,
+ul.ui-silk-joystick-error > li:before,
+ul.ui-silk > li.ui-silk-joystick-error:before {
+	background-position: -240px -240px;
+}
+.ui-silk-key,
+ul.ui-silk-key > li:before,
+ul.ui-silk > li.ui-silk-key:before {
+	background-position: -256px -240px;
+}
+.ui-silk-keyboard,
+ul.ui-silk-keyboard > li:before,
+ul.ui-silk > li.ui-silk-keyboard:before {
+	background-position: -272px -240px;
+}
+.ui-silk-keyboard-add,
+ul.ui-silk-keyboard-add > li:before,
+ul.ui-silk > li.ui-silk-keyboard-add:before {
+	background-position: -288px -240px;
+}
+.ui-silk-keyboard-delete,
+ul.ui-silk-keyboard-delete > li:before,
+ul.ui-silk > li.ui-silk-keyboard-delete:before {
+	background-position: -304px -240px;
+}
+.ui-silk-keyboard-magnify,
+ul.ui-silk-keyboard-magnify > li:before,
+ul.ui-silk > li.ui-silk-keyboard-magnify:before {
+	background-position: -320px -240px;
+}
+.ui-silk-key-add,
+ul.ui-silk-key-add > li:before,
+ul.ui-silk > li.ui-silk-key-add:before {
+	background-position: -336px -240px;
+}
+.ui-silk-key-delete,
+ul.ui-silk-key-delete > li:before,
+ul.ui-silk > li.ui-silk-key-delete:before {
+	background-position: -352px -240px;
+}
+.ui-silk-key-go,
+ul.ui-silk-key-go > li:before,
+ul.ui-silk > li.ui-silk-key-go:before {
+	background-position: -368px -240px;
+}
+.ui-silk-layers,
+ul.ui-silk-layers > li:before,
+ul.ui-silk > li.ui-silk-layers:before {
+	background-position: -384px -240px;
+}
+.ui-silk-layout,
+ul.ui-silk-layout > li:before,
+ul.ui-silk > li.ui-silk-layout:before {
+	background-position: -400px -240px;
+}
+.ui-silk-layout-add,
+ul.ui-silk-layout-add > li:before,
+ul.ui-silk > li.ui-silk-layout-add:before {
+	background-position: -416px -240px;
+}
+.ui-silk-layout-content,
+ul.ui-silk-layout-content > li:before,
+ul.ui-silk > li.ui-silk-layout-content:before {
+	background-position: -432px -240px;
+}
+.ui-silk-layout-delete,
+ul.ui-silk-layout-delete > li:before,
+ul.ui-silk > li.ui-silk-layout-delete:before {
+	background-position: -448px -240px;
+}
+.ui-silk-layout-edit,
+ul.ui-silk-layout-edit > li:before,
+ul.ui-silk > li.ui-silk-layout-edit:before {
+	background-position: -464px -240px;
+}
+.ui-silk-layout-error,
+ul.ui-silk-layout-error > li:before,
+ul.ui-silk > li.ui-silk-layout-error:before {
+	background-position: -480px -240px;
+}
+.ui-silk-layout-header,
+ul.ui-silk-layout-header > li:before,
+ul.ui-silk > li.ui-silk-layout-header:before {
+	background-position: -496px -240px;
+}
+.ui-silk-layout-link,
+ul.ui-silk-layout-link > li:before,
+ul.ui-silk > li.ui-silk-layout-link:before {
+	background-position: 0 -256px;
+}
+.ui-silk-layout-sidebar,
+ul.ui-silk-layout-sidebar > li:before,
+ul.ui-silk > li.ui-silk-layout-sidebar:before {
+	background-position: -16px -256px;
+}
+.ui-silk-lightbulb,
+ul.ui-silk-lightbulb > li:before,
+ul.ui-silk > li.ui-silk-lightbulb:before {
+	background-position: -32px -256px;
+}
+.ui-silk-lightbulb-add,
+ul.ui-silk-lightbulb-add > li:before,
+ul.ui-silk > li.ui-silk-lightbulb-add:before {
+	background-position: -48px -256px;
+}
+.ui-silk-lightbulb-delete,
+ul.ui-silk-lightbulb-delete > li:before,
+ul.ui-silk > li.ui-silk-lightbulb-delete:before {
+	background-position: -64px -256px;
+}
+.ui-silk-lightbulb-off,
+ul.ui-silk-lightbulb-off > li:before,
+ul.ui-silk > li.ui-silk-lightbulb-off:before {
+	background-position: -80px -256px;
+}
+.ui-silk-lightning,
+ul.ui-silk-lightning > li:before,
+ul.ui-silk > li.ui-silk-lightning:before {
+	background-position: -96px -256px;
+}
+.ui-silk-lightning-add,
+ul.ui-silk-lightning-add > li:before,
+ul.ui-silk > li.ui-silk-lightning-add:before {
+	background-position: -112px -256px;
+}
+.ui-silk-lightning-delete,
+ul.ui-silk-lightning-delete > li:before,
+ul.ui-silk > li.ui-silk-lightning-delete:before {
+	background-position: -128px -256px;
+}
+.ui-silk-lightning-go,
+ul.ui-silk-lightning-go > li:before,
+ul.ui-silk > li.ui-silk-lightning-go:before {
+	background-position: -144px -256px;
+}
+.ui-silk-link,
+ul.ui-silk-link > li:before,
+ul.ui-silk > li.ui-silk-link:before {
+	background-position: -160px -256px;
+}
+.ui-silk-link-add,
+ul.ui-silk-link-add > li:before,
+ul.ui-silk > li.ui-silk-link-add:before {
+	background-position: -176px -256px;
+}
+.ui-silk-link-break,
+ul.ui-silk-link-break > li:before,
+ul.ui-silk > li.ui-silk-link-break:before {
+	background-position: -192px -256px;
+}
+.ui-silk-link-delete,
+ul.ui-silk-link-delete > li:before,
+ul.ui-silk > li.ui-silk-link-delete:before {
+	background-position: -208px -256px;
+}
+.ui-silk-link-edit,
+ul.ui-silk-link-edit > li:before,
+ul.ui-silk > li.ui-silk-link-edit:before {
+	background-position: -224px -256px;
+}
+.ui-silk-link-error,
+ul.ui-silk-link-error > li:before,
+ul.ui-silk > li.ui-silk-link-error:before {
+	background-position: -240px -256px;
+}
+.ui-silk-link-go,
+ul.ui-silk-link-go > li:before,
+ul.ui-silk > li.ui-silk-link-go:before {
+	background-position: -256px -256px;
+}
+.ui-silk-lock,
+ul.ui-silk-lock > li:before,
+ul.ui-silk > li.ui-silk-lock:before {
+	background-position: -272px -256px;
+}
+.ui-silk-lock-add,
+ul.ui-silk-lock-add > li:before,
+ul.ui-silk > li.ui-silk-lock-add:before {
+	background-position: -288px -256px;
+}
+.ui-silk-lock-break,
+ul.ui-silk-lock-break > li:before,
+ul.ui-silk > li.ui-silk-lock-break:before {
+	background-position: -304px -256px;
+}
+.ui-silk-lock-delete,
+ul.ui-silk-lock-delete > li:before,
+ul.ui-silk > li.ui-silk-lock-delete:before {
+	background-position: -320px -256px;
+}
+.ui-silk-lock-edit,
+ul.ui-silk-lock-edit > li:before,
+ul.ui-silk > li.ui-silk-lock-edit:before {
+	background-position: -336px -256px;
+}
+.ui-silk-lock-go,
+ul.ui-silk-lock-go > li:before,
+ul.ui-silk > li.ui-silk-lock-go:before {
+	background-position: -352px -256px;
+}
+.ui-silk-lock-open,
+ul.ui-silk-lock-open > li:before,
+ul.ui-silk > li.ui-silk-lock-open:before {
+	background-position: -368px -256px;
+}
+.ui-silk-lorry,
+ul.ui-silk-lorry > li:before,
+ul.ui-silk > li.ui-silk-lorry:before {
+	background-position: -384px -256px;
+}
+.ui-silk-lorry-add,
+ul.ui-silk-lorry-add > li:before,
+ul.ui-silk > li.ui-silk-lorry-add:before {
+	background-position: -400px -256px;
+}
+.ui-silk-lorry-delete,
+ul.ui-silk-lorry-delete > li:before,
+ul.ui-silk > li.ui-silk-lorry-delete:before {
+	background-position: -416px -256px;
+}
+.ui-silk-lorry-error,
+ul.ui-silk-lorry-error > li:before,
+ul.ui-silk > li.ui-silk-lorry-error:before {
+	background-position: -432px -256px;
+}
+.ui-silk-lorry-flatbed,
+ul.ui-silk-lorry-flatbed > li:before,
+ul.ui-silk > li.ui-silk-lorry-flatbed:before {
+	background-position: -448px -256px;
+}
+.ui-silk-lorry-go,
+ul.ui-silk-lorry-go > li:before,
+ul.ui-silk > li.ui-silk-lorry-go:before {
+	background-position: -464px -256px;
+}
+.ui-silk-lorry-link,
+ul.ui-silk-lorry-link > li:before,
+ul.ui-silk > li.ui-silk-lorry-link:before {
+	background-position: -480px -256px;
+}
+.ui-silk-magifier-zoom-out,
+ul.ui-silk-magifier-zoom-out > li:before,
+ul.ui-silk > li.ui-silk-magifier-zoom-out:before {
+	background-position: -496px -256px;
+}
+.ui-silk-magnifier,
+ul.ui-silk-magnifier > li:before,
+ul.ui-silk > li.ui-silk-magnifier:before {
+	background-position: 0 -272px;
+}
+.ui-silk-magnifier-zoom-in,
+ul.ui-silk-magnifier-zoom-in > li:before,
+ul.ui-silk > li.ui-silk-magnifier-zoom-in:before {
+	background-position: -16px -272px;
+}
+.ui-silk-male,
+ul.ui-silk-male > li:before,
+ul.ui-silk > li.ui-silk-male:before {
+	background-position: -32px -272px;
+}
+.ui-silk-map,
+ul.ui-silk-map > li:before,
+ul.ui-silk > li.ui-silk-map:before {
+	background-position: -48px -272px;
+}
+.ui-silk-map-add,
+ul.ui-silk-map-add > li:before,
+ul.ui-silk > li.ui-silk-map-add:before {
+	background-position: -64px -272px;
+}
+.ui-silk-map-delete,
+ul.ui-silk-map-delete > li:before,
+ul.ui-silk > li.ui-silk-map-delete:before {
+	background-position: -80px -272px;
+}
+.ui-silk-map-edit,
+ul.ui-silk-map-edit > li:before,
+ul.ui-silk > li.ui-silk-map-edit:before {
+	background-position: -96px -272px;
+}
+.ui-silk-map-go,
+ul.ui-silk-map-go > li:before,
+ul.ui-silk > li.ui-silk-map-go:before {
+	background-position: -112px -272px;
+}
+.ui-silk-map-magnify,
+ul.ui-silk-map-magnify > li:before,
+ul.ui-silk > li.ui-silk-map-magnify:before {
+	background-position: -128px -272px;
+}
+.ui-silk-medal-bronze-1,
+ul.ui-silk-medal-bronze-1 > li:before,
+ul.ui-silk > li.ui-silk-medal-bronze-1:before {
+	background-position: -144px -272px;
+}
+.ui-silk-medal-bronze-2,
+ul.ui-silk-medal-bronze-2 > li:before,
+ul.ui-silk > li.ui-silk-medal-bronze-2:before {
+	background-position: -160px -272px;
+}
+.ui-silk-medal-bronze-3,
+ul.ui-silk-medal-bronze-3 > li:before,
+ul.ui-silk > li.ui-silk-medal-bronze-3:before {
+	background-position: -176px -272px;
+}
+.ui-silk-medal-bronze-add,
+ul.ui-silk-medal-bronze-add > li:before,
+ul.ui-silk > li.ui-silk-medal-bronze-add:before {
+	background-position: -192px -272px;
+}
+.ui-silk-medal-bronze-delete,
+ul.ui-silk-medal-bronze-delete > li:before,
+ul.ui-silk > li.ui-silk-medal-bronze-delete:before {
+	background-position: -208px -272px;
+}
+.ui-silk-medal-gold-1,
+ul.ui-silk-medal-gold-1 > li:before,
+ul.ui-silk > li.ui-silk-medal-gold-1:before {
+	background-position: -224px -272px;
+}
+.ui-silk-medal-gold-2,
+ul.ui-silk-medal-gold-2 > li:before,
+ul.ui-silk > li.ui-silk-medal-gold-2:before {
+	background-position: -240px -272px;
+}
+.ui-silk-medal-gold-3,
+ul.ui-silk-medal-gold-3 > li:before,
+ul.ui-silk > li.ui-silk-medal-gold-3:before {
+	background-position: -256px -272px;
+}
+.ui-silk-medal-gold-add,
+ul.ui-silk-medal-gold-add > li:before,
+ul.ui-silk > li.ui-silk-medal-gold-add:before {
+	background-position: -272px -272px;
+}
+.ui-silk-medal-gold-delete,
+ul.ui-silk-medal-gold-delete > li:before,
+ul.ui-silk > li.ui-silk-medal-gold-delete:before {
+	background-position: -288px -272px;
+}
+.ui-silk-medal-silver-1,
+ul.ui-silk-medal-silver-1 > li:before,
+ul.ui-silk > li.ui-silk-medal-silver-1:before {
+	background-position: -304px -272px;
+}
+.ui-silk-medal-silver-2,
+ul.ui-silk-medal-silver-2 > li:before,
+ul.ui-silk > li.ui-silk-medal-silver-2:before {
+	background-position: -320px -272px;
+}
+.ui-silk-medal-silver-3,
+ul.ui-silk-medal-silver-3 > li:before,
+ul.ui-silk > li.ui-silk-medal-silver-3:before {
+	background-position: -336px -272px;
+}
+.ui-silk-medal-silver-add,
+ul.ui-silk-medal-silver-add > li:before,
+ul.ui-silk > li.ui-silk-medal-silver-add:before {
+	background-position: -352px -272px;
+}
+.ui-silk-medal-silver-delete,
+ul.ui-silk-medal-silver-delete > li:before,
+ul.ui-silk > li.ui-silk-medal-silver-delete:before {
+	background-position: -368px -272px;
+}
+.ui-silk-money,
+ul.ui-silk-money > li:before,
+ul.ui-silk > li.ui-silk-money:before {
+	background-position: -384px -272px;
+}
+.ui-silk-money-add,
+ul.ui-silk-money-add > li:before,
+ul.ui-silk > li.ui-silk-money-add:before {
+	background-position: -400px -272px;
+}
+.ui-silk-money-delete,
+ul.ui-silk-money-delete > li:before,
+ul.ui-silk > li.ui-silk-money-delete:before {
+	background-position: -416px -272px;
+}
+.ui-silk-money-dollar,
+ul.ui-silk-money-dollar > li:before,
+ul.ui-silk > li.ui-silk-money-dollar:before {
+	background-position: -432px -272px;
+}
+.ui-silk-money-euro,
+ul.ui-silk-money-euro > li:before,
+ul.ui-silk > li.ui-silk-money-euro:before {
+	background-position: -448px -272px;
+}
+.ui-silk-money-pound,
+ul.ui-silk-money-pound > li:before,
+ul.ui-silk > li.ui-silk-money-pound:before {
+	background-position: -464px -272px;
+}
+.ui-silk-money-yen,
+ul.ui-silk-money-yen > li:before,
+ul.ui-silk > li.ui-silk-money-yen:before {
+	background-position: -480px -272px;
+}
+.ui-silk-monitor,
+ul.ui-silk-monitor > li:before,
+ul.ui-silk > li.ui-silk-monitor:before {
+	background-position: -496px -272px;
+}
+.ui-silk-monitor-add,
+ul.ui-silk-monitor-add > li:before,
+ul.ui-silk > li.ui-silk-monitor-add:before {
+	background-position: 0 -288px;
+}
+.ui-silk-monitor-delete,
+ul.ui-silk-monitor-delete > li:before,
+ul.ui-silk > li.ui-silk-monitor-delete:before {
+	background-position: -16px -288px;
+}
+.ui-silk-monitor-edit,
+ul.ui-silk-monitor-edit > li:before,
+ul.ui-silk > li.ui-silk-monitor-edit:before {
+	background-position: -32px -288px;
+}
+.ui-silk-monitor-error,
+ul.ui-silk-monitor-error > li:before,
+ul.ui-silk > li.ui-silk-monitor-error:before {
+	background-position: -48px -288px;
+}
+.ui-silk-monitor-go,
+ul.ui-silk-monitor-go > li:before,
+ul.ui-silk > li.ui-silk-monitor-go:before {
+	background-position: -64px -288px;
+}
+.ui-silk-monitor-lightning,
+ul.ui-silk-monitor-lightning > li:before,
+ul.ui-silk > li.ui-silk-monitor-lightning:before {
+	background-position: -80px -288px;
+}
+.ui-silk-monitor-link,
+ul.ui-silk-monitor-link > li:before,
+ul.ui-silk > li.ui-silk-monitor-link:before {
+	background-position: -96px -288px;
+}
+.ui-silk-mouse,
+ul.ui-silk-mouse > li:before,
+ul.ui-silk > li.ui-silk-mouse:before {
+	background-position: -112px -288px;
+}
+.ui-silk-mouse-add,
+ul.ui-silk-mouse-add > li:before,
+ul.ui-silk > li.ui-silk-mouse-add:before {
+	background-position: -128px -288px;
+}
+.ui-silk-mouse-delete,
+ul.ui-silk-mouse-delete > li:before,
+ul.ui-silk > li.ui-silk-mouse-delete:before {
+	background-position: -144px -288px;
+}
+.ui-silk-mouse-error,
+ul.ui-silk-mouse-error > li:before,
+ul.ui-silk > li.ui-silk-mouse-error:before {
+	background-position: -160px -288px;
+}
+.ui-silk-music,
+ul.ui-silk-music > li:before,
+ul.ui-silk > li.ui-silk-music:before {
+	background-position: -176px -288px;
+}
+.ui-silk-new,
+ul.ui-silk-new > li:before,
+ul.ui-silk > li.ui-silk-new:before {
+	background-position: -192px -288px;
+}
+.ui-silk-newspaper,
+ul.ui-silk-newspaper > li:before,
+ul.ui-silk > li.ui-silk-newspaper:before {
+	background-position: -208px -288px;
+}
+.ui-silk-newspaper-add,
+ul.ui-silk-newspaper-add > li:before,
+ul.ui-silk > li.ui-silk-newspaper-add:before {
+	background-position: -224px -288px;
+}
+.ui-silk-newspaper-delete,
+ul.ui-silk-newspaper-delete > li:before,
+ul.ui-silk > li.ui-silk-newspaper-delete:before {
+	background-position: -240px -288px;
+}
+.ui-silk-newspaper-go,
+ul.ui-silk-newspaper-go > li:before,
+ul.ui-silk > li.ui-silk-newspaper-go:before {
+	background-position: -256px -288px;
+}
+.ui-silk-newspaper-link,
+ul.ui-silk-newspaper-link > li:before,
+ul.ui-silk > li.ui-silk-newspaper-link:before {
+	background-position: -272px -288px;
+}
+.ui-silk-note,
+ul.ui-silk-note > li:before,
+ul.ui-silk > li.ui-silk-note:before {
+	background-position: -288px -288px;
+}
+.ui-silk-note-add,
+ul.ui-silk-note-add > li:before,
+ul.ui-silk > li.ui-silk-note-add:before {
+	background-position: -304px -288px;
+}
+.ui-silk-note-delete,
+ul.ui-silk-note-delete > li:before,
+ul.ui-silk > li.ui-silk-note-delete:before {
+	background-position: -320px -288px;
+}
+.ui-silk-note-edit,
+ul.ui-silk-note-edit > li:before,
+ul.ui-silk > li.ui-silk-note-edit:before {
+	background-position: -336px -288px;
+}
+.ui-silk-note-error,
+ul.ui-silk-note-error > li:before,
+ul.ui-silk > li.ui-silk-note-error:before {
+	background-position: -352px -288px;
+}
+.ui-silk-note-go,
+ul.ui-silk-note-go > li:before,
+ul.ui-silk > li.ui-silk-note-go:before {
+	background-position: -368px -288px;
+}
+.ui-silk-overlays,
+ul.ui-silk-overlays > li:before,
+ul.ui-silk > li.ui-silk-overlays:before {
+	background-position: -384px -288px;
+}
+.ui-silk-package,
+ul.ui-silk-package > li:before,
+ul.ui-silk > li.ui-silk-package:before {
+	background-position: -400px -288px;
+}
+.ui-silk-package-add,
+ul.ui-silk-package-add > li:before,
+ul.ui-silk > li.ui-silk-package-add:before {
+	background-position: -416px -288px;
+}
+.ui-silk-package-delete,
+ul.ui-silk-package-delete > li:before,
+ul.ui-silk > li.ui-silk-package-delete:before {
+	background-position: -432px -288px;
+}
+.ui-silk-package-go,
+ul.ui-silk-package-go > li:before,
+ul.ui-silk > li.ui-silk-package-go:before {
+	background-position: -448px -288px;
+}
+.ui-silk-package-green,
+ul.ui-silk-package-green > li:before,
+ul.ui-silk > li.ui-silk-package-green:before {
+	background-position: -464px -288px;
+}
+.ui-silk-package-link,
+ul.ui-silk-package-link > li:before,
+ul.ui-silk > li.ui-silk-package-link:before {
+	background-position: -480px -288px;
+}
+.ui-silk-page,
+ul.ui-silk-page > li:before,
+ul.ui-silk > li.ui-silk-page:before {
+	background-position: -496px -288px;
+}
+.ui-silk-page-add,
+ul.ui-silk-page-add > li:before,
+ul.ui-silk > li.ui-silk-page-add:before {
+	background-position: 0 -304px;
+}
+.ui-silk-page-attach,
+ul.ui-silk-page-attach > li:before,
+ul.ui-silk > li.ui-silk-page-attach:before {
+	background-position: -16px -304px;
+}
+.ui-silk-page-code,
+ul.ui-silk-page-code > li:before,
+ul.ui-silk > li.ui-silk-page-code:before {
+	background-position: -32px -304px;
+}
+.ui-silk-page-copy,
+ul.ui-silk-page-copy > li:before,
+ul.ui-silk > li.ui-silk-page-copy:before {
+	background-position: -48px -304px;
+}
+.ui-silk-page-delete,
+ul.ui-silk-page-delete > li:before,
+ul.ui-silk > li.ui-silk-page-delete:before {
+	background-position: -64px -304px;
+}
+.ui-silk-page-edit,
+ul.ui-silk-page-edit > li:before,
+ul.ui-silk > li.ui-silk-page-edit:before {
+	background-position: -80px -304px;
+}
+.ui-silk-page-error,
+ul.ui-silk-page-error > li:before,
+ul.ui-silk > li.ui-silk-page-error:before {
+	background-position: -96px -304px;
+}
+.ui-silk-page-excel,
+ul.ui-silk-page-excel > li:before,
+ul.ui-silk > li.ui-silk-page-excel:before {
+	background-position: -112px -304px;
+}
+.ui-silk-page-find,
+ul.ui-silk-page-find > li:before,
+ul.ui-silk > li.ui-silk-page-find:before {
+	background-position: -128px -304px;
+}
+.ui-silk-page-gear,
+ul.ui-silk-page-gear > li:before,
+ul.ui-silk > li.ui-silk-page-gear:before {
+	background-position: -144px -304px;
+}
+.ui-silk-page-go,
+ul.ui-silk-page-go > li:before,
+ul.ui-silk > li.ui-silk-page-go:before {
+	background-position: -160px -304px;
+}
+.ui-silk-page-green,
+ul.ui-silk-page-green > li:before,
+ul.ui-silk > li.ui-silk-page-green:before {
+	background-position: -176px -304px;
+}
+.ui-silk-page-key,
+ul.ui-silk-page-key > li:before,
+ul.ui-silk > li.ui-silk-page-key:before {
+	background-position: -192px -304px;
+}
+.ui-silk-page-lightning,
+ul.ui-silk-page-lightning > li:before,
+ul.ui-silk > li.ui-silk-page-lightning:before {
+	background-position: -208px -304px;
+}
+.ui-silk-page-link,
+ul.ui-silk-page-link > li:before,
+ul.ui-silk > li.ui-silk-page-link:before {
+	background-position: -224px -304px;
+}
+.ui-silk-page-paintbrush,
+ul.ui-silk-page-paintbrush > li:before,
+ul.ui-silk > li.ui-silk-page-paintbrush:before {
+	background-position: -240px -304px;
+}
+.ui-silk-page-paste,
+ul.ui-silk-page-paste > li:before,
+ul.ui-silk > li.ui-silk-page-paste:before {
+	background-position: -256px -304px;
+}
+.ui-silk-page-red,
+ul.ui-silk-page-red > li:before,
+ul.ui-silk > li.ui-silk-page-red:before {
+	background-position: -272px -304px;
+}
+.ui-silk-page-refresh,
+ul.ui-silk-page-refresh > li:before,
+ul.ui-silk > li.ui-silk-page-refresh:before {
+	background-position: -288px -304px;
+}
+.ui-silk-page-save,
+ul.ui-silk-page-save > li:before,
+ul.ui-silk > li.ui-silk-page-save:before {
+	background-position: -304px -304px;
+}
+.ui-silk-page-white,
+ul.ui-silk-page-white > li:before,
+ul.ui-silk > li.ui-silk-page-white:before {
+	background-position: -320px -304px;
+}
+.ui-silk-page-white-acrobat,
+ul.ui-silk-page-white-acrobat > li:before,
+ul.ui-silk > li.ui-silk-page-white-acrobat:before {
+	background-position: -336px -304px;
+}
+.ui-silk-page-white-actionscript,
+ul.ui-silk-page-white-actionscript > li:before,
+ul.ui-silk > li.ui-silk-page-white-actionscript:before {
+	background-position: -352px -304px;
+}
+.ui-silk-page-white-add,
+ul.ui-silk-page-white-add > li:before,
+ul.ui-silk > li.ui-silk-page-white-add:before {
+	background-position: -368px -304px;
+}
+.ui-silk-page-white-c,
+ul.ui-silk-page-white-c > li:before,
+ul.ui-silk > li.ui-silk-page-white-c:before {
+	background-position: -384px -304px;
+}
+.ui-silk-page-white-camera,
+ul.ui-silk-page-white-camera > li:before,
+ul.ui-silk > li.ui-silk-page-white-camera:before {
+	background-position: -400px -304px;
+}
+.ui-silk-page-white-cd,
+ul.ui-silk-page-white-cd > li:before,
+ul.ui-silk > li.ui-silk-page-white-cd:before {
+	background-position: -416px -304px;
+}
+.ui-silk-page-white-code,
+ul.ui-silk-page-white-code > li:before,
+ul.ui-silk > li.ui-silk-page-white-code:before {
+	background-position: -432px -304px;
+}
+.ui-silk-page-white-code-red,
+ul.ui-silk-page-white-code-red > li:before,
+ul.ui-silk > li.ui-silk-page-white-code-red:before {
+	background-position: -448px -304px;
+}
+.ui-silk-page-white-coldfusion,
+ul.ui-silk-page-white-coldfusion > li:before,
+ul.ui-silk > li.ui-silk-page-white-coldfusion:before {
+	background-position: -464px -304px;
+}
+.ui-silk-page-white-compressed,
+ul.ui-silk-page-white-compressed > li:before,
+ul.ui-silk > li.ui-silk-page-white-compressed:before {
+	background-position: -480px -304px;
+}
+.ui-silk-page-white-copy,
+ul.ui-silk-page-white-copy > li:before,
+ul.ui-silk > li.ui-silk-page-white-copy:before {
+	background-position: -496px -304px;
+}
+.ui-silk-page-white-cplusplus,
+ul.ui-silk-page-white-cplusplus > li:before,
+ul.ui-silk > li.ui-silk-page-white-cplusplus:before {
+	background-position: 0 -320px;
+}
+.ui-silk-page-white-csharp,
+ul.ui-silk-page-white-csharp > li:before,
+ul.ui-silk > li.ui-silk-page-white-csharp:before {
+	background-position: -16px -320px;
+}
+.ui-silk-page-white-cup,
+ul.ui-silk-page-white-cup > li:before,
+ul.ui-silk > li.ui-silk-page-white-cup:before {
+	background-position: -32px -320px;
+}
+.ui-silk-page-white-database,
+ul.ui-silk-page-white-database > li:before,
+ul.ui-silk > li.ui-silk-page-white-database:before {
+	background-position: -48px -320px;
+}
+.ui-silk-page-white-delete,
+ul.ui-silk-page-white-delete > li:before,
+ul.ui-silk > li.ui-silk-page-white-delete:before {
+	background-position: -64px -320px;
+}
+.ui-silk-page-white-dvd,
+ul.ui-silk-page-white-dvd > li:before,
+ul.ui-silk > li.ui-silk-page-white-dvd:before {
+	background-position: -80px -320px;
+}
+.ui-silk-page-white-edit,
+ul.ui-silk-page-white-edit > li:before,
+ul.ui-silk > li.ui-silk-page-white-edit:before {
+	background-position: -96px -320px;
+}
+.ui-silk-page-white-error,
+ul.ui-silk-page-white-error > li:before,
+ul.ui-silk > li.ui-silk-page-white-error:before {
+	background-position: -112px -320px;
+}
+.ui-silk-page-white-excel,
+ul.ui-silk-page-white-excel > li:before,
+ul.ui-silk > li.ui-silk-page-white-excel:before {
+	background-position: -128px -320px;
+}
+.ui-silk-page-white-find,
+ul.ui-silk-page-white-find > li:before,
+ul.ui-silk > li.ui-silk-page-white-find:before {
+	background-position: -144px -320px;
+}
+.ui-silk-page-white-flash,
+ul.ui-silk-page-white-flash > li:before,
+ul.ui-silk > li.ui-silk-page-white-flash:before {
+	background-position: -160px -320px;
+}
+.ui-silk-page-white-freehand,
+ul.ui-silk-page-white-freehand > li:before,
+ul.ui-silk > li.ui-silk-page-white-freehand:before {
+	background-position: -176px -320px;
+}
+.ui-silk-page-white-gear,
+ul.ui-silk-page-white-gear > li:before,
+ul.ui-silk > li.ui-silk-page-white-gear:before {
+	background-position: -192px -320px;
+}
+.ui-silk-page-white-get,
+ul.ui-silk-page-white-get > li:before,
+ul.ui-silk > li.ui-silk-page-white-get:before {
+	background-position: -208px -320px;
+}
+.ui-silk-page-white-go,
+ul.ui-silk-page-white-go > li:before,
+ul.ui-silk > li.ui-silk-page-white-go:before {
+	background-position: -224px -320px;
+}
+.ui-silk-page-white-h,
+ul.ui-silk-page-white-h > li:before,
+ul.ui-silk > li.ui-silk-page-white-h:before {
+	background-position: -240px -320px;
+}
+.ui-silk-page-white-horizontal,
+ul.ui-silk-page-white-horizontal > li:before,
+ul.ui-silk > li.ui-silk-page-white-horizontal:before {
+	background-position: -256px -320px;
+}
+.ui-silk-page-white-key,
+ul.ui-silk-page-white-key > li:before,
+ul.ui-silk > li.ui-silk-page-white-key:before {
+	background-position: -272px -320px;
+}
+.ui-silk-page-white-lightning,
+ul.ui-silk-page-white-lightning > li:before,
+ul.ui-silk > li.ui-silk-page-white-lightning:before {
+	background-position: -288px -320px;
+}
+.ui-silk-page-white-link,
+ul.ui-silk-page-white-link > li:before,
+ul.ui-silk > li.ui-silk-page-white-link:before {
+	background-position: -304px -320px;
+}
+.ui-silk-page-white-magnify,
+ul.ui-silk-page-white-magnify > li:before,
+ul.ui-silk > li.ui-silk-page-white-magnify:before {
+	background-position: -320px -320px;
+}
+.ui-silk-page-white-medal,
+ul.ui-silk-page-white-medal > li:before,
+ul.ui-silk > li.ui-silk-page-white-medal:before {
+	background-position: -336px -320px;
+}
+.ui-silk-page-white-office,
+ul.ui-silk-page-white-office > li:before,
+ul.ui-silk > li.ui-silk-page-white-office:before {
+	background-position: -352px -320px;
+}
+.ui-silk-page-white-paint,
+ul.ui-silk-page-white-paint > li:before,
+ul.ui-silk > li.ui-silk-page-white-paint:before {
+	background-position: -368px -320px;
+}
+.ui-silk-page-white-paintbrush,
+ul.ui-silk-page-white-paintbrush > li:before,
+ul.ui-silk > li.ui-silk-page-white-paintbrush:before {
+	background-position: -384px -320px;
+}
+.ui-silk-page-white-paste,
+ul.ui-silk-page-white-paste > li:before,
+ul.ui-silk > li.ui-silk-page-white-paste:before {
+	background-position: -400px -320px;
+}
+.ui-silk-page-white-php,
+ul.ui-silk-page-white-php > li:before,
+ul.ui-silk > li.ui-silk-page-white-php:before {
+	background-position: -416px -320px;
+}
+.ui-silk-page-white-picture,
+ul.ui-silk-page-white-picture > li:before,
+ul.ui-silk > li.ui-silk-page-white-picture:before {
+	background-position: -432px -320px;
+}
+.ui-silk-page-white-powerpoint,
+ul.ui-silk-page-white-powerpoint > li:before,
+ul.ui-silk > li.ui-silk-page-white-powerpoint:before {
+	background-position: -448px -320px;
+}
+.ui-silk-page-white-put,
+ul.ui-silk-page-white-put > li:before,
+ul.ui-silk > li.ui-silk-page-white-put:before {
+	background-position: -464px -320px;
+}
+.ui-silk-page-white-ruby,
+ul.ui-silk-page-white-ruby > li:before,
+ul.ui-silk > li.ui-silk-page-white-ruby:before {
+	background-position: -480px -320px;
+}
+.ui-silk-page-white-stack,
+ul.ui-silk-page-white-stack > li:before,
+ul.ui-silk > li.ui-silk-page-white-stack:before {
+	background-position: -496px -320px;
+}
+.ui-silk-page-white-star,
+ul.ui-silk-page-white-star > li:before,
+ul.ui-silk > li.ui-silk-page-white-star:before {
+	background-position: 0 -336px;
+}
+.ui-silk-page-white-swoosh,
+ul.ui-silk-page-white-swoosh > li:before,
+ul.ui-silk > li.ui-silk-page-white-swoosh:before {
+	background-position: -16px -336px;
+}
+.ui-silk-page-white-text,
+ul.ui-silk-page-white-text > li:before,
+ul.ui-silk > li.ui-silk-page-white-text:before {
+	background-position: -32px -336px;
+}
+.ui-silk-page-white-text-width,
+ul.ui-silk-page-white-text-width > li:before,
+ul.ui-silk > li.ui-silk-page-white-text-width:before {
+	background-position: -48px -336px;
+}
+.ui-silk-page-white-tux,
+ul.ui-silk-page-white-tux > li:before,
+ul.ui-silk > li.ui-silk-page-white-tux:before {
+	background-position: -64px -336px;
+}
+.ui-silk-page-white-vector,
+ul.ui-silk-page-white-vector > li:before,
+ul.ui-silk > li.ui-silk-page-white-vector:before {
+	background-position: -80px -336px;
+}
+.ui-silk-page-white-visualstudio,
+ul.ui-silk-page-white-visualstudio > li:before,
+ul.ui-silk > li.ui-silk-page-white-visualstudio:before {
+	background-position: -96px -336px;
+}
+.ui-silk-page-white-width,
+ul.ui-silk-page-white-width > li:before,
+ul.ui-silk > li.ui-silk-page-white-width:before {
+	background-position: -112px -336px;
+}
+.ui-silk-page-white-word,
+ul.ui-silk-page-white-word > li:before,
+ul.ui-silk > li.ui-silk-page-white-word:before {
+	background-position: -128px -336px;
+}
+.ui-silk-page-white-world,
+ul.ui-silk-page-white-world > li:before,
+ul.ui-silk > li.ui-silk-page-white-world:before {
+	background-position: -144px -336px;
+}
+.ui-silk-page-white-wrench,
+ul.ui-silk-page-white-wrench > li:before,
+ul.ui-silk > li.ui-silk-page-white-wrench:before {
+	background-position: -160px -336px;
+}
+.ui-silk-page-white-zip,
+ul.ui-silk-page-white-zip > li:before,
+ul.ui-silk > li.ui-silk-page-white-zip:before {
+	background-position: -176px -336px;
+}
+.ui-silk-page-word,
+ul.ui-silk-page-word > li:before,
+ul.ui-silk > li.ui-silk-page-word:before {
+	background-position: -192px -336px;
+}
+.ui-silk-page-world,
+ul.ui-silk-page-world > li:before,
+ul.ui-silk > li.ui-silk-page-world:before {
+	background-position: -208px -336px;
+}
+.ui-silk-paintbrush,
+ul.ui-silk-paintbrush > li:before,
+ul.ui-silk > li.ui-silk-paintbrush:before {
+	background-position: -224px -336px;
+}
+.ui-silk-paintcan,
+ul.ui-silk-paintcan > li:before,
+ul.ui-silk > li.ui-silk-paintcan:before {
+	background-position: -240px -336px;
+}
+.ui-silk-palette,
+ul.ui-silk-palette > li:before,
+ul.ui-silk > li.ui-silk-palette:before {
+	background-position: -256px -336px;
+}
+.ui-silk-paste-plain,
+ul.ui-silk-paste-plain > li:before,
+ul.ui-silk > li.ui-silk-paste-plain:before {
+	background-position: -272px -336px;
+}
+.ui-silk-paste-word,
+ul.ui-silk-paste-word > li:before,
+ul.ui-silk > li.ui-silk-paste-word:before {
+	background-position: -288px -336px;
+}
+.ui-silk-pencil,
+ul.ui-silk-pencil > li:before,
+ul.ui-silk > li.ui-silk-pencil:before {
+	background-position: -304px -336px;
+}
+.ui-silk-pencil-add,
+ul.ui-silk-pencil-add > li:before,
+ul.ui-silk > li.ui-silk-pencil-add:before {
+	background-position: -320px -336px;
+}
+.ui-silk-pencil-delete,
+ul.ui-silk-pencil-delete > li:before,
+ul.ui-silk > li.ui-silk-pencil-delete:before {
+	background-position: -336px -336px;
+}
+.ui-silk-pencil-go,
+ul.ui-silk-pencil-go > li:before,
+ul.ui-silk > li.ui-silk-pencil-go:before {
+	background-position: -352px -336px;
+}
+.ui-silk-phone,
+ul.ui-silk-phone > li:before,
+ul.ui-silk > li.ui-silk-phone:before {
+	background-position: -368px -336px;
+}
+.ui-silk-phone-add,
+ul.ui-silk-phone-add > li:before,
+ul.ui-silk > li.ui-silk-phone-add:before {
+	background-position: -384px -336px;
+}
+.ui-silk-phone-delete,
+ul.ui-silk-phone-delete > li:before,
+ul.ui-silk > li.ui-silk-phone-delete:before {
+	background-position: -400px -336px;
+}
+.ui-silk-phone-sound,
+ul.ui-silk-phone-sound > li:before,
+ul.ui-silk > li.ui-silk-phone-sound:before {
+	background-position: -416px -336px;
+}
+.ui-silk-photo,
+ul.ui-silk-photo > li:before,
+ul.ui-silk > li.ui-silk-photo:before {
+	background-position: -432px -336px;
+}
+.ui-silk-photos,
+ul.ui-silk-photos > li:before,
+ul.ui-silk > li.ui-silk-photos:before {
+	background-position: -448px -336px;
+}
+.ui-silk-photo-add,
+ul.ui-silk-photo-add > li:before,
+ul.ui-silk > li.ui-silk-photo-add:before {
+	background-position: -464px -336px;
+}
+.ui-silk-photo-delete,
+ul.ui-silk-photo-delete > li:before,
+ul.ui-silk > li.ui-silk-photo-delete:before {
+	background-position: -480px -336px;
+}
+.ui-silk-photo-link,
+ul.ui-silk-photo-link > li:before,
+ul.ui-silk > li.ui-silk-photo-link:before {
+	background-position: -496px -336px;
+}
+.ui-silk-picture,
+ul.ui-silk-picture > li:before,
+ul.ui-silk > li.ui-silk-picture:before {
+	background-position: 0 -352px;
+}
+.ui-silk-pictures,
+ul.ui-silk-pictures > li:before,
+ul.ui-silk > li.ui-silk-pictures:before {
+	background-position: -16px -352px;
+}
+.ui-silk-picture-add,
+ul.ui-silk-picture-add > li:before,
+ul.ui-silk > li.ui-silk-picture-add:before {
+	background-position: -32px -352px;
+}
+.ui-silk-picture-delete,
+ul.ui-silk-picture-delete > li:before,
+ul.ui-silk > li.ui-silk-picture-delete:before {
+	background-position: -48px -352px;
+}
+.ui-silk-picture-edit,
+ul.ui-silk-picture-edit > li:before,
+ul.ui-silk > li.ui-silk-picture-edit:before {
+	background-position: -64px -352px;
+}
+.ui-silk-picture-empty,
+ul.ui-silk-picture-empty > li:before,
+ul.ui-silk > li.ui-silk-picture-empty:before {
+	background-position: -80px -352px;
+}
+.ui-silk-picture-error,
+ul.ui-silk-picture-error > li:before,
+ul.ui-silk > li.ui-silk-picture-error:before {
+	background-position: -96px -352px;
+}
+.ui-silk-picture-go,
+ul.ui-silk-picture-go > li:before,
+ul.ui-silk > li.ui-silk-picture-go:before {
+	background-position: -112px -352px;
+}
+.ui-silk-picture-key,
+ul.ui-silk-picture-key > li:before,
+ul.ui-silk > li.ui-silk-picture-key:before {
+	background-position: -128px -352px;
+}
+.ui-silk-picture-link,
+ul.ui-silk-picture-link > li:before,
+ul.ui-silk > li.ui-silk-picture-link:before {
+	background-position: -144px -352px;
+}
+.ui-silk-picture-save,
+ul.ui-silk-picture-save > li:before,
+ul.ui-silk > li.ui-silk-picture-save:before {
+	background-position: -160px -352px;
+}
+.ui-silk-pilcrow,
+ul.ui-silk-pilcrow > li:before,
+ul.ui-silk > li.ui-silk-pilcrow:before {
+	background-position: -176px -352px;
+}
+.ui-silk-pill,
+ul.ui-silk-pill > li:before,
+ul.ui-silk > li.ui-silk-pill:before {
+	background-position: -192px -352px;
+}
+.ui-silk-pill-add,
+ul.ui-silk-pill-add > li:before,
+ul.ui-silk > li.ui-silk-pill-add:before {
+	background-position: -208px -352px;
+}
+.ui-silk-pill-delete,
+ul.ui-silk-pill-delete > li:before,
+ul.ui-silk > li.ui-silk-pill-delete:before {
+	background-position: -224px -352px;
+}
+.ui-silk-pill-go,
+ul.ui-silk-pill-go > li:before,
+ul.ui-silk > li.ui-silk-pill-go:before {
+	background-position: -240px -352px;
+}
+.ui-silk-plugin,
+ul.ui-silk-plugin > li:before,
+ul.ui-silk > li.ui-silk-plugin:before {
+	background-position: -256px -352px;
+}
+.ui-silk-plugin-add,
+ul.ui-silk-plugin-add > li:before,
+ul.ui-silk > li.ui-silk-plugin-add:before {
+	background-position: -272px -352px;
+}
+.ui-silk-plugin-delete,
+ul.ui-silk-plugin-delete > li:before,
+ul.ui-silk > li.ui-silk-plugin-delete:before {
+	background-position: -288px -352px;
+}
+.ui-silk-plugin-disabled,
+ul.ui-silk-plugin-disabled > li:before,
+ul.ui-silk > li.ui-silk-plugin-disabled:before {
+	background-position: -304px -352px;
+}
+.ui-silk-plugin-edit,
+ul.ui-silk-plugin-edit > li:before,
+ul.ui-silk > li.ui-silk-plugin-edit:before {
+	background-position: -320px -352px;
+}
+.ui-silk-plugin-error,
+ul.ui-silk-plugin-error > li:before,
+ul.ui-silk > li.ui-silk-plugin-error:before {
+	background-position: -336px -352px;
+}
+.ui-silk-plugin-go,
+ul.ui-silk-plugin-go > li:before,
+ul.ui-silk > li.ui-silk-plugin-go:before {
+	background-position: -352px -352px;
+}
+.ui-silk-plugin-link,
+ul.ui-silk-plugin-link > li:before,
+ul.ui-silk > li.ui-silk-plugin-link:before {
+	background-position: -368px -352px;
+}
+.ui-silk-printer,
+ul.ui-silk-printer > li:before,
+ul.ui-silk > li.ui-silk-printer:before {
+	background-position: -384px -352px;
+}
+.ui-silk-printer-add,
+ul.ui-silk-printer-add > li:before,
+ul.ui-silk > li.ui-silk-printer-add:before {
+	background-position: -400px -352px;
+}
+.ui-silk-printer-delete,
+ul.ui-silk-printer-delete > li:before,
+ul.ui-silk > li.ui-silk-printer-delete:before {
+	background-position: -416px -352px;
+}
+.ui-silk-printer-empty,
+ul.ui-silk-printer-empty > li:before,
+ul.ui-silk > li.ui-silk-printer-empty:before {
+	background-position: -432px -352px;
+}
+.ui-silk-printer-error,
+ul.ui-silk-printer-error > li:before,
+ul.ui-silk > li.ui-silk-printer-error:before {
+	background-position: -448px -352px;
+}
+.ui-silk-rainbow,
+ul.ui-silk-rainbow > li:before,
+ul.ui-silk > li.ui-silk-rainbow:before {
+	background-position: -464px -352px;
+}
+.ui-silk-report,
+ul.ui-silk-report > li:before,
+ul.ui-silk > li.ui-silk-report:before {
+	background-position: -480px -352px;
+}
+.ui-silk-report-add,
+ul.ui-silk-report-add > li:before,
+ul.ui-silk > li.ui-silk-report-add:before {
+	background-position: -496px -352px;
+}
+.ui-silk-report-delete,
+ul.ui-silk-report-delete > li:before,
+ul.ui-silk > li.ui-silk-report-delete:before {
+	background-position: 0 -368px;
+}
+.ui-silk-report-disk,
+ul.ui-silk-report-disk > li:before,
+ul.ui-silk > li.ui-silk-report-disk:before {
+	background-position: -16px -368px;
+}
+.ui-silk-report-edit,
+ul.ui-silk-report-edit > li:before,
+ul.ui-silk > li.ui-silk-report-edit:before {
+	background-position: -32px -368px;
+}
+.ui-silk-report-go,
+ul.ui-silk-report-go > li:before,
+ul.ui-silk > li.ui-silk-report-go:before {
+	background-position: -48px -368px;
+}
+.ui-silk-report-key,
+ul.ui-silk-report-key > li:before,
+ul.ui-silk > li.ui-silk-report-key:before {
+	background-position: -64px -368px;
+}
+.ui-silk-report-link,
+ul.ui-silk-report-link > li:before,
+ul.ui-silk > li.ui-silk-report-link:before {
+	background-position: -80px -368px;
+}
+.ui-silk-report-magnify,
+ul.ui-silk-report-magnify > li:before,
+ul.ui-silk > li.ui-silk-report-magnify:before {
+	background-position: -96px -368px;
+}
+.ui-silk-report-picture,
+ul.ui-silk-report-picture > li:before,
+ul.ui-silk > li.ui-silk-report-picture:before {
+	background-position: -112px -368px;
+}
+.ui-silk-report-user,
+ul.ui-silk-report-user > li:before,
+ul.ui-silk > li.ui-silk-report-user:before {
+	background-position: -128px -368px;
+}
+.ui-silk-report-word,
+ul.ui-silk-report-word > li:before,
+ul.ui-silk > li.ui-silk-report-word:before {
+	background-position: -144px -368px;
+}
+.ui-silk-resultset-first,
+ul.ui-silk-resultset-first > li:before,
+ul.ui-silk > li.ui-silk-resultset-first:before {
+	background-position: -160px -368px;
+}
+.ui-silk-resultset-last,
+ul.ui-silk-resultset-last > li:before,
+ul.ui-silk > li.ui-silk-resultset-last:before {
+	background-position: -176px -368px;
+}
+.ui-silk-resultset-next,
+ul.ui-silk-resultset-next > li:before,
+ul.ui-silk > li.ui-silk-resultset-next:before {
+	background-position: -192px -368px;
+}
+.ui-silk-resultset-previous,
+ul.ui-silk-resultset-previous > li:before,
+ul.ui-silk > li.ui-silk-resultset-previous:before {
+	background-position: -208px -368px;
+}
+.ui-silk-rosette,
+ul.ui-silk-rosette > li:before,
+ul.ui-silk > li.ui-silk-rosette:before {
+	background-position: -224px -368px;
+}
+.ui-silk-rss,
+ul.ui-silk-rss > li:before,
+ul.ui-silk > li.ui-silk-rss:before {
+	background-position: -240px -368px;
+}
+.ui-silk-rss-add,
+ul.ui-silk-rss-add > li:before,
+ul.ui-silk > li.ui-silk-rss-add:before {
+	background-position: -256px -368px;
+}
+.ui-silk-rss-delete,
+ul.ui-silk-rss-delete > li:before,
+ul.ui-silk > li.ui-silk-rss-delete:before {
+	background-position: -272px -368px;
+}
+.ui-silk-rss-go,
+ul.ui-silk-rss-go > li:before,
+ul.ui-silk > li.ui-silk-rss-go:before {
+	background-position: -288px -368px;
+}
+.ui-silk-rss-valid,
+ul.ui-silk-rss-valid > li:before,
+ul.ui-silk > li.ui-silk-rss-valid:before {
+	background-position: -304px -368px;
+}
+.ui-silk-ruby,
+ul.ui-silk-ruby > li:before,
+ul.ui-silk > li.ui-silk-ruby:before {
+	background-position: -320px -368px;
+}
+.ui-silk-ruby-add,
+ul.ui-silk-ruby-add > li:before,
+ul.ui-silk > li.ui-silk-ruby-add:before {
+	background-position: -336px -368px;
+}
+.ui-silk-ruby-delete,
+ul.ui-silk-ruby-delete > li:before,
+ul.ui-silk > li.ui-silk-ruby-delete:before {
+	background-position: -352px -368px;
+}
+.ui-silk-ruby-gear,
+ul.ui-silk-ruby-gear > li:before,
+ul.ui-silk > li.ui-silk-ruby-gear:before {
+	background-position: -368px -368px;
+}
+.ui-silk-ruby-get,
+ul.ui-silk-ruby-get > li:before,
+ul.ui-silk > li.ui-silk-ruby-get:before {
+	background-position: -384px -368px;
+}
+.ui-silk-ruby-go,
+ul.ui-silk-ruby-go > li:before,
+ul.ui-silk > li.ui-silk-ruby-go:before {
+	background-position: -400px -368px;
+}
+.ui-silk-ruby-key,
+ul.ui-silk-ruby-key > li:before,
+ul.ui-silk > li.ui-silk-ruby-key:before {
+	background-position: -416px -368px;
+}
+.ui-silk-ruby-link,
+ul.ui-silk-ruby-link > li:before,
+ul.ui-silk > li.ui-silk-ruby-link:before {
+	background-position: -432px -368px;
+}
+.ui-silk-ruby-put,
+ul.ui-silk-ruby-put > li:before,
+ul.ui-silk > li.ui-silk-ruby-put:before {
+	background-position: -448px -368px;
+}
+.ui-silk-script,
+ul.ui-silk-script > li:before,
+ul.ui-silk > li.ui-silk-script:before {
+	background-position: -464px -368px;
+}
+.ui-silk-script-add,
+ul.ui-silk-script-add > li:before,
+ul.ui-silk > li.ui-silk-script-add:before {
+	background-position: -480px -368px;
+}
+.ui-silk-script-code,
+ul.ui-silk-script-code > li:before,
+ul.ui-silk > li.ui-silk-script-code:before {
+	background-position: -496px -368px;
+}
+.ui-silk-script-code-red,
+ul.ui-silk-script-code-red > li:before,
+ul.ui-silk > li.ui-silk-script-code-red:before {
+	background-position: 0 -384px;
+}
+.ui-silk-script-delete,
+ul.ui-silk-script-delete > li:before,
+ul.ui-silk > li.ui-silk-script-delete:before {
+	background-position: -16px -384px;
+}
+.ui-silk-script-edit,
+ul.ui-silk-script-edit > li:before,
+ul.ui-silk > li.ui-silk-script-edit:before {
+	background-position: -32px -384px;
+}
+.ui-silk-script-error,
+ul.ui-silk-script-error > li:before,
+ul.ui-silk > li.ui-silk-script-error:before {
+	background-position: -48px -384px;
+}
+.ui-silk-script-gear,
+ul.ui-silk-script-gear > li:before,
+ul.ui-silk > li.ui-silk-script-gear:before {
+	background-position: -64px -384px;
+}
+.ui-silk-script-go,
+ul.ui-silk-script-go > li:before,
+ul.ui-silk > li.ui-silk-script-go:before {
+	background-position: -80px -384px;
+}
+.ui-silk-script-key,
+ul.ui-silk-script-key > li:before,
+ul.ui-silk > li.ui-silk-script-key:before {
+	background-position: -96px -384px;
+}
+.ui-silk-script-lightning,
+ul.ui-silk-script-lightning > li:before,
+ul.ui-silk > li.ui-silk-script-lightning:before {
+	background-position: -112px -384px;
+}
+.ui-silk-script-link,
+ul.ui-silk-script-link > li:before,
+ul.ui-silk > li.ui-silk-script-link:before {
+	background-position: -128px -384px;
+}
+.ui-silk-script-palette,
+ul.ui-silk-script-palette > li:before,
+ul.ui-silk > li.ui-silk-script-palette:before {
+	background-position: -144px -384px;
+}
+.ui-silk-script-save,
+ul.ui-silk-script-save > li:before,
+ul.ui-silk > li.ui-silk-script-save:before {
+	background-position: -160px -384px;
+}
+.ui-silk-server,
+ul.ui-silk-server > li:before,
+ul.ui-silk > li.ui-silk-server:before {
+	background-position: -176px -384px;
+}
+.ui-silk-server-add,
+ul.ui-silk-server-add > li:before,
+ul.ui-silk > li.ui-silk-server-add:before {
+	background-position: -192px -384px;
+}
+.ui-silk-server-chart,
+ul.ui-silk-server-chart > li:before,
+ul.ui-silk > li.ui-silk-server-chart:before {
+	background-position: -208px -384px;
+}
+.ui-silk-server-compressed,
+ul.ui-silk-server-compressed > li:before,
+ul.ui-silk > li.ui-silk-server-compressed:before {
+	background-position: -224px -384px;
+}
+.ui-silk-server-connect,
+ul.ui-silk-server-connect > li:before,
+ul.ui-silk > li.ui-silk-server-connect:before {
+	background-position: -240px -384px;
+}
+.ui-silk-server-database,
+ul.ui-silk-server-database > li:before,
+ul.ui-silk > li.ui-silk-server-database:before {
+	background-position: -256px -384px;
+}
+.ui-silk-server-delete,
+ul.ui-silk-server-delete > li:before,
+ul.ui-silk > li.ui-silk-server-delete:before {
+	background-position: -272px -384px;
+}
+.ui-silk-server-edit,
+ul.ui-silk-server-edit > li:before,
+ul.ui-silk > li.ui-silk-server-edit:before {
+	background-position: -288px -384px;
+}
+.ui-silk-server-error,
+ul.ui-silk-server-error > li:before,
+ul.ui-silk > li.ui-silk-server-error:before {
+	background-position: -304px -384px;
+}
+.ui-silk-server-go,
+ul.ui-silk-server-go > li:before,
+ul.ui-silk > li.ui-silk-server-go:before {
+	background-position: -320px -384px;
+}
+.ui-silk-server-key,
+ul.ui-silk-server-key > li:before,
+ul.ui-silk > li.ui-silk-server-key:before {
+	background-position: -336px -384px;
+}
+.ui-silk-server-lightning,
+ul.ui-silk-server-lightning > li:before,
+ul.ui-silk > li.ui-silk-server-lightning:before {
+	background-position: -352px -384px;
+}
+.ui-silk-server-link,
+ul.ui-silk-server-link > li:before,
+ul.ui-silk > li.ui-silk-server-link:before {
+	background-position: -368px -384px;
+}
+.ui-silk-server-uncompressed,
+ul.ui-silk-server-uncompressed > li:before,
+ul.ui-silk > li.ui-silk-server-uncompressed:before {
+	background-position: -384px -384px;
+}
+.ui-silk-shading,
+ul.ui-silk-shading > li:before,
+ul.ui-silk > li.ui-silk-shading:before {
+	background-position: -400px -384px;
+}
+.ui-silk-shape-align-bottom,
+ul.ui-silk-shape-align-bottom > li:before,
+ul.ui-silk > li.ui-silk-shape-align-bottom:before {
+	background-position: -416px -384px;
+}
+.ui-silk-shape-align-center,
+ul.ui-silk-shape-align-center > li:before,
+ul.ui-silk > li.ui-silk-shape-align-center:before {
+	background-position: -432px -384px;
+}
+.ui-silk-shape-align-left,
+ul.ui-silk-shape-align-left > li:before,
+ul.ui-silk > li.ui-silk-shape-align-left:before {
+	background-position: -448px -384px;
+}
+.ui-silk-shape-align-middle,
+ul.ui-silk-shape-align-middle > li:before,
+ul.ui-silk > li.ui-silk-shape-align-middle:before {
+	background-position: -464px -384px;
+}
+.ui-silk-shape-align-right,
+ul.ui-silk-shape-align-right > li:before,
+ul.ui-silk > li.ui-silk-shape-align-right:before {
+	background-position: -480px -384px;
+}
+.ui-silk-shape-align-top,
+ul.ui-silk-shape-align-top > li:before,
+ul.ui-silk > li.ui-silk-shape-align-top:before {
+	background-position: -496px -384px;
+}
+.ui-silk-shape-flip-horizontal,
+ul.ui-silk-shape-flip-horizontal > li:before,
+ul.ui-silk > li.ui-silk-shape-flip-horizontal:before {
+	background-position: 0 -400px;
+}
+.ui-silk-shape-flip-vertical,
+ul.ui-silk-shape-flip-vertical > li:before,
+ul.ui-silk > li.ui-silk-shape-flip-vertical:before {
+	background-position: -16px -400px;
+}
+.ui-silk-shape-group,
+ul.ui-silk-shape-group > li:before,
+ul.ui-silk > li.ui-silk-shape-group:before {
+	background-position: -32px -400px;
+}
+.ui-silk-shape-handles,
+ul.ui-silk-shape-handles > li:before,
+ul.ui-silk > li.ui-silk-shape-handles:before {
+	background-position: -48px -400px;
+}
+.ui-silk-shape-move-back,
+ul.ui-silk-shape-move-back > li:before,
+ul.ui-silk > li.ui-silk-shape-move-back:before {
+	background-position: -64px -400px;
+}
+.ui-silk-shape-move-backwards,
+ul.ui-silk-shape-move-backwards > li:before,
+ul.ui-silk > li.ui-silk-shape-move-backwards:before {
+	background-position: -80px -400px;
+}
+.ui-silk-shape-move-forwards,
+ul.ui-silk-shape-move-forwards > li:before,
+ul.ui-silk > li.ui-silk-shape-move-forwards:before {
+	background-position: -96px -400px;
+}
+.ui-silk-shape-move-front,
+ul.ui-silk-shape-move-front > li:before,
+ul.ui-silk > li.ui-silk-shape-move-front:before {
+	background-position: -112px -400px;
+}
+.ui-silk-shape-rotate-anticlockwise,
+ul.ui-silk-shape-rotate-anticlockwise > li:before,
+ul.ui-silk > li.ui-silk-shape-rotate-anticlockwise:before {
+	background-position: -128px -400px;
+}
+.ui-silk-shape-rotate-clockwise,
+ul.ui-silk-shape-rotate-clockwise > li:before,
+ul.ui-silk > li.ui-silk-shape-rotate-clockwise:before {
+	background-position: -144px -400px;
+}
+.ui-silk-shape-square,
+ul.ui-silk-shape-square > li:before,
+ul.ui-silk > li.ui-silk-shape-square:before {
+	background-position: -160px -400px;
+}
+.ui-silk-shape-square-add,
+ul.ui-silk-shape-square-add > li:before,
+ul.ui-silk > li.ui-silk-shape-square-add:before {
+	background-position: -176px -400px;
+}
+.ui-silk-shape-square-delete,
+ul.ui-silk-shape-square-delete > li:before,
+ul.ui-silk > li.ui-silk-shape-square-delete:before {
+	background-position: -192px -400px;
+}
+.ui-silk-shape-square-edit,
+ul.ui-silk-shape-square-edit > li:before,
+ul.ui-silk > li.ui-silk-shape-square-edit:before {
+	background-position: -208px -400px;
+}
+.ui-silk-shape-square-error,
+ul.ui-silk-shape-square-error > li:before,
+ul.ui-silk > li.ui-silk-shape-square-error:before {
+	background-position: -224px -400px;
+}
+.ui-silk-shape-square-go,
+ul.ui-silk-shape-square-go > li:before,
+ul.ui-silk > li.ui-silk-shape-square-go:before {
+	background-position: -240px -400px;
+}
+.ui-silk-shape-square-key,
+ul.ui-silk-shape-square-key > li:before,
+ul.ui-silk > li.ui-silk-shape-square-key:before {
+	background-position: -256px -400px;
+}
+.ui-silk-shape-square-link,
+ul.ui-silk-shape-square-link > li:before,
+ul.ui-silk > li.ui-silk-shape-square-link:before {
+	background-position: -272px -400px;
+}
+.ui-silk-shape-ungroup,
+ul.ui-silk-shape-ungroup > li:before,
+ul.ui-silk > li.ui-silk-shape-ungroup:before {
+	background-position: -288px -400px;
+}
+.ui-silk-shield,
+ul.ui-silk-shield > li:before,
+ul.ui-silk > li.ui-silk-shield:before {
+	background-position: -304px -400px;
+}
+.ui-silk-shield-add,
+ul.ui-silk-shield-add > li:before,
+ul.ui-silk > li.ui-silk-shield-add:before {
+	background-position: -320px -400px;
+}
+.ui-silk-shield-delete,
+ul.ui-silk-shield-delete > li:before,
+ul.ui-silk > li.ui-silk-shield-delete:before {
+	background-position: -336px -400px;
+}
+.ui-silk-shield-go,
+ul.ui-silk-shield-go > li:before,
+ul.ui-silk > li.ui-silk-shield-go:before {
+	background-position: -352px -400px;
+}
+.ui-silk-sitemap,
+ul.ui-silk-sitemap > li:before,
+ul.ui-silk > li.ui-silk-sitemap:before {
+	background-position: -368px -400px;
+}
+.ui-silk-sitemap-color,
+ul.ui-silk-sitemap-color > li:before,
+ul.ui-silk > li.ui-silk-sitemap-color:before {
+	background-position: -384px -400px;
+}
+.ui-silk-sound,
+ul.ui-silk-sound > li:before,
+ul.ui-silk > li.ui-silk-sound:before {
+	background-position: -400px -400px;
+}
+.ui-silk-sound-add,
+ul.ui-silk-sound-add > li:before,
+ul.ui-silk > li.ui-silk-sound-add:before {
+	background-position: -416px -400px;
+}
+.ui-silk-sound-delete,
+ul.ui-silk-sound-delete > li:before,
+ul.ui-silk > li.ui-silk-sound-delete:before {
+	background-position: -432px -400px;
+}
+.ui-silk-sound-low,
+ul.ui-silk-sound-low > li:before,
+ul.ui-silk > li.ui-silk-sound-low:before {
+	background-position: -448px -400px;
+}
+.ui-silk-sound-mute,
+ul.ui-silk-sound-mute > li:before,
+ul.ui-silk > li.ui-silk-sound-mute:before {
+	background-position: -464px -400px;
+}
+.ui-silk-sound-none,
+ul.ui-silk-sound-none > li:before,
+ul.ui-silk > li.ui-silk-sound-none:before {
+	background-position: -480px -400px;
+}
+.ui-silk-spellcheck,
+ul.ui-silk-spellcheck > li:before,
+ul.ui-silk > li.ui-silk-spellcheck:before {
+	background-position: -496px -400px;
+}
+.ui-silk-sport-8ball,
+ul.ui-silk-sport-8ball > li:before,
+ul.ui-silk > li.ui-silk-sport-8ball:before {
+	background-position: 0 -416px;
+}
+.ui-silk-sport-basketball,
+ul.ui-silk-sport-basketball > li:before,
+ul.ui-silk > li.ui-silk-sport-basketball:before {
+	background-position: -16px -416px;
+}
+.ui-silk-sport-football,
+ul.ui-silk-sport-football > li:before,
+ul.ui-silk > li.ui-silk-sport-football:before {
+	background-position: -32px -416px;
+}
+.ui-silk-sport-golf,
+ul.ui-silk-sport-golf > li:before,
+ul.ui-silk > li.ui-silk-sport-golf:before {
+	background-position: -48px -416px;
+}
+.ui-silk-sport-raquet,
+ul.ui-silk-sport-raquet > li:before,
+ul.ui-silk > li.ui-silk-sport-raquet:before {
+	background-position: -64px -416px;
+}
+.ui-silk-sport-shuttlecock,
+ul.ui-silk-sport-shuttlecock > li:before,
+ul.ui-silk > li.ui-silk-sport-shuttlecock:before {
+	background-position: -80px -416px;
+}
+.ui-silk-sport-soccer,
+ul.ui-silk-sport-soccer > li:before,
+ul.ui-silk > li.ui-silk-sport-soccer:before {
+	background-position: -96px -416px;
+}
+.ui-silk-sport-tennis,
+ul.ui-silk-sport-tennis > li:before,
+ul.ui-silk > li.ui-silk-sport-tennis:before {
+	background-position: -112px -416px;
+}
+.ui-silk-star,
+ul.ui-silk-star > li:before,
+ul.ui-silk > li.ui-silk-star:before {
+	background-position: -128px -416px;
+}
+.ui-silk-status-away,
+ul.ui-silk-status-away > li:before,
+ul.ui-silk > li.ui-silk-status-away:before {
+	background-position: -144px -416px;
+}
+.ui-silk-status-busy,
+ul.ui-silk-status-busy > li:before,
+ul.ui-silk > li.ui-silk-status-busy:before {
+	background-position: -160px -416px;
+}
+.ui-silk-status-offline,
+ul.ui-silk-status-offline > li:before,
+ul.ui-silk > li.ui-silk-status-offline:before {
+	background-position: -176px -416px;
+}
+.ui-silk-status-online,
+ul.ui-silk-status-online > li:before,
+ul.ui-silk > li.ui-silk-status-online:before {
+	background-position: -192px -416px;
+}
+.ui-silk-stop,
+ul.ui-silk-stop > li:before,
+ul.ui-silk > li.ui-silk-stop:before {
+	background-position: -208px -416px;
+}
+.ui-silk-style,
+ul.ui-silk-style > li:before,
+ul.ui-silk > li.ui-silk-style:before {
+	background-position: -224px -416px;
+}
+.ui-silk-style-add,
+ul.ui-silk-style-add > li:before,
+ul.ui-silk > li.ui-silk-style-add:before {
+	background-position: -240px -416px;
+}
+.ui-silk-style-delete,
+ul.ui-silk-style-delete > li:before,
+ul.ui-silk > li.ui-silk-style-delete:before {
+	background-position: -256px -416px;
+}
+.ui-silk-style-edit,
+ul.ui-silk-style-edit > li:before,
+ul.ui-silk > li.ui-silk-style-edit:before {
+	background-position: -272px -416px;
+}
+.ui-silk-style-go,
+ul.ui-silk-style-go > li:before,
+ul.ui-silk > li.ui-silk-style-go:before {
+	background-position: -288px -416px;
+}
+.ui-silk-sum,
+ul.ui-silk-sum > li:before,
+ul.ui-silk > li.ui-silk-sum:before {
+	background-position: -304px -416px;
+}
+.ui-silk-tab,
+ul.ui-silk-tab > li:before,
+ul.ui-silk > li.ui-silk-tab:before {
+	background-position: -320px -416px;
+}
+.ui-silk-table,
+ul.ui-silk-table > li:before,
+ul.ui-silk > li.ui-silk-table:before {
+	background-position: -336px -416px;
+}
+.ui-silk-table-add,
+ul.ui-silk-table-add > li:before,
+ul.ui-silk > li.ui-silk-table-add:before {
+	background-position: -352px -416px;
+}
+.ui-silk-table-delete,
+ul.ui-silk-table-delete > li:before,
+ul.ui-silk > li.ui-silk-table-delete:before {
+	background-position: -368px -416px;
+}
+.ui-silk-table-edit,
+ul.ui-silk-table-edit > li:before,
+ul.ui-silk > li.ui-silk-table-edit:before {
+	background-position: -384px -416px;
+}
+.ui-silk-table-error,
+ul.ui-silk-table-error > li:before,
+ul.ui-silk > li.ui-silk-table-error:before {
+	background-position: -400px -416px;
+}
+.ui-silk-table-gear,
+ul.ui-silk-table-gear > li:before,
+ul.ui-silk > li.ui-silk-table-gear:before {
+	background-position: -416px -416px;
+}
+.ui-silk-table-go,
+ul.ui-silk-table-go > li:before,
+ul.ui-silk > li.ui-silk-table-go:before {
+	background-position: -432px -416px;
+}
+.ui-silk-table-key,
+ul.ui-silk-table-key > li:before,
+ul.ui-silk > li.ui-silk-table-key:before {
+	background-position: -448px -416px;
+}
+.ui-silk-table-lightning,
+ul.ui-silk-table-lightning > li:before,
+ul.ui-silk > li.ui-silk-table-lightning:before {
+	background-position: -464px -416px;
+}
+.ui-silk-table-link,
+ul.ui-silk-table-link > li:before,
+ul.ui-silk > li.ui-silk-table-link:before {
+	background-position: -480px -416px;
+}
+.ui-silk-table-multiple,
+ul.ui-silk-table-multiple > li:before,
+ul.ui-silk > li.ui-silk-table-multiple:before {
+	background-position: -496px -416px;
+}
+.ui-silk-table-refresh,
+ul.ui-silk-table-refresh > li:before,
+ul.ui-silk > li.ui-silk-table-refresh:before {
+	background-position: 0 -432px;
+}
+.ui-silk-table-relationship,
+ul.ui-silk-table-relationship > li:before,
+ul.ui-silk > li.ui-silk-table-relationship:before {
+	background-position: -16px -432px;
+}
+.ui-silk-table-row-delete,
+ul.ui-silk-table-row-delete > li:before,
+ul.ui-silk > li.ui-silk-table-row-delete:before {
+	background-position: -32px -432px;
+}
+.ui-silk-table-row-insert,
+ul.ui-silk-table-row-insert > li:before,
+ul.ui-silk > li.ui-silk-table-row-insert:before {
+	background-position: -48px -432px;
+}
+.ui-silk-table-save,
+ul.ui-silk-table-save > li:before,
+ul.ui-silk > li.ui-silk-table-save:before {
+	background-position: -64px -432px;
+}
+.ui-silk-table-sort,
+ul.ui-silk-table-sort > li:before,
+ul.ui-silk > li.ui-silk-table-sort:before {
+	background-position: -80px -432px;
+}
+.ui-silk-tab-add,
+ul.ui-silk-tab-add > li:before,
+ul.ui-silk > li.ui-silk-tab-add:before {
+	background-position: -96px -432px;
+}
+.ui-silk-tab-delete,
+ul.ui-silk-tab-delete > li:before,
+ul.ui-silk > li.ui-silk-tab-delete:before {
+	background-position: -112px -432px;
+}
+.ui-silk-tab-edit,
+ul.ui-silk-tab-edit > li:before,
+ul.ui-silk > li.ui-silk-tab-edit:before {
+	background-position: -128px -432px;
+}
+.ui-silk-tab-go,
+ul.ui-silk-tab-go > li:before,
+ul.ui-silk > li.ui-silk-tab-go:before {
+	background-position: -144px -432px;
+}
+.ui-silk-tag,
+ul.ui-silk-tag > li:before,
+ul.ui-silk > li.ui-silk-tag:before {
+	background-position: -160px -432px;
+}
+.ui-silk-tag-blue,
+ul.ui-silk-tag-blue > li:before,
+ul.ui-silk > li.ui-silk-tag-blue:before {
+	background-position: -176px -432px;
+}
+.ui-silk-tag-blue-add,
+ul.ui-silk-tag-blue-add > li:before,
+ul.ui-silk > li.ui-silk-tag-blue-add:before {
+	background-position: -192px -432px;
+}
+.ui-silk-tag-blue-delete,
+ul.ui-silk-tag-blue-delete > li:before,
+ul.ui-silk > li.ui-silk-tag-blue-delete:before {
+	background-position: -208px -432px;
+}
+.ui-silk-tag-blue-edit,
+ul.ui-silk-tag-blue-edit > li:before,
+ul.ui-silk > li.ui-silk-tag-blue-edit:before {
+	background-position: -224px -432px;
+}
+.ui-silk-tag-green,
+ul.ui-silk-tag-green > li:before,
+ul.ui-silk > li.ui-silk-tag-green:before {
+	background-position: -240px -432px;
+}
+.ui-silk-tag-orange,
+ul.ui-silk-tag-orange > li:before,
+ul.ui-silk > li.ui-silk-tag-orange:before {
+	background-position: -256px -432px;
+}
+.ui-silk-tag-pink,
+ul.ui-silk-tag-pink > li:before,
+ul.ui-silk > li.ui-silk-tag-pink:before {
+	background-position: -272px -432px;
+}
+.ui-silk-tag-purple,
+ul.ui-silk-tag-purple > li:before,
+ul.ui-silk > li.ui-silk-tag-purple:before {
+	background-position: -288px -432px;
+}
+.ui-silk-tag-red,
+ul.ui-silk-tag-red > li:before,
+ul.ui-silk > li.ui-silk-tag-red:before {
+	background-position: -304px -432px;
+}
+.ui-silk-tag-yellow,
+ul.ui-silk-tag-yellow > li:before,
+ul.ui-silk > li.ui-silk-tag-yellow:before {
+	background-position: -320px -432px;
+}
+.ui-silk-telephone,
+ul.ui-silk-telephone > li:before,
+ul.ui-silk > li.ui-silk-telephone:before {
+	background-position: -336px -432px;
+}
+.ui-silk-telephone-add,
+ul.ui-silk-telephone-add > li:before,
+ul.ui-silk > li.ui-silk-telephone-add:before {
+	background-position: -352px -432px;
+}
+.ui-silk-telephone-delete,
+ul.ui-silk-telephone-delete > li:before,
+ul.ui-silk > li.ui-silk-telephone-delete:before {
+	background-position: -368px -432px;
+}
+.ui-silk-telephone-edit,
+ul.ui-silk-telephone-edit > li:before,
+ul.ui-silk > li.ui-silk-telephone-edit:before {
+	background-position: -384px -432px;
+}
+.ui-silk-telephone-error,
+ul.ui-silk-telephone-error > li:before,
+ul.ui-silk > li.ui-silk-telephone-error:before {
+	background-position: -400px -432px;
+}
+.ui-silk-telephone-go,
+ul.ui-silk-telephone-go > li:before,
+ul.ui-silk > li.ui-silk-telephone-go:before {
+	background-position: -416px -432px;
+}
+.ui-silk-telephone-key,
+ul.ui-silk-telephone-key > li:before,
+ul.ui-silk > li.ui-silk-telephone-key:before {
+	background-position: -432px -432px;
+}
+.ui-silk-telephone-link,
+ul.ui-silk-telephone-link > li:before,
+ul.ui-silk > li.ui-silk-telephone-link:before {
+	background-position: -448px -432px;
+}
+.ui-silk-television,
+ul.ui-silk-television > li:before,
+ul.ui-silk > li.ui-silk-television:before {
+	background-position: -464px -432px;
+}
+.ui-silk-television-add,
+ul.ui-silk-television-add > li:before,
+ul.ui-silk > li.ui-silk-television-add:before {
+	background-position: -480px -432px;
+}
+.ui-silk-television-delete,
+ul.ui-silk-television-delete > li:before,
+ul.ui-silk > li.ui-silk-television-delete:before {
+	background-position: -496px -432px;
+}
+.ui-silk-textfield,
+ul.ui-silk-textfield > li:before,
+ul.ui-silk > li.ui-silk-textfield:before {
+	background-position: 0 -448px;
+}
+.ui-silk-textfield-add,
+ul.ui-silk-textfield-add > li:before,
+ul.ui-silk > li.ui-silk-textfield-add:before {
+	background-position: -16px -448px;
+}
+.ui-silk-textfield-delete,
+ul.ui-silk-textfield-delete > li:before,
+ul.ui-silk > li.ui-silk-textfield-delete:before {
+	background-position: -32px -448px;
+}
+.ui-silk-textfield-key,
+ul.ui-silk-textfield-key > li:before,
+ul.ui-silk > li.ui-silk-textfield-key:before {
+	background-position: -48px -448px;
+}
+.ui-silk-textfield-rename,
+ul.ui-silk-textfield-rename > li:before,
+ul.ui-silk > li.ui-silk-textfield-rename:before {
+	background-position: -64px -448px;
+}
+.ui-silk-text-align-center,
+ul.ui-silk-text-align-center > li:before,
+ul.ui-silk > li.ui-silk-text-align-center:before {
+	background-position: -80px -448px;
+}
+.ui-silk-text-align-justify,
+ul.ui-silk-text-align-justify > li:before,
+ul.ui-silk > li.ui-silk-text-align-justify:before {
+	background-position: -96px -448px;
+}
+.ui-silk-text-align-left,
+ul.ui-silk-text-align-left > li:before,
+ul.ui-silk > li.ui-silk-text-align-left:before {
+	background-position: -112px -448px;
+}
+.ui-silk-text-align-right,
+ul.ui-silk-text-align-right > li:before,
+ul.ui-silk > li.ui-silk-text-align-right:before {
+	background-position: -128px -448px;
+}
+.ui-silk-text-allcaps,
+ul.ui-silk-text-allcaps > li:before,
+ul.ui-silk > li.ui-silk-text-allcaps:before {
+	background-position: -144px -448px;
+}
+.ui-silk-text-bold,
+ul.ui-silk-text-bold > li:before,
+ul.ui-silk > li.ui-silk-text-bold:before {
+	background-position: -160px -448px;
+}
+.ui-silk-text-columns,
+ul.ui-silk-text-columns > li:before,
+ul.ui-silk > li.ui-silk-text-columns:before {
+	background-position: -176px -448px;
+}
+.ui-silk-text-dropcaps,
+ul.ui-silk-text-dropcaps > li:before,
+ul.ui-silk > li.ui-silk-text-dropcaps:before {
+	background-position: -192px -448px;
+}
+.ui-silk-text-heading-1,
+ul.ui-silk-text-heading-1 > li:before,
+ul.ui-silk > li.ui-silk-text-heading-1:before {
+	background-position: -208px -448px;
+}
+.ui-silk-text-heading-2,
+ul.ui-silk-text-heading-2 > li:before,
+ul.ui-silk > li.ui-silk-text-heading-2:before {
+	background-position: -224px -448px;
+}
+.ui-silk-text-heading-3,
+ul.ui-silk-text-heading-3 > li:before,
+ul.ui-silk > li.ui-silk-text-heading-3:before {
+	background-position: -240px -448px;
+}
+.ui-silk-text-heading-4,
+ul.ui-silk-text-heading-4 > li:before,
+ul.ui-silk > li.ui-silk-text-heading-4:before {
+	background-position: -256px -448px;
+}
+.ui-silk-text-heading-5,
+ul.ui-silk-text-heading-5 > li:before,
+ul.ui-silk > li.ui-silk-text-heading-5:before {
+	background-position: -272px -448px;
+}
+.ui-silk-text-heading-6,
+ul.ui-silk-text-heading-6 > li:before,
+ul.ui-silk > li.ui-silk-text-heading-6:before {
+	background-position: -288px -448px;
+}
+.ui-silk-text-horizontalrule,
+ul.ui-silk-text-horizontalrule > li:before,
+ul.ui-silk > li.ui-silk-text-horizontalrule:before {
+	background-position: -304px -448px;
+}
+.ui-silk-text-indent,
+ul.ui-silk-text-indent > li:before,
+ul.ui-silk > li.ui-silk-text-indent:before {
+	background-position: -320px -448px;
+}
+.ui-silk-text-indent-remove,
+ul.ui-silk-text-indent-remove > li:before,
+ul.ui-silk > li.ui-silk-text-indent-remove:before {
+	background-position: -336px -448px;
+}
+.ui-silk-text-italic,
+ul.ui-silk-text-italic > li:before,
+ul.ui-silk > li.ui-silk-text-italic:before {
+	background-position: -352px -448px;
+}
+.ui-silk-text-kerning,
+ul.ui-silk-text-kerning > li:before,
+ul.ui-silk > li.ui-silk-text-kerning:before {
+	background-position: -368px -448px;
+}
+.ui-silk-text-letterspacing,
+ul.ui-silk-text-letterspacing > li:before,
+ul.ui-silk > li.ui-silk-text-letterspacing:before {
+	background-position: -384px -448px;
+}
+.ui-silk-text-letter-omega,
+ul.ui-silk-text-letter-omega > li:before,
+ul.ui-silk > li.ui-silk-text-letter-omega:before {
+	background-position: -400px -448px;
+}
+.ui-silk-text-linespacing,
+ul.ui-silk-text-linespacing > li:before,
+ul.ui-silk > li.ui-silk-text-linespacing:before {
+	background-position: -416px -448px;
+}
+.ui-silk-text-list-bullets,
+ul.ui-silk-text-list-bullets > li:before,
+ul.ui-silk > li.ui-silk-text-list-bullets:before {
+	background-position: -432px -448px;
+}
+.ui-silk-text-list-numbers,
+ul.ui-silk-text-list-numbers > li:before,
+ul.ui-silk > li.ui-silk-text-list-numbers:before {
+	background-position: -448px -448px;
+}
+.ui-silk-text-lowercase,
+ul.ui-silk-text-lowercase > li:before,
+ul.ui-silk > li.ui-silk-text-lowercase:before {
+	background-position: -464px -448px;
+}
+.ui-silk-text-padding-bottom,
+ul.ui-silk-text-padding-bottom > li:before,
+ul.ui-silk > li.ui-silk-text-padding-bottom:before {
+	background-position: -480px -448px;
+}
+.ui-silk-text-padding-left,
+ul.ui-silk-text-padding-left > li:before,
+ul.ui-silk > li.ui-silk-text-padding-left:before {
+	background-position: -496px -448px;
+}
+.ui-silk-text-padding-right,
+ul.ui-silk-text-padding-right > li:before,
+ul.ui-silk > li.ui-silk-text-padding-right:before {
+	background-position: 0 -464px;
+}
+.ui-silk-text-padding-top,
+ul.ui-silk-text-padding-top > li:before,
+ul.ui-silk > li.ui-silk-text-padding-top:before {
+	background-position: -16px -464px;
+}
+.ui-silk-text-replace,
+ul.ui-silk-text-replace > li:before,
+ul.ui-silk > li.ui-silk-text-replace:before {
+	background-position: -32px -464px;
+}
+.ui-silk-text-signature,
+ul.ui-silk-text-signature > li:before,
+ul.ui-silk > li.ui-silk-text-signature:before {
+	background-position: -48px -464px;
+}
+.ui-silk-text-smallcaps,
+ul.ui-silk-text-smallcaps > li:before,
+ul.ui-silk > li.ui-silk-text-smallcaps:before {
+	background-position: -64px -464px;
+}
+.ui-silk-text-strikethrough,
+ul.ui-silk-text-strikethrough > li:before,
+ul.ui-silk > li.ui-silk-text-strikethrough:before {
+	background-position: -80px -464px;
+}
+.ui-silk-text-subscript,
+ul.ui-silk-text-subscript > li:before,
+ul.ui-silk > li.ui-silk-text-subscript:before {
+	background-position: -96px -464px;
+}
+.ui-silk-text-superscript,
+ul.ui-silk-text-superscript > li:before,
+ul.ui-silk > li.ui-silk-text-superscript:before {
+	background-position: -112px -464px;
+}
+.ui-silk-text-underline,
+ul.ui-silk-text-underline > li:before,
+ul.ui-silk > li.ui-silk-text-underline:before {
+	background-position: -128px -464px;
+}
+.ui-silk-text-uppercase,
+ul.ui-silk-text-uppercase > li:before,
+ul.ui-silk > li.ui-silk-text-uppercase:before {
+	background-position: -144px -464px;
+}
+.ui-silk-thumb-down,
+ul.ui-silk-thumb-down > li:before,
+ul.ui-silk > li.ui-silk-thumb-down:before {
+	background-position: -160px -464px;
+}
+.ui-silk-thumb-up,
+ul.ui-silk-thumb-up > li:before,
+ul.ui-silk > li.ui-silk-thumb-up:before {
+	background-position: -176px -464px;
+}
+.ui-silk-tick,
+ul.ui-silk-tick > li:before,
+ul.ui-silk > li.ui-silk-tick:before {
+	background-position: -192px -464px;
+}
+.ui-silk-time,
+ul.ui-silk-time > li:before,
+ul.ui-silk > li.ui-silk-time:before {
+	background-position: -208px -464px;
+}
+.ui-silk-timeline-marker,
+ul.ui-silk-timeline-marker > li:before,
+ul.ui-silk > li.ui-silk-timeline-marker:before {
+	background-position: -224px -464px;
+}
+.ui-silk-time-add,
+ul.ui-silk-time-add > li:before,
+ul.ui-silk > li.ui-silk-time-add:before {
+	background-position: -240px -464px;
+}
+.ui-silk-time-delete,
+ul.ui-silk-time-delete > li:before,
+ul.ui-silk > li.ui-silk-time-delete:before {
+	background-position: -256px -464px;
+}
+.ui-silk-time-go,
+ul.ui-silk-time-go > li:before,
+ul.ui-silk > li.ui-silk-time-go:before {
+	background-position: -272px -464px;
+}
+.ui-silk-transmit,
+ul.ui-silk-transmit > li:before,
+ul.ui-silk > li.ui-silk-transmit:before {
+	background-position: -288px -464px;
+}
+.ui-silk-transmit-add,
+ul.ui-silk-transmit-add > li:before,
+ul.ui-silk > li.ui-silk-transmit-add:before {
+	background-position: -304px -464px;
+}
+.ui-silk-transmit-blue,
+ul.ui-silk-transmit-blue > li:before,
+ul.ui-silk > li.ui-silk-transmit-blue:before {
+	background-position: -320px -464px;
+}
+.ui-silk-transmit-delete,
+ul.ui-silk-transmit-delete > li:before,
+ul.ui-silk > li.ui-silk-transmit-delete:before {
+	background-position: -336px -464px;
+}
+.ui-silk-transmit-edit,
+ul.ui-silk-transmit-edit > li:before,
+ul.ui-silk > li.ui-silk-transmit-edit:before {
+	background-position: -352px -464px;
+}
+.ui-silk-transmit-error,
+ul.ui-silk-transmit-error > li:before,
+ul.ui-silk > li.ui-silk-transmit-error:before {
+	background-position: -368px -464px;
+}
+.ui-silk-transmit-go,
+ul.ui-silk-transmit-go > li:before,
+ul.ui-silk > li.ui-silk-transmit-go:before {
+	background-position: -384px -464px;
+}
+.ui-silk-tux,
+ul.ui-silk-tux > li:before,
+ul.ui-silk > li.ui-silk-tux:before {
+	background-position: -400px -464px;
+}
+.ui-silk-user,
+ul.ui-silk-user > li:before,
+ul.ui-silk > li.ui-silk-user:before {
+	background-position: -416px -464px;
+}
+.ui-silk-user-add,
+ul.ui-silk-user-add > li:before,
+ul.ui-silk > li.ui-silk-user-add:before {
+	background-position: -432px -464px;
+}
+.ui-silk-user-comment,
+ul.ui-silk-user-comment > li:before,
+ul.ui-silk > li.ui-silk-user-comment:before {
+	background-position: -448px -464px;
+}
+.ui-silk-user-delete,
+ul.ui-silk-user-delete > li:before,
+ul.ui-silk > li.ui-silk-user-delete:before {
+	background-position: -464px -464px;
+}
+.ui-silk-user-edit,
+ul.ui-silk-user-edit > li:before,
+ul.ui-silk > li.ui-silk-user-edit:before {
+	background-position: -480px -464px;
+}
+.ui-silk-user-female,
+ul.ui-silk-user-female > li:before,
+ul.ui-silk > li.ui-silk-user-female:before {
+	background-position: -496px -464px;
+}
+.ui-silk-user-go,
+ul.ui-silk-user-go > li:before,
+ul.ui-silk > li.ui-silk-user-go:before {
+	background-position: 0 -480px;
+}
+.ui-silk-user-gray,
+ul.ui-silk-user-gray > li:before,
+ul.ui-silk > li.ui-silk-user-gray:before {
+	background-position: -16px -480px;
+}
+.ui-silk-user-green,
+ul.ui-silk-user-green > li:before,
+ul.ui-silk > li.ui-silk-user-green:before {
+	background-position: -32px -480px;
+}
+.ui-silk-user-orange,
+ul.ui-silk-user-orange > li:before,
+ul.ui-silk > li.ui-silk-user-orange:before {
+	background-position: -48px -480px;
+}
+.ui-silk-user-red,
+ul.ui-silk-user-red > li:before,
+ul.ui-silk > li.ui-silk-user-red:before {
+	background-position: -64px -480px;
+}
+.ui-silk-user-suit,
+ul.ui-silk-user-suit > li:before,
+ul.ui-silk > li.ui-silk-user-suit:before {
+	background-position: -80px -480px;
+}
+.ui-silk-vcard,
+ul.ui-silk-vcard > li:before,
+ul.ui-silk > li.ui-silk-vcard:before {
+	background-position: -96px -480px;
+}
+.ui-silk-vcard-add,
+ul.ui-silk-vcard-add > li:before,
+ul.ui-silk > li.ui-silk-vcard-add:before {
+	background-position: -112px -480px;
+}
+.ui-silk-vcard-delete,
+ul.ui-silk-vcard-delete > li:before,
+ul.ui-silk > li.ui-silk-vcard-delete:before {
+	background-position: -128px -480px;
+}
+.ui-silk-vcard-edit,
+ul.ui-silk-vcard-edit > li:before,
+ul.ui-silk > li.ui-silk-vcard-edit:before {
+	background-position: -144px -480px;
+}
+.ui-silk-vector,
+ul.ui-silk-vector > li:before,
+ul.ui-silk > li.ui-silk-vector:before {
+	background-position: -160px -480px;
+}
+.ui-silk-vector-add,
+ul.ui-silk-vector-add > li:before,
+ul.ui-silk > li.ui-silk-vector-add:before {
+	background-position: -176px -480px;
+}
+.ui-silk-vector-delete,
+ul.ui-silk-vector-delete > li:before,
+ul.ui-silk > li.ui-silk-vector-delete:before {
+	background-position: -192px -480px;
+}
+.ui-silk-wand,
+ul.ui-silk-wand > li:before,
+ul.ui-silk > li.ui-silk-wand:before {
+	background-position: -208px -480px;
+}
+.ui-silk-weather-clouds,
+ul.ui-silk-weather-clouds > li:before,
+ul.ui-silk > li.ui-silk-weather-clouds:before {
+	background-position: -224px -480px;
+}
+.ui-silk-weather-cloudy,
+ul.ui-silk-weather-cloudy > li:before,
+ul.ui-silk > li.ui-silk-weather-cloudy:before {
+	background-position: -240px -480px;
+}
+.ui-silk-weather-lightning,
+ul.ui-silk-weather-lightning > li:before,
+ul.ui-silk > li.ui-silk-weather-lightning:before {
+	background-position: -256px -480px;
+}
+.ui-silk-weather-rain,
+ul.ui-silk-weather-rain > li:before,
+ul.ui-silk > li.ui-silk-weather-rain:before {
+	background-position: -272px -480px;
+}
+.ui-silk-weather-snow,
+ul.ui-silk-weather-snow > li:before,
+ul.ui-silk > li.ui-silk-weather-snow:before {
+	background-position: -288px -480px;
+}
+.ui-silk-weather-sun,
+ul.ui-silk-weather-sun > li:before,
+ul.ui-silk > li.ui-silk-weather-sun:before {
+	background-position: -304px -480px;
+}
+.ui-silk-webcam,
+ul.ui-silk-webcam > li:before,
+ul.ui-silk > li.ui-silk-webcam:before {
+	background-position: -320px -480px;
+}
+.ui-silk-webcam-add,
+ul.ui-silk-webcam-add > li:before,
+ul.ui-silk > li.ui-silk-webcam-add:before {
+	background-position: -336px -480px;
+}
+.ui-silk-webcam-delete,
+ul.ui-silk-webcam-delete > li:before,
+ul.ui-silk > li.ui-silk-webcam-delete:before {
+	background-position: -352px -480px;
+}
+.ui-silk-webcam-error,
+ul.ui-silk-webcam-error > li:before,
+ul.ui-silk > li.ui-silk-webcam-error:before {
+	background-position: -368px -480px;
+}
+.ui-silk-world,
+ul.ui-silk-world > li:before,
+ul.ui-silk > li.ui-silk-world:before {
+	background-position: -384px -480px;
+}
+.ui-silk-world-add,
+ul.ui-silk-world-add > li:before,
+ul.ui-silk > li.ui-silk-world-add:before {
+	background-position: -400px -480px;
+}
+.ui-silk-world-delete,
+ul.ui-silk-world-delete > li:before,
+ul.ui-silk > li.ui-silk-world-delete:before {
+	background-position: -416px -480px;
+}
+.ui-silk-world-edit,
+ul.ui-silk-world-edit > li:before,
+ul.ui-silk > li.ui-silk-world-edit:before {
+	background-position: -432px -480px;
+}
+.ui-silk-world-go,
+ul.ui-silk-world-go > li:before,
+ul.ui-silk > li.ui-silk-world-go:before {
+	background-position: -448px -480px;
+}
+.ui-silk-world-link,
+ul.ui-silk-world-link > li:before,
+ul.ui-silk > li.ui-silk-world-link:before {
+	background-position: -464px -480px;
+}
+.ui-silk-wrench,
+ul.ui-silk-wrench > li:before,
+ul.ui-silk > li.ui-silk-wrench:before {
+	background-position: -480px -480px;
+}
+.ui-silk-wrench-orange,
+ul.ui-silk-wrench-orange > li:before,
+ul.ui-silk > li.ui-silk-wrench-orange:before {
+	background-position: -496px -480px;
+}
+.ui-silk-xhtml,
+ul.ui-silk-xhtml > li:before,
+ul.ui-silk > li.ui-silk-xhtml:before {
+	background-position: 0 -496px;
+}
+.ui-silk-xhtml-add,
+ul.ui-silk-xhtml-add > li:before,
+ul.ui-silk > li.ui-silk-xhtml-add:before {
+	background-position: -16px -496px;
+}
+.ui-silk-xhtml-delete,
+ul.ui-silk-xhtml-delete > li:before,
+ul.ui-silk > li.ui-silk-xhtml-delete:before {
+	background-position: -32px -496px;
+}
+.ui-silk-xhtml-go,
+ul.ui-silk-xhtml-go > li:before,
+ul.ui-silk > li.ui-silk-xhtml-go:before {
+	background-position: -48px -496px;
+}
+.ui-silk-xhtml-valid,
+ul.ui-silk-xhtml-valid > li:before,
+ul.ui-silk > li.ui-silk-xhtml-valid:before {
+	background-position: -64px -496px;
+}
+.ui-silk-zoom,
+ul.ui-silk-zoom > li:before,
+ul.ui-silk > li.ui-silk-zoom:before {
+	background-position: -80px -496px;
+}
+.ui-silk-zoom-in,
+ul.ui-silk-zoom-in > li:before,
+ul.ui-silk > li.ui-silk-zoom-in:before {
+	background-position: -96px -496px;
+}
+.ui-silk-zoom-out,
+ul.ui-silk-zoom-out > li:before,
+ul.ui-silk > li.ui-silk-zoom-out:before {
+	background-position: -112px -496px;
+}

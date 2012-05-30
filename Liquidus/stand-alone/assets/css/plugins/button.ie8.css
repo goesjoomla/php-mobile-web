@@ -1,0 +1,35 @@
+/**
+ * F6 Liquidus's CSS framework.
+ *
+ * F6 Liquidus's CSS framework is the combination of several well-known CSS
+ * frameworks. The 960 Grid System, the Blueprint and the Emastic CSS Framework
+ * to name a few. So, why need another CSS framework? F6 Liquidus's CSS
+ * framework is created to inherit the pros of existing frameworks while
+ * trying to limit their cons to minimal. Besides that, F6 Liquidus's CSS
+ * framework also contains many build-from-scratch proprietary styles.
+ *
+ * @copyright   Copyright (c) 2011 Manh-Cuong Nguyen
+ * @author      Manh-Cuong Nguyen [nmc] <cuongnm@f6studio.com>
+ * @license     http://f6studio.com/license
+ *
+ * @package     Liquidus
+ * @subpackage  CSS Framework
+ * @link        http://f6studio.com/Liquidus
+ *
+ * @version     1.0.0
+ */
+
+/* Buttons
+-----------------------------------------------------------------------------------------------*/
+
+button, form .button {
+	padding: 4px 5px 5px;
+}
+button {
+	*padding: 1px 5px 8px; /* IE7 */
+	_padding: 2px 5px 7px; /* IE6 */
+}
+form input.button {
+	margin: -5px 0 !important; /* !important => override inline style for IE6 */
+	*padding: 2px 4px 3px 4px; /* IE7- */
+}

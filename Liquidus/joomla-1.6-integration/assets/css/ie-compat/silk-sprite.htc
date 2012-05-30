@@ -1,0 +1,48 @@
+<!--
+/**
+ * F6 Liquidus's CSS framework.
+ *
+ * F6 Liquidus's CSS framework is the combination of several well-known CSS
+ * frameworks. The 960 Grid System, the Blueprint and the Emastic CSS Framework
+ * to name a few. So, why need another CSS framework? F6 Liquidus's CSS
+ * framework is created to inherit the pros of existing frameworks while
+ * trying to limit their cons to minimal. Besides that, F6 Liquidus's CSS
+ * framework also contains many build-from-scratch proprietary styles.
+ *
+ * @copyright   Copyright (c) 2011 Manh-Cuong Nguyen
+ * @author      Manh-Cuong Nguyen [nmc] <cuongnm@f6studio.com>
+ * @license     http://f6studio.com/license
+ *
+ * @package     Liquidus
+ * @subpackage  CSS Framework
+ * @link        http://f6studio.com/Liquidus
+ *
+ * @version     1.0.0
+ */
+-->
+
+<public:attach event="ondocumentready" onevent="fixSilkSprite()" />
+<script type="text/javascript">
+	// fix silk-sprite applied to `ul` using the unsupported `li:before` pseudo-element
+	function fixSilkSprite() {
+		var c = (this.className && this.className.match(/\bui-silk\b/)) ? this.className : this.parentNode.className;
+		if (!(c = c.match(/\b(ui-silk-[^\s]+)\b/)))
+			return;
+
+		var fixedFor = this.getAttribute('fixSilkSprite'),
+		requestFor = this.parentNode.nodeName
+		           + (this.parentNode.className ? '.' + this.parentNode.className.replace(/\s+/, '.') : '')
+		           + ' '
+		           + this.nodeName
+		           + (this.className ? '.' + this.className.replace(/\s+/, '.') : '')
+		           ;
+
+		if (fixedFor && fixedFor == requestFor)
+			return;
+		else if (fixedFor)
+			this.innerHTML = this.innerHTML.replace(/<span class="ui-silk ui-silk-[^\s]+"> <\/span>/i, '');
+
+		this.innerHTML = '<span class="ui-silk ' + c[0] + '"> </span>' + this.innerHTML;
+		this.setAttribute('fixSilkSprite', requestFor);
+	}
+</script>

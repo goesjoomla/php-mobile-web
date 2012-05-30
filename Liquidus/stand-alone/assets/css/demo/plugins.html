@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+/**
+ * F6 Liquidus CSS framework plugins demo.
+ *
+ * F6 Liquidus CSS framework is the combination of several well-known CSS frameworks. The 960 Grid
+ * System, the Blueprint and the Emastic CSS Framework to name a few. So, why need another CSS
+ * framework? F6 Liquidus CSS framework is created to inherit the pros of existing frameworks while
+ * trying to limit their cons to minimal. Besides that, F6 Liquidus CSS framework also contains
+ * many build-from-scratch proprietary styles.
+ *
+ * @copyright   Copyright (c) 2011 Manh-Cuong Nguyen
+ * @author      Manh-Cuong Nguyen [nmc] <cuongnm@f6studio.com>
+ * @license     http://f6studio.com/license
+ *
+ * @package     Liquidus
+ * @subpackage  CSS Framework
+ * @link        http://f6studio.com/Liquidus
+ *
+ * @version     1.0.0
+ */
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr" >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>F6 Liquidus CSS Framework &raquo; Demo &raquo; Plugins</title>
+	<meta name="author" content="The F6 Studio Group">
+	<link rel="stylesheet" href="../reset.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../typography.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../grids/960gs.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/font.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/semantic.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/color.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/message.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/layout.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/silk-sprite.css" type="text/css" media="screen, projection" />
+
+	<!--[if lte IE 7]><link rel="stylesheet" href="../typography.ie7.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/semantics.ie7.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/messages.ie7.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/layout.ie7.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/silk-sprite.ie7.css" type="text/css" media="screen, projection" /><![endif]-->
+
+	<!--[if lte IE 6]><link rel="stylesheet" href="../plugins/silk-sprite.ie6.css" type="text/css" media="screen, projection" /><![endif]-->
+
+	<style type="text/css">
+		h1 { text-shadow: 2px 2px 2px #999; }
+
+		/* navigation */
+		ul#nav, ul#nav ul { margin: -.333em 0 1.333em; border: 1px solid #c6d880; border-width: .25em 0; -webkit-box-shadow: 3px 3px 3px #999; -moz-box-shadow: 3px 3px 3px #999; box-shadow: 3px 3px 3px #999; padding: 0 0 0 1.5em; background: #e6efc2; color: #264409; list-style: none; }
+		ul#nav ul { margin: .75em 0 0 -1.1em; border-width: 0 .25em .25em; padding: 0 .5em .5em 0; }
+		ul#nav li ul ul { position: static; left: auto; margin: 0 0 0 1.25em; border: 0; padding: 0; width: 13em; -webkit-box-shadow: 0; -moz-box-shadow: 0; box-shadow: 0; list-style: circle outside; }
+		ul#nav li { padding: .75em 0; }
+		ul#nav li li { margin-left: .833em !important; padding: 0; }
+		ul#nav li a { padding: 0; }
+
+		/* grids */
+		.grid-lines { background: url(../images/grid_line.png); }
+
+		/* page nav */
+		span.next, span.prev { line-height: 1.25em; vertical-align: top; }
+	</style>
+</head>
+<body>
+	<div class="container_12 grid-lines">
+		<br />
+		<h1>F6 Liquidus CSS framework</h1>
+		<ul id="nav" class="sf-menu">
+			<li>
+				<a href="typography.html">Typography</a>
+				<ul>
+					<li><a href="typography.html#paragraph">Paragraph</a></li>
+					<li><a href="typography.html#lists">Lists</a></li>
+					<li><a href="typography.html#blockquotes">Blockquotes</a></li>
+					<li><a href="typography.html#tables">Tables</a></li>
+					<li><a href="typography.html#preformatted-text">Preformatted text</a></li>
+					<li><a href="typography.html#other-elements">Other elements</a></li>
+				</ul>
+			</li>
+			<li class="active">
+				<a href="plugins.html">Plugins</a>
+				<ul>
+					<li><a href="plugins.html#font">font.css</a></li>
+					<li><a href="plugins.html#semantic">semantic.css</a></li>
+					<li><a href="plugins.html#color">color.css</a></li>
+					<li><a href="plugins.html#message">message.css</a></li>
+					<li><a href="plugins-form.html#form">form.css</a></li>
+					<li><a href="plugins-form.html#button">button.css</a></li>
+					<li><a href="plugins-layout.html#layout">layout.css</a></li>
+					<li><a href="plugins-silk-sprite.html#silk-sprite">silk-sprite.css</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="grids.html">Grids</a>
+				<ul>
+					<li>
+						<a href="grids.html#960-grid-system">960 grid system</a>
+						<ul>
+							<li><a href="grids.html#960-grid-system-12-columns-grid">12 columns grid</a></li>
+							<li><a href="grids.html#960-grid-system-16-columns-grid">16 columns grid</a></li>
+							<li><a href="grids.html#960-grid-system-24-columns-grid">24 columns grid</a></li>
+						</ul>
+					</li>
+					<li><a href="grids.html#emastic-grid">Emastic grid</a></li>
+				</ul>
+			</li>
+		</ul>
+		<!--[if lte IE 7]><script type="text/javascript">
+			var nav = document.getElementById('nav');
+			var items = nav.getElementsByTagName('li');
+			for (var j = 0; j < items.length; j++) {
+				items[j].onmouseover = function() { this.className += ' mouseover'; };
+				items[j].onmouseout = function() { this.className = this.className.replace(' mouseover', ''); };
+			}
+		</script><![endif]-->
+		<h2>Plugins</h2>
+		<h3 id="fonts">font.css</h3>
+		<ul class="notice ui-silk ui-silk-plugin">
+			<li>The <abbr title="plugins/font.css">font.css</abbr> plugin declare following additional font styles.</li>
+		</ul>
+		<p class="byline"><strong>&lt;p class=&quot;byline&quot;&gt;</strong> Be careful when using predefined font classes for elements other than &lt;p&gt; because the beautiful vertical rhythm might be broken. You should decide if it worth the sacrifice.</p>
+		<p class="oldbook"><strong>&lt;p class=&quot;oldbook&quot;&gt;</strong> Pellentesque tempor, dui ut ultrices viverra, neque urna blandit nisi, id accumsan dolor est vitae risus. Aliquam erat volutpat. Sed aliquet, quam quis aliquet lacinia, leo urna mollis tortor, sed nonummy libero leo eget nunc.</p>
+		<p class="note"><strong>&lt;p class=&quot;note&quot;&gt;</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce sodales ligula sed urna. Aliquam posuere arcu viverra erat. Pellentesque et enim dapibus ante facilisis bibendum. Nam congue dapibus urna. Vestibulum consequat arcu at magna. Nunc faucibus mollis lacus.</p>
+		<p class="mono"><strong>&lt;p class=&quot;mono&quot;&gt;</strong> Nunc tincidunt vehicula pede. Integer consequat quam sed nisl. Aenean elit massa, porta at, lacinia ut, elementum vel, metus. Integer eget mauris a quam rutrum ullamcorper. Morbi tempus nunc id mi.</p>
+		<h3 id="semantics">semantic.css</h3>
+		<ul class="notice ui-silk ui-silk-plugin">
+			<li>The <abbr title="plugins/semantic.css">semantic.css</abbr> plugin declare following additional classes for semantic markup styling.</li>
+		</ul>
+		<h4>&lt;blockquote class=&quot;show-marks&quot;&gt;</h4>
+		<blockquote class="show-marks">
+			<p><span class="fire">Quoted text must be wrapped by <strong>&lt;p&gt;</strong> and <strong>&lt;/p&gt;</strong>. Otherwise, the opening and closing quotation marks will not be created.</span> Mauris porttitor augue ut ante. Nullam blandit ipsum vel pede. Nunc commodo arcu id pede. Phasellus interdum urna nec ante. Nam pretium, massa eget bibendum consectetuer, magna mauris tincidunt tellus, quis faucibus risus quam bibendum arcu.</p>
+			<cite>&lt;cite&gt; Mickey Mouse</cite>
+		</blockquote>
+		<h4>&lt;table class=&quot;show-borders&quot;&gt;</h4>
+		<table class="show-borders">
+			<caption>A simple table</caption>
+			<tbody>
+				<tr>
+					<th>Lorem ipsum</th>
+					<td>Dolor sit</td>
+					<td class="a-right">&lt;td class=&quot;a-right&quot;&gt;</td>
+				</tr>
+				<tr>
+					<th>Dolor sit</th>
+					<td>Nostrud exerci</td>
+					<td class="a-right">$75.00</td>
+				</tr>
+				<tr>
+					<th>Nostrud exerci</th>
+					<td>Lorem ipsum</td>
+					<td class="a-right">$200.00</td>
+				</tr>
+				<tr>
+					<th>Lorem ipsum</th>
+					<td>Dolor sit</td>
+					<td class="a-right">$64.00</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="show-borders" summary="This table includes examples of as many table elements as possible">
+			<caption>And a more complex one</caption>
+			<colgroup>
+				<col class="colA">
+				<col class="colB">
+				<col class="colC">
+			</colgroup>
+			<thead>
+				<tr class="table-head">
+					<th colspan="3">&lt;thead&gt; &lt;tr class=&quot;table-head&quot;&gt; &lt;th colspan=&quot;3&quot;&gt;</th>
+				</tr>
+				<tr>
+					<th>&lt;thead&gt; &lt;tr&gt; &lt;th&gt;</th>
+					<th>&lt;thead&gt; &lt;tr&gt; &lt;th&gt;</th>
+					<th class="a-right">&lt;thead&gt; &lt;tr&gt; &lt;th class=&quot;a-right&quot;&gt;</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<th>Subtotal</th>
+					<td>&lt;tfoot&gt; &lt;tr&gt; &lt;td&gt;</td>
+					<th class="a-right">$500.00</th>
+				</tr>
+				<tr class="table-foot">
+					<th>Total</th>
+					<td>&lt;tfoot&gt; &lt;tr class=&quot;table-foot&quot;&gt; &lt;td&gt;</td>
+					<th class="a-right">$500.00</th>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr class="odd">
+					<th>&lt;tbody&gt; &lt;tr class=&quot;odd&quot;&gt; &lt;th&gt;</th>
+					<td>&lt;tbody&gt; &lt;tr class=&quot;odd&quot;&gt; &lt;td&gt;</td>
+					<td class="a-right">$125.00</td>
+				</tr>
+				<tr>
+					<th>&lt;tbody&gt; &lt;tr&gt; &lt;th&gt;</th>
+					<td>&lt;tbody&gt; &lt;tr&gt; &lt;td&gt;</td>
+					<td class="a-right">$75.00</td>
+				</tr>
+				<tr class="odd">
+					<th>Nostrud exerci</th>
+					<td>Lorem ipsum</td>
+					<td class="a-right">$200.00</td>
+				</tr>
+				<tr>
+					<th>Lorem ipsum</th>
+					<td>Dolor sit</td>
+					<td class="a-right">$64.00</td>
+				</tr>
+				<tr class="odd">
+					<th>Dolor sit</th>
+					<td>Nostrud exerci</td>
+					<td class="a-right">$36.00</td>
+				</tr>
+			</tbody>
+		</table>
+		<h3 id="colors">color.css</h3>
+		<ul class="notice ui-silk ui-silk-plugin">
+			<li>The <abbr title="plugins/color.css">color.css</abbr> plugin declare following additional classes for colorization.</li>
+		</ul>
+		<p>
+			<span class="byline water"><strong>&lt;span class=&quot;byline water&quot;&gt;</strong> predefined color classes can be used, whether in combination with other class or not, for any element.</span>
+			<span class="earth"><strong>&lt;span class=&quot;earth&quot;&gt;</strong> Consectetur adipisicing elit.</span>
+			<br />
+			<span class="air" style="background:#666"><strong>&lt;span class=&quot;air&quot;&gt;</strong> EFFECTIVE ONLY ON DARK BACKGROUND.</span>
+			<br />
+			<span class="fire"><strong>&lt;span class=&quot;fire&quot;&gt;</strong> Et dolore magna aliqua.</span>
+			<br />
+			<span class="wine"><strong>&lt;span class=&quot;wine&quot;&gt;</strong> Lorem ipsum dolor sit amet.</span>
+			<br />
+			<span class="beer"><strong>&lt;span class=&quot;beer&quot;&gt;</strong> Consectetur adipisicing elit.</span>
+			<br />
+			<span class="caffe"><strong>&lt;span class=&quot;caffe&quot;&gt;</strong> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+			<br />
+			<span class="caffe-cream"><strong>&lt;span class=&quot;caffe-cream&quot;&gt;</strong> Et dolore magna aliqua.</span>
+			<br />
+			<span class="espresso"><strong>&lt;span class=&quot;espresso&quot;&gt;</strong> Lorem ipsum dolor sit amet.</span>
+			<br />
+			<span class="caramel"><strong>&lt;span class=&quot;caramel&quot;&gt;</strong> Consectetur adipisicing elit.</span>
+			<br />
+			<span class="chocolate"><strong>&lt;span class=&quot;chocolate&quot;&gt;</strong> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+			<br />
+			<span class="black-pepper"><strong>&lt;span class=&quot;black-pepper&quot;&gt;</strong> Et dolore magna aliqua.</span>
+			<br />
+			<span class="pepper-lite"><strong>&lt;span class=&quot;pepper-lite&quot;&gt;</strong> Lorem ipsum dolor sit amet.</span>
+			<br />
+			<span class="lipstick"><strong>&lt;span class=&quot;lipstick&quot;&gt;</strong> Consectetur adipisicing elit.</span>
+		</p>
+		<h3 id="messages">message.css</h3>
+		<ul class="notice ui-silk ui-silk-plugin">
+			<li>The <abbr title="plugins/message.css">message.css</abbr> plugin declare additional classes for message box styling.</li>
+		</ul>
+		<p class="error">This is a <strong>&lt;p class=&quot;error&quot;&gt;</strong> and a nested <a href="#">link</a>.</p>
+		<p>Below is a <strong>&lt;dl class=&quot;info&quot;&gt;</strong>:</p>
+		<dl class="info">
+			<dt>This is a <strong>&lt;dt&gt;</strong></dt>
+			<dd>This is a <strong>&lt;dd&gt;</strong> and a nested <a href="#">link</a>.</dd>
+			<dt>This is another <strong>&lt;dt&gt;</strong></dt>
+			<dd>This is another <strong>&lt;dd&gt;</strong> and another nested <a href="#">link</a>.</dd>
+		</dl>
+		<p>Below is an <strong>&lt;ol class=&quot;success&quot;&gt;</strong>:</p>
+		<ol class="success">
+			<li>This is a list item and a nested <a href="#">link</a>.</li>
+			<li>This is another list item and another nested <a href="#">link</a>.</li>
+		</ol>
+		<p>Below is an <strong>&lt;ul class=&quot;notice ui-silk ui-silk-exclamation&quot;&gt;</strong>:</p>
+		<ul class="notice ui-silk ui-silk-exclamation">
+			<li>This is a list item and a nested <a href="#">link</a>.</li>
+			<li>This is another list item and another nested <a href="#">link</a>.</li>
+			<li>This message box style requires the plugin <a href="plugins-silk-sprite.html#silk-sprite" title="plugins/silk-sprite.css">silk-sprite.css</a> for rendering icons.</li>
+		</ul>
+		<hr />
+		<p class="clearfix" style="margin-bottom:1.5em">
+			<a class="f-left" href="typography.html" title="Typography"><span class="prev">&laquo;</span> Typography</a>
+			<a class="f-right" href="plugins-form.html#form" title="Plugins: form.css, button.css">Plugins: form.css, button.css <span class="next">&raquo;</span></a>
+		</p>
+	</div>
+</body>
+</html>

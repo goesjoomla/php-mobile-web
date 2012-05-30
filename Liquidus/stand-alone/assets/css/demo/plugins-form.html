@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+/**
+ * F6 Liquidus CSS framework plugins demo.
+ *
+ * F6 Liquidus CSS framework is the combination of several well-known CSS frameworks. The 960 Grid
+ * System, the Blueprint and the Emastic CSS Framework to name a few. So, why need another CSS
+ * framework? F6 Liquidus CSS framework is created to inherit the pros of existing frameworks while
+ * trying to limit their cons to minimal. Besides that, F6 Liquidus CSS framework also contains
+ * many build-from-scratch proprietary styles.
+ *
+ * @copyright   Copyright (c) 2011 Manh-Cuong Nguyen
+ * @author      Manh-Cuong Nguyen [nmc] <cuongnm@f6studio.com>
+ * @license     http://f6studio.com/license
+ *
+ * @package     Liquidus
+ * @subpackage  CSS Framework
+ * @link        http://f6studio.com/Liquidus
+ *
+ * @version     1.0.0
+ */
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr" >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>F6 Liquidus CSS Framework &raquo; Demo &raquo; Plugins</title>
+	<meta name="author" content="The F6 Studio Group">
+	<link rel="stylesheet" href="../reset.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../typography.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../grids/960gs.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/message.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/form.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/button.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/layout.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/silk-sprite.css" type="text/css" media="screen, projection" />
+
+	<!--[if lte IE 8]><link rel="stylesheet" href="../plugins/form.ie8.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/button.ie8.css" type="text/css" media="screen, projection" /><![endif]-->
+
+	<!--[if lte IE 7]><link rel="stylesheet" href="../typography.ie7.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/messages.ie7.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/layout.ie7.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="../plugins/silk-sprite.ie7.css" type="text/css" media="screen, projection" /><![endif]-->
+
+	<!--[if lte IE 6]><link rel="stylesheet" href="../plugins/silk-sprite.ie6.css" type="text/css" media="screen, projection" /><![endif]-->
+
+	<style type="text/css">
+		h1 { text-shadow: 2px 2px 2px #999; }
+
+		/* navigation */
+		ul#nav, ul#nav ul { margin: -.333em 0 1.333em; border: 1px solid #c6d880; border-width: .25em 0; -webkit-box-shadow: 3px 3px 3px #999; -moz-box-shadow: 3px 3px 3px #999; box-shadow: 3px 3px 3px #999; padding: 0 0 0 1.5em; background: #e6efc2; color: #264409; list-style: none; }
+		ul#nav ul { margin: .75em 0 0 -1.1em; border-width: 0 .25em .25em; padding: 0 .5em .5em 0; }
+		ul#nav li ul ul { position: static; left: auto; margin: 0 0 0 1.25em; border: 0; padding: 0; width: 13em; -webkit-box-shadow: 0; -moz-box-shadow: 0; box-shadow: 0; list-style: circle outside; }
+		ul#nav li { padding: .75em 0; }
+		ul#nav li li { margin-left: .833em !important; padding: 0; }
+		ul#nav li a { padding: 0; }
+
+		/* grids */
+		.grid-lines { background: url(../images/grid_line.png); }
+
+		/* page nav */
+		span.next, span.prev { line-height: 1.25em; vertical-align: top; }
+	</style>
+</head>
+<body>
+	<div class="container_12 grid-lines">
+		<br />
+		<h1>F6 Liquidus CSS framework</h1>
+		<ul id="nav" class="sf-menu">
+			<li>
+				<a href="typography.html">Typography</a>
+				<ul>
+					<li><a href="typography.html#paragraph">Paragraph</a></li>
+					<li><a href="typography.html#lists">Lists</a></li>
+					<li><a href="typography.html#blockquotes">Blockquotes</a></li>
+					<li><a href="typography.html#tables">Tables</a></li>
+					<li><a href="typography.html#preformatted-text">Preformatted text</a></li>
+					<li><a href="typography.html#other-elements">Other elements</a></li>
+				</ul>
+			</li>
+			<li class="active">
+				<a href="plugins.html">Plugins</a>
+				<ul>
+					<li><a href="plugins.html#font">font.css</a></li>
+					<li><a href="plugins.html#semantic">semantic.css</a></li>
+					<li><a href="plugins.html#color">color.css</a></li>
+					<li><a href="plugins.html#message">message.css</a></li>
+					<li><a href="plugins-form.html#form">form.css</a></li>
+					<li><a href="plugins-form.html#button">button.css</a></li>
+					<li><a href="plugins-layout.html#layout">layout.css</a></li>
+					<li><a href="plugins-silk-sprite.html#silk-sprite">silk-sprite.css</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="grids.html">Grids</a>
+				<ul>
+					<li>
+						<a href="grids.html#960-grid-system">960 grid system</a>
+						<ul>
+							<li><a href="grids.html#960-grid-system-12-columns-grid">12 columns grid</a></li>
+							<li><a href="grids.html#960-grid-system-16-columns-grid">16 columns grid</a></li>
+							<li><a href="grids.html#960-grid-system-24-columns-grid">24 columns grid</a></li>
+						</ul>
+					</li>
+					<li><a href="grids.html#emastic-grid">Emastic grid</a></li>
+				</ul>
+			</li>
+		</ul>
+		<!--[if lte IE 7]><script type="text/javascript">
+			var nav = document.getElementById('nav');
+			var items = nav.getElementsByTagName('li');
+			for (var j = 0; j < items.length; j++) {
+				items[j].onmouseover = function() { this.className += ' mouseover'; };
+				items[j].onmouseout = function() { this.className = this.className.replace(' mouseover', ''); };
+			}
+		</script><![endif]-->
+		<h2>Plugins</h2>
+		<h3 id="form">form.css</h3>
+		<ul class="notice ui-silk ui-silk-plugin">
+			<li>The <abbr title="plugins/form.css">form.css</abbr> plugin declare following styles for form.</li>
+		</ul>
+		<div class="container_12" style="margin-bottom:1.5em">
+			<div class="grid_6">
+				<form action="#" onsubmit="return false;">
+					<fieldset>
+						<legend>fieldset &gt; legend</legend>
+						<label>I am a &lt;label&gt;</label>
+						<input type="text" name="input_text" value="I am an &lt;input type=&quot;text&quot; /&gt;"size="30" />
+						<br /><br />
+						<label>Radio button</label>
+						<input type="radio" name="input_radio" value="1" title="I am an &lt;input type=&quot;radio&quot; /&gt;" />
+						<br /><br />
+						<label>Checkbox</label>
+						<input type="checkbox" name="input_checkbox" value="1" title="I am an &lt;input type=&quot;checkbox&quot; /&gt;" />
+						<br /><br />
+						<label>Select field</label>
+						<select name="select">
+							<option value="1">Lorem ipsum dolor sit amet</option>
+							<option value="2">Fusce sodales ligula sed urna</option>
+							<option value="3">Aliquam posuere arcu viverra erat</option>
+						</select>
+						<br /><br />
+						<label>Select field (multiple)</label>
+						<select name="select_multiple" class="select-multiple" multiple="multiple" size="5" title="&lt;select class=&quot;select-multiple&quot; multiple=&quot;multiple&quot;&gt;">
+							<option value="1">Lorem ipsum dolor sit amet</option>
+							<option value="2">Fusce sodales ligula sed urna</option>
+							<option value="3">Aliquam posuere arcu viverra erat</option>
+							<option value="4">Epsum factorial non deposit quid</option>
+							<option value="5">Vestibulum vel pede ut urna</option>
+						</select>
+						<br /><br />
+						<label>Select with groups</label>
+						<select name="select_grouped">
+							<option>Favorite pet</option>
+							<optgroup label="mammals">
+								<option>dog</option>
+								<option>cat</option>
+								<option>rabbit</option>
+								<option>horse</option>
+							</optgroup>
+							<optgroup label="reptiles">
+								<option>iguana</option>
+								<option>snake</option>
+							</optgroup>
+						</select>
+						<br /><br />
+						<label>Text area</label>
+						<textarea name="textarea" rows="8"></textarea>
+						<br /><br />
+						<input type="submit" name="submit" value="Submit" title="&lt;input type=&quot;submit&quot; /&gt;" onclick="alert(this.title);" />
+						<input type="reset" name="reset" value="Reset" title="&lt;input type=&quot;reset&quot; /&gt;" onclick="alert(this.title);" />
+						<input type="button" name="button" value="&lt;input type=&quot;button&quot; /&gt;" title="&lt;input type=&quot;button&quot; /&gt;" onclick="alert(this.title);" />
+					</fieldset>
+				</form>
+			</div>
+			<div class="grid_6">
+				<form action="#" onsubmit="return false;">
+					<fieldset>
+						<legend>Another fieldset &gt; legend</legend>
+						<ul class="notice ui-silk ui-silk-pencil">
+							<li>To visually create 2-column form, you simply need to put each label / field pair inside <strong>&lt;p&gt;</strong> and <strong>&lt;/p&gt;</strong>.</li>
+						</ul>
+						<p>
+							<label>I am a &lt;label&gt;</label>
+							<input type="text" name="input_text" value="I am an &lt;input type=&quot;text&quot; /&gt;"size="30" />
+						</p>
+						<p>
+							<label>Radio button</label>
+							<input type="radio" name="input_radio" value="1" title="I am an &lt;input type=&quot;radio&quot; /&gt;" />
+						</p>
+						<p>
+							<label>Checkbox</label>
+							<input type="checkbox" name="input_checkbox" value="1" title="I am an &lt;input type=&quot;checkbox&quot; /&gt;" />
+						</p>
+						<p>
+							<label>Select field</label>
+							<select name="select">
+								<option value="1">Lorem ipsum dolor sit amet</option>
+								<option value="2">Fusce sodales ligula sed urna</option>
+								<option value="3">Aliquam posuere arcu viverra erat</option>
+							</select>
+						</p>
+						<ul class="notice ui-silk ui-silk-pencil">
+							<li>Buttons should be wrapped by <strong>&lt;p class=&quot;action&quot;&gt;</strong> and <strong>&lt;/p&gt;</strong>.</li>
+						</ul>
+						<p class="action">
+							<input type="submit" name="submit" value="Submit" title="&lt;input type=&quot;submit&quot; /&gt;" onclick="alert(this.title);" />
+							<input type="reset" name="reset" value="Reset" title="&lt;input type=&quot;reset&quot; /&gt;" onclick="alert(this.title);" />
+						</p>
+					</fieldset>
+					<fieldset class="collapse">
+						<legend>fieldset.collapse &gt; legend</legend>
+						<ul class="notice ui-silk ui-silk-pencil">
+							<li>Below is a <strong>&lt;fieldset class=&quot;collapse&quot;&gt;</strong>. When using the <strong>collapse</strong> class, <strong>&lt;fieldset&gt;</strong> will no longer have border and any nested <strong>&lt;legend&gt;</strong> will never been visible.</li>
+						</ul>
+						<p>
+							<label>Select with groups</label>
+							<select name="select_grouped">
+								<option>Favorite pet</option>
+								<optgroup label="mammals">
+									<option>dog</option>
+									<option>cat</option>
+									<option>rabbit</option>
+									<option>horse</option>
+								</optgroup>
+								<optgroup label="reptiles">
+									<option>iguana</option>
+									<option>snake</option>
+								</optgroup>
+							</select>
+						</p>
+						<p>
+							<label>Text area</label>
+							<textarea name="textarea" rows="1"></textarea>
+						</p>
+						<p class="action">
+							<input type="button" name="button" value="&lt;input type=&quot;button&quot; /&gt;" title="&lt;input type=&quot;button&quot; /&gt;" onclick="alert(this.title);" />
+						</p>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<h4>Sample registration forms</h4>
+		<form action="#" onsubmit="return false;">
+			<fieldset>
+				<legend>Login Information</legend>
+				<p>
+					<label>Username:</label>
+					<input type="text" name="username" />
+				</p>
+				<p>
+					<label>Password:</label>
+					<input type="password" name="password" />
+				</p>
+				<p>
+					<label>Re-type Password:</label>
+					<input type="password" name="password2" />
+				</p>
+				<p class="action">
+					<input type="submit" value="Confirm Availability" onclick="alert('Username availability checking routine should be called after clicking');" />
+				</p>
+			</fieldset>
+			<fieldset>
+				<legend>Personal Information</legend>
+				<p>
+					<label>First Name:</label>
+					<input type="text" name="first-name" />
+				</p>
+				<p>
+					<label>Last Name:</label>
+					<input type="text" name="last-name" />
+				</p>
+				<p>
+					<label>Prefix:</label>
+					<select name="prefix">
+						<option value="">- click to select -</option>
+						<option value="dr">Dr</option>
+						<option value="mr">Mr</option>
+						<option value="mrs">Mrs</option>
+						<option value="ms">Ms</option>
+					</select>
+				</p>
+				<p>
+					<label>Suffix:</label>
+					<select name="suffix">
+						<option value="">- click to select -</option>
+						<option value="jr">Jr</option>
+						<option value="sr">Sr</option>
+					</select>
+				</p>
+				<p>
+					<span class="label">Gender:</span>
+					<input type="radio" name="gender" value="male" id="gender-male" /> <label for="gender-male">Male</label>
+					&nbsp;
+					<input type="radio" name="gender" value="female" id="gender-female" /> <label for="gender-female">Female</label>
+				</p>
+				<p>
+					<label>Email Address:</label>
+					<input type="text" name="email" size="80" />
+				</p>
+				<p>
+					<label>Re-type Email Address:</label>
+					<input type="text" name="email2" size="80" />
+				</p>
+				<p>
+					<label>Personal Note:</label>
+					<textarea name="note" cols="60" rows="3"></textarea>
+				</p>
+				<p class="action">
+					<input type="submit" value="Register" onclick="alert('Thank you for registration!');" />
+				</p>
+			</fieldset>
+		</form>
+		<h3 id="button">button.css</h3>
+		<ul class="notice ui-silk ui-silk-plugin">
+			<li>The <abbr title="plugins/button.css">button.css</abbr> plugin makes the form buttons look more beautiful without using any image for styling.</li>
+		</ul>
+		<form action="#" onsubmit="return false;" class="a-center">
+			<button>I am a &lt;button&gt;</button>
+			<a class="button">I am an &lt;a class=&quot;button&quot;&gt;</a>
+			<br /><br />
+			<input type="submit" name="submit" value="Please click" class="button" title="&lt;input type=&quot;submit&quot; class=&quot;button&quot; /&gt;" onclick="alert(this.title);" />
+			<input type="reset" name="reset" value="To see" class="button" title="&lt;input type=&quot;reset&quot; class=&quot;button&quot; /&gt;" onclick="alert(this.title);" />
+			<input type="button" name="button" value="Who we are" class="button" title="&lt;input type=&quot;button&quot; class=&quot;button&quot; /&gt;" onclick="alert(this.title);" />
+		</form>
+		<h4>Sample login forms</h4>
+		<ul class="notice ui-silk ui-silk-plugin">
+			<li>The <abbr title="plugins/button.css">button.css</abbr> plugin should be used in conjunction with the <abbr title="plugins/form.css">form.css</abbr> plugin.</li>
+		</ul>
+		<form action="#" class="clearfix" onsubmit="return false;">
+			<div class="grid_6">
+				<fieldset>
+					<legend>Login</legend>
+					<p>Login to complete your purchase.</p>
+					<p>
+						<label class="a-right">Username:</label>
+						<input id="username" type="text" name="username" />
+					</p>
+					<p>
+						<label class="a-right">Password:</label>
+						<input id="password" type="password" name="password" />
+					</p>
+					<p class="action">
+						<input type="submit" value="Login" class="button" onclick="var u = document.getElementById('username'); var p = document.getElementById('password'); alert(u.value == '' || p.value == '' ? 'Missing either username or password' : 'Your username/password is: ' + u.value + '/' + p.value);" />
+					</p>
+				</fieldset>
+			</div>
+			<div class="grid_6">
+				<fieldset>
+					<legend>Register</legend>
+					<p>If you do not already have an account, please register a new account then login to complete your purchase.</p>
+					<p class="a-center">
+						<a class="button" onclick="alert('So you want to register a new account. Thank you!');">Create Account</a>
+					</p>
+				</fieldset>
+			</div>
+		</form>
+		<hr />
+		<p class="clearfix" style="margin-bottom:1.5em">
+			<a class="f-left" href="plugins.html" title="Plugins: font.css, semantic.css, color.css, message.css"><span class="prev">&laquo;</span> Plugins: font.css, semantic.css, color.css, message.css</a>
+			<a class="f-right" href="plugins-layout.html#layout" title="Plugins: layout.css">Plugins: layout.css <span class="next">&raquo;</span></a>
+		</p>
+	</div>
+</body>
+</html>

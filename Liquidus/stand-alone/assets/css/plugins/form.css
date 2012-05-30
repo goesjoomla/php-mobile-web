@@ -1,0 +1,241 @@
+/**
+ * F6 Liquidus's CSS framework.
+ *
+ * F6 Liquidus's CSS framework is the combination of several well-known CSS
+ * frameworks. The 960 Grid System, the Blueprint and the Emastic CSS Framework
+ * to name a few. So, why need another CSS framework? F6 Liquidus's CSS
+ * framework is created to inherit the pros of existing frameworks while
+ * trying to limit their cons to minimal. Besides that, F6 Liquidus's CSS
+ * framework also contains many build-from-scratch proprietary styles.
+ *
+ * @copyright   Copyright (c) 2011 Manh-Cuong Nguyen
+ * @author      Manh-Cuong Nguyen [nmc] <cuongnm@f6studio.com>
+ * @license     http://f6studio.com/license
+ *
+ * @package     Liquidus
+ * @subpackage  CSS Framework
+ * @link        http://f6studio.com/Liquidus
+ *
+ * @version     1.0.0
+ */
+
+/* Wrappers
+-----------------------------------------------------------------------------------------------*/
+
+form {
+	padding-bottom: 1.5em;
+}
+form:last-child {
+	padding-bottom: 0;
+}
+fieldset {
+	border: 1px solid #ccc;
+	padding: 17px;
+
+	-webkit-border-radius: 9px;
+	   -moz-border-radius: 9px;
+	        border-radius: 9px;
+}
+fieldset + fieldset {
+	margin-top: 1.5em;
+}
+fieldset legend {
+	padding: 0 .5em 1px;
+	font-weight: bold;
+}
+@media screen and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {
+	/* Opera */
+	:root * > fieldset legend {
+		padding-bottom: 0;
+	}
+}
+fieldset label, fieldset span.label {
+	font-weight: bold;
+}
+
+/* visually create 2 column fieldset */
+fieldset p.field {
+	white-space: nowrap;
+}
+fieldset p label, fieldset p span.label {
+	display: inline-block;
+	width: 33%;
+}
+fieldset p span.label ~ label, fieldset p span.label ~ * label {
+	display: inline;
+	width: auto;
+	font-weight: normal;
+}
+fieldset .action {
+	margin-left: 33%;
+	padding-left: .417em;
+	white-space: nowrap;
+}
+
+/* fieldset without border and legend */
+fieldset.collapse {
+	margin: 0;
+	border: 0;
+	padding: .75em 0;
+}
+fieldset.collapse legend {
+	display: none;
+}
+
+/* Elements
+-----------------------------------------------------------------------------------------------*/
+
+input[type=text], input[type=password] {
+	margin: -3px 0;
+	border-color: #666 #ccc #ccc;
+	border-style: solid;
+	border-width: 1px;
+	padding: 3px 0 3px 3px;
+	background: #fff;
+	vertical-align: top;
+}
+@media screen and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {
+	/* Opera */
+	:root * > input[type=text], :root * > input[type=password] {
+		margin: 0 0 -6px;
+	}
+}
+input[type=radio], input[type=checkbox] {
+	margin: 0;
+	vertical-align: text-top;
+}
+@media screen and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {
+	/* Opera */
+	:root * > input[type=radio], :root * > input[type=checkbox] {
+		vertical-align: middle;
+	}
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+	margin: -5px 0;
+	padding: 2px;
+	cursor: pointer;
+	vertical-align: top;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	/* Safari and Google Chrome */
+	input[type=button], input[type=submit], input[type=reset] {
+		padding: 3px;
+		height: 28px;
+	}
+}
+@media screen and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {
+	/* Opera */
+	:root * > input[type=button], :root * > input[type=submit], :root * > input[type=reset] {
+		margin: 0 0 -6px;
+	}
+}
+input[type=button]:disabled, input[type=submit]:disabled, input[type=reset]:disabled {
+	border: 1px solid;
+	padding: 4px;
+	background: #dcdcdc;
+	color: #999;
+	cursor: default;
+}
+
+select {
+	margin: -1px 0;
+	vertical-align: top;
+}
+@media screen and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {
+	/* Opera */
+	:root * > select {
+		margin: 0 0 -4px;
+	}
+}
+select[multiple] {
+	margin: -2px 0;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	/* Safari and Google Chrome */
+	select[multiple] {
+		margin: 2px 0;
+	}
+	select[size="2"], select[size="3"], select[size="4"], select[size="22"] {
+		margin: -7px 0px -8px;
+	}
+	select[size="5"], select[size="23"] {
+		margin: -7px 0;
+	}
+	select[size="6"], select[size="24"] {
+		margin: -6px 0px -7px;
+	}
+	select[size="7"], select[size="25"] {
+		margin: -6px 0;
+	}
+	select[size="8"], select[size="26"] {
+		margin: -5px 0px -6px;
+	}
+	select[size="9"], select[size="27"] {
+		margin: -5px 0;
+	}
+	select[size="10"], select[size="28"] {
+		margin: -4px 0 -5px;
+	}
+	select[size="11"], select[size="29"] {
+		margin: -4px 0;
+	}
+	select[size="12"], select[size="30"] {
+		margin: -3px 0 -4px;
+	}
+	select[size="13"], select[size="31"] {
+		margin: -3px 0;
+	}
+	select[size="14"], select[size="32"] {
+		margin: -2px 0 -3px;
+	}
+	select[size="15"], select[size="33"] {
+		margin: -2px 0;
+	}
+	select[size="16"], select[size="34"] {
+		margin: -1px 0 -2px;
+	}
+	select[size="17"], select[size="35"] {
+		margin: -1px 0;
+	}
+	select[size="18"], select[size="36"] {
+		margin: 0 0 -1px;
+	}
+	select[size="19"], select[size="37"] {
+		margin: 0;
+	}
+	select[size="20"], select[size="38"] {
+		margin: 0 0 1px;
+	}
+	select[size="21"], select[size="39"] {
+		margin: -8px 0;
+	}
+}
+@media screen and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {
+	/* Opera */
+	:root * > select[multiple] {
+		margin: 0 0 -4px;
+	}
+}
+select[multiple] option {
+	padding: 1px 5px 1px 3px;
+}
+
+textarea {
+	line-height: 18px;
+	margin: -2px 0;
+	padding: 1px 0 0 3px;
+	vertical-align: top;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	/* Safari and Google Chrome */
+	textarea {
+		padding: 1px 0px 1px 3px;
+	}
+}
+@media screen and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {
+	/* Opera */
+	:root * > textarea {
+		margin: 0 0 -5px;
+	}
+}

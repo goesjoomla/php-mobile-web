@@ -1,0 +1,4 @@
+<Files ~ "\.(php|xml)$">
+	Order deny,allow
+	Deny from all
+</Files>

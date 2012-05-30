@@ -1,0 +1,474 @@
+/**
+ * Default theme style declaration.
+ *
+ * @copyright  Copyright (c) 2011 Manh-Cuong Nguyen
+ * @author     Manh-Cuong Nguyen [nmc] <cuongnm@f6studio.com>
+ * @license    http://f6studio.com/license
+ *
+ * @package    Liquidus
+ * @link       http://f6studio.com/Liquidus
+ *
+ * @version    1.0.0
+ */
+
+/* --- Common -------------------------------------------------------------- */
+
+/**
+ * Layout
+ */
+body {
+	background-color: #b6b6b6;
+}
+
+.container_12 {
+	border-color: #fff;
+	border-style: solid;
+	border-width: 0 1px;
+}
+
+.left-column {
+	margin: 0;
+	border-right: 1px solid #f0f0f0;
+	background-color: #f7f7f7;
+}
+.left-column.grid_3 {
+	width: 239px;
+}
+
+/**
+ * Typography
+ */
+a:link {
+	color: #1a9f78;
+}
+
+fieldset label, fieldset span.label, input {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 13px;
+}
+fieldset label, fieldset span.label {
+	font-weight: normal;
+}
+input[type="text"], input[type="password"], input[type="checkbox"] {
+	border: 1px solid #5a5b5e;
+	background-color: #4b4c50;
+}
+input[type="submit"], input[type="reset"], input[type="button"] {
+	outline: 1px solid #5a5b5e;
+	border: 1px solid #1a9f78;
+
+	background-color: #017654;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#1a9f78), to(#017654));
+	background-image: -webkit-linear-gradient(top, #1a9f78, #017654);
+	background-image:    -moz-linear-gradient(top, #1a9f78, #017654);
+	background-image:     -ms-linear-gradient(top, #1a9f78, #017654);
+	background-image:      -o-linear-gradient(top, #1a9f78, #017654);
+	background-image:         linear-gradient(top, #1a9f78, #017654);
+	          filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#1a9f78', EndColorStr='#017654');
+
+	color: #fff;
+}
+
+/* --- Header -------------------------------------------------------------- */
+
+#liquidus-header {
+	background-color: #005b41;
+}
+
+/**
+ * Logo
+ */
+#logo {
+	margin: 0;
+
+	background-color: #0d8e68;
+	background-image: -webkit-gradient(linear, left top, right top, from(#1a9f78), to(#0d8e68));
+	background-image: -webkit-linear-gradient(left, #1a9f78, #0d8e68);
+	background-image:    -moz-linear-gradient(left, #1a9f78, #0d8e68);
+	background-image:     -ms-linear-gradient(left, #1a9f78, #0d8e68);
+	background-image:      -o-linear-gradient(left, #1a9f78, #0d8e68);
+	background-image:         linear-gradient(left, #1a9f78, #0d8e68);
+	          filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#1a9f78', EndColorStr='#0d8e68');
+}
+#logo.grid_3 {
+	width: 240px;
+}
+#logo h1 {
+	margin: 9px 0;
+	text-align: center;
+}
+
+/**
+ * Navigation
+ */
+#nav {
+	margin: 0;
+	background-color: #fff;
+}
+#nav.grid_9 {
+	width: 720px;
+}
+
+/* --- Body ---------------------------------------------------------------- */
+
+#liquidus-body {
+	border-top: 1px solid #fff;
+}
+#liquidus-body .container_12 {
+	margin-top: -1px;
+	background-color: #ccc;
+}
+
+/**
+ * Top Block
+ */
+#liquidus-body .top-block {
+	background-color: #fff;
+}
+
+#quick-info {
+	position: relative;
+	margin: 0;
+
+	background-color: #0d8e68;
+	background-image: -webkit-gradient(linear, right top, left top, from(#1a9f78), to(#0d8e68));
+	background-image: -webkit-linear-gradient(right, #1a9f78, #0d8e68);
+	background-image:    -moz-linear-gradient(right, #1a9f78, #0d8e68);
+	background-image:     -ms-linear-gradient(right, #1a9f78, #0d8e68);
+	background-image:      -o-linear-gradient(right, #1a9f78, #0d8e68);
+	background-image:         linear-gradient(right, #1a9f78, #0d8e68);
+	          filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#1a9f78', EndColorStr='#0d8e68');
+}
+#quick-info.grid_9 {
+	width: 720px;
+}
+
+#introduction {
+	height: inherit;
+	color: #fff;
+}
+#introduction a:link {
+	color: #fff;
+	font-weight: bold;
+}
+
+#breadcrumb, #breadcrumb .breadcrumb-bg {
+	position: absolute;
+	bottom: 0;
+	width: inherit;
+	height: 27px;
+	z-index: 1;
+
+	opacity: .65;
+	 filter: alpha(opacity=65);
+
+	color: #fff;
+	line-height: 27px;
+}
+#breadcrumb .breadcrumb-bg {
+	width: 100%;
+	z-index: 0;
+
+	opacity: .2;
+	 filter: alpha(opacity=20);
+
+	background-color: #fff;
+}
+
+/**
+ * Bottom Block
+ */
+#liquidus-body .bottom-block {
+	margin-top: 5px;
+	background-color: #fff;
+}
+
+#main-content {
+	margin: 0;
+	padding: 10px;
+}
+
+#sub-content {
+	margin: 0;
+}
+#sub-content.grid_3 {
+	width: 240px;
+}
+
+#local-nav .local-nav-inner {
+	width: inherit;
+}
+
+/* --- Extras -------------------------------------------------------------- */
+
+#banner-left, #banner-right {
+	position: absolute;
+	width: 120px;
+}
+
+/* --- Footer -------------------------------------------------------------- */
+
+#liquidus-footer {
+	border-top: 1px solid #fff;
+	background-color: #005b41;
+}
+#liquidus-footer .container_12 {
+	position: relative;
+	margin-top: -5px;
+	padding-top: 5px;
+	background-color: #ccc;
+}
+
+/**
+ * Logo
+ */
+#logo-footer {
+	margin: 0;
+
+	background-color: #0d8e68;
+	background-image: -webkit-gradient(linear, left top, right top, from(#1a9f78), to(#0d8e68));
+	background-image: -webkit-linear-gradient(left, #1a9f78, #0d8e68);
+	background-image:    -moz-linear-gradient(left, #1a9f78, #0d8e68);
+	background-image:     -ms-linear-gradient(left, #1a9f78, #0d8e68);
+	background-image:      -o-linear-gradient(left, #1a9f78, #0d8e68);
+	background-image:         linear-gradient(left, #1a9f78, #0d8e68);
+	          filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#1a9f78', EndColorStr='#0d8e68');
+}
+#logo-footer.grid_3 {
+	width: 240px;
+}
+#logo-footer h1 {
+	margin: 9px 0;
+	text-align: center;
+}
+
+/**
+ * Navigation
+ */
+#nav-footer {
+	margin: 0;
+	background-color: #fff;
+}
+#nav-footer.grid_9 {
+	width: 720px;
+}
+
+/* --- Content Wrappers ---------------------------------------------------- */
+
+/**
+ * Standard Wrapper
+ */
+.liquidus-standard .heading {
+	margin: 0;
+	color: #1a9f78;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+}
+.liquidus-standard .content {
+	padding: 9px 12px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/**
+ * Standard Wrapper @ Left Column
+ */
+.left-column .liquidus-standard {
+	margin-right: -1px;
+	border-color: #e8e8e8;
+	border-style: solid;
+	border-width: 0 1px 1px 0;
+}
+
+.left-column .heading {
+	font-size: 17px;
+	padding: 24px 12px 12px;
+}
+#quick-links .heading {
+	padding: 12px 12px 6px;
+}
+#local-nav .heading {
+	margin-right: -1px;
+	border-right: 1px solid #e0e0e0;
+	background-color: #eee;
+}
+
+.left-column .liquidus-standard-black {
+	border-color: #3d3e42;
+	border-width: 0 1px 0 0;
+	background-color: #3d3e42;
+	color: #d8d8d8;
+}
+.left-column .liquidus-standard-black input {
+	color: #d8d8d8;
+}
+.left-column .liquidus-standard-black a:link {
+	color: #0fcf97;
+}
+
+#quick-links .liquidus-standard-black {
+	background: #3d3e42 url(img/sprites.gif) 0 -335px repeat-x;
+}
+#local-nav .liquidus-standard-black .heading {
+	border-color: #45464a;
+	background-color: #45464a;
+	color: #d03371;
+}
+
+/**
+ * Inline Wrapper @ Breadcrumb
+ */
+#breadcrumb .liquidus-inline {
+	padding: 0 12px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+#breadcrumb .liquidus-inline dt {
+	font-weight: normal;
+}
+
+/* --- Content Blocks ------------------------------------------------------ */
+
+/**
+ * List Menu @ Topmost Nav
+ */
+#nav ul.menu {
+	margin: 1px 0 1px 1px;
+	border: 1px solid #e0e0e0;
+	height: 56px;
+	line-height: 56px;
+}
+#nav ul.menu li {
+	margin: 0;
+	border-right: 1px solid #e0e0e0;
+	font-family: "Lucida Console", Monaco, monospace;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+#nav ul.menu li a {
+	padding: 0 24px;
+	color: #1a9f78;
+}
+#nav ul.menu li:hover, #nav ul.menu li.mouseover, #nav ul.menu li.active {
+	background-color: #1a9f78;
+}
+#nav ul.menu li:hover a, #nav ul.menu li.mouseover a, #nav ul.menu li.active a {
+	margin-bottom: 4px;
+	height: 52px;
+	background-color: #fff;
+	text-decoration: none;
+}
+#nav ul.menu li.active a {
+	background: #f7f7f7 url(img/sprites.gif) 50% 36px no-repeat;
+}
+
+/**
+ * Drop-down Menu @ Topmost Nav
+ */
+#nav ul.sf-menu ul {
+	margin-top: -4px;
+	border-color: #1a9f78;
+	border-style: solid;
+	border-width: 3px 1px 1px;
+	width: 216px;
+}
+#nav ul.sf-menu ul ul {
+	margin-top: -31px;
+	margin-left: 213px;
+	border-width: 0 1px 1px 4px;
+}
+#nav ul.sf-menu ul li {
+	border-color: #1a9f78;
+	border-style: solid;
+	border-width: 1px 0 0;
+	width: 216px;
+}
+#nav ul.sf-menu ul li a {
+	margin: 0 !important;
+	height: auto !important;
+	font-size: 12px;
+	line-height: 30px;
+	text-transform: none;
+}
+#nav ul.sf-menu ul li:hover a, #nav ul.sf-menu ul li.mouseover a, #nav ul.sf-menu ul li.active a,
+#nav ul.sf-menu ul li:hover li:hover a, #nav ul.sf-menu ul li.mouseover li.mouseover a, #nav ul.sf-menu ul li.active li.active a,
+#nav ul.sf-menu ul li:hover li:hover li:hover a, #nav ul.sf-menu ul li.mouseover li.mouseover li.mouseover a, #nav ul.sf-menu ul li.active li.active li.active a {
+	background-color: #f7f7f7;
+}
+#nav ul.sf-menu ul li:hover li a, #nav ul.sf-menu ul li.mouseover li a, #nav ul.sf-menu ul li.active li a,
+#nav ul.sf-menu ul li:hover li:hover li a, #nav ul.sf-menu ul li.mouseover li.mouseover li a, #nav ul.sf-menu ul li.active li.active li a,
+#nav ul.sf-menu ul li:hover li:hover li:hover li a, #nav ul.sf-menu ul li.mouseover li.mouseover li.mouseover li a, #nav ul.sf-menu ul li.active li.active li.active li a {
+	background-color: #fff;
+}
+
+/**
+ * List Menu @ Left Column
+ */
+.left-column ul.menu {
+	margin: 0;
+	list-style: none;
+}
+
+.left-column ul.menu li {
+	border-top: 1px solid #eaeaea;
+	padding-left: 21px;
+	background: url(img/sprites.gif) 2px -42px no-repeat;
+	line-height: 24px;
+}
+.left-column ul.menu li:first-child {
+	border-top: 0;
+}
+.left-column ul.menu li:hover, .left-column ul.menu li.mouseover, .left-column ul.menu li.active {
+	background-position: 2px -78px;
+}
+
+.left-column ul.menu li a {
+	display: block;
+	background: url(img/sprites.gif) 99% -110px no-repeat;
+}
+.left-column ul.menu li a:hover, .left-column ul.menu li.active a {
+	background-position: 99% -146px;
+	color: #ce316f;
+	text-decoration: none;
+}
+
+/* The black style */
+.left-column .liquidus-standard-black ul.menu li {
+	border-color: #393a3d;
+	background-position: 2px -186px;
+}
+.left-column .liquidus-standard-black ul.menu li:hover,
+.left-column .liquidus-standard-black ul.menu li.mouseover,
+.left-column .liquidus-standard-black ul.menu li.active {
+	background-position: 2px -222px;
+}
+
+.left-column .liquidus-standard-black ul.menu li a {
+	background-position: 99% -254px;
+	color: #d85f90;
+}
+.left-column .liquidus-standard-black ul.menu li a:hover,
+.left-column .liquidus-standard-black ul.menu li.active a {
+	background-position: 99% -290px;
+	color: #0cd89d;
+}
+
+/**
+ * Login Form
+ */
+.login-form fieldset {
+	padding: 0;
+}
+.login-form input[type=text], .login-form input[type=password] {
+	width: 62%;
+}
+.login-form input[type=checkbox] {
+	margin-top: 2px;
+}
+.login-form input.button {
+	float: left;
+	margin: -7px 0;
+}
+.login-form ul {
+	margin-top: -9px;
+}

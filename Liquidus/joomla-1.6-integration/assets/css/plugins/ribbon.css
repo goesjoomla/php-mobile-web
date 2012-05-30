@@ -1,0 +1,107 @@
+/**
+ * F6 Liquidus's CSS framework.
+ *
+ * F6 Liquidus's CSS framework is the combination of several well-known CSS
+ * frameworks. The 960 Grid System, the Blueprint and the Emastic CSS Framework
+ * to name a few. So, why need another CSS framework? F6 Liquidus's CSS
+ * framework is created to inherit the pros of existing frameworks while
+ * trying to limit their cons to minimal. Besides that, F6 Liquidus's CSS
+ * framework also contains many build-from-scratch proprietary styles.
+ *
+ * @copyright   Copyright (c) 2011 Manh-Cuong Nguyen
+ * @author      Manh-Cuong Nguyen [nmc] <cuongnm@f6studio.com>
+ * @license     http://f6studio.com/license
+ *
+ * @package     Liquidus
+ * @subpackage  CSS Framework
+ * @link        http://f6studio.com/Liquidus
+ *
+ * @version     1.0.0
+ */
+
+/* CSS3 Ribbon
+-----------------------------------------------------------------------------------------------*/
+
+/*
+* !!! NOTE !!!
+*
+* Always remember to set background for the element containing ribbon created with following
+* style declaration.
+*/
+
+/* <!-- Horizontal Ribbon */
+.ribbon {
+	position: relative;
+	padding-top: 18px;
+	height: 72px;
+}
+
+.ribbon .rectangle {
+	position: absolute;
+	left: -15px;
+	right: -15px;
+	height: 72px;
+	z-index: 1;
+
+	-webkit-box-shadow: 0 1px 3px #666;
+	   -moz-box-shadow: 0 1px 3px #666;
+	        box-shadow: 0 1px 3px #666;
+
+	background: #e0ffff;
+}
+
+.ribbon .triangle-l, .ribbon .triangle-r {
+	position: absolute;
+	bottom: -17px;
+	z-index: -1;
+	border: 15px solid #ababab;
+	zoom: 1;
+
+	-webkit-transform: rotate(-45deg);
+	   -moz-transform: rotate(-45deg);
+	    -ms-transform: rotate(-45deg);
+	     -o-transform: rotate(-45deg);
+	        transform: rotate(-45deg);
+	           filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865476, M12=0.7071067811865475, M21=-0.7071067811865475, M22=0.7071067811865476, sizingMethod='auto expand');
+}
+.ribbon .triangle-l {
+	left: -9px;
+}
+.ribbon .triangle-r {
+	right: -9px;
+}
+/* Horizontal Ribbon --> */
+
+/* <!-- Vertical Ribbon */
+.ribbon.vertical {
+	padding-top: 0;
+	padding-left: 18px;
+	width: 360px;
+}
+
+.ribbon.vertical .rectangle {
+	top: -15px;
+	right: auto;
+	bottom: -15px;
+	left: auto;
+	width: 360px;
+	height: auto;
+
+	-webkit-box-shadow: 1px 0 3px #666;
+	   -moz-box-shadow: 1px 0 3px #666;
+	        box-shadow: 1px 0 3px #666;
+}
+
+.ribbon.vertical .triangle-l, .ribbon.vertical .triangle-r {
+	top: auto;
+	right: -15px;
+	bottom: auto;
+	left: auto;
+}
+.ribbon.vertical .triangle-l {
+	top: -9px;
+}
+.ribbon.vertical .triangle-r {
+	bottom: -10px;
+}
+/* Vertical Ribbon --> */
