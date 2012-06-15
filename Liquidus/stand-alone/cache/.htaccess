@@ -1,4 +1,0 @@
-<Files ~ "\.cache$">
-	Order deny,allow
-	Deny from all
-</Files>
