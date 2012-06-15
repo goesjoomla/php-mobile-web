@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<!--
+/**
+ * Joomla! 1.6 template declaration file.
+ *
+ * @copyright  Copyright (c) 2011 Manh-Cuong Nguyen
+ * @author     Manh-Cuong Nguyen [nmc] <cuongnm@f6studio.com>
+ * @license    http://f6studio.com/license
+ *
+ * @package    Liquidus
+ * @link       http://f6studio.com/Liquidus
+ *
+ * @version    1.0.0
+ */
+-->
+<extension version="1.6" type="template" client="site">
+	<name>Liquidus</name>
+	<creationDate>October 19, 2011</creationDate>
+	<author>Manh-Cuong Nguyen</author>
+	<authorEmail>cuongnm@f6studio.com</authorEmail>
+	<authorUrl>http://f6studio.com/</authorUrl>
+	<copyright>Copyright (c) 2011 Manh-Cuong Nguyen. All rights reserved.</copyright>
+	<license>See http://f6studio.com/license</license>
+	<version>1.0.0</version>
+	<description>TPL_LIQUIDUS_XML_DESCRIPTION</description>
+
+	<files>
+		<folder>assets</folder>
+		<folder>cache</folder>
+		<folder>html</folder>
+		<folder>language</folder>
+		<folder>libraries</folder>
+		<folder>logs</folder>
+		<folder>templates</folder>
+		<folder>themes</folder>
+		<filename>bootstrap.php</filename>
+		<filename>index.html</filename>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<!--filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>component.php</filename-->
+		<filename>test.php</filename>
+	</files>
+
+	<positions>
+		<position>quick-links-1</position>
+		<position>quick-links-2</position>
+		<position>logo</position>
+		<position>nav</position>
+		<position>introduction-1</position>
+		<position>introduction-2</position>
+		<position>introduction-3</position>
+		<position>introduction-4</position>
+		<position>main-content</position>
+		<position>sub-content</position>
+		<position>local-nav</position>
+		<position>extras-1</position>
+		<position>extras-2</position>
+		<position>extras-3</position>
+		<position>extras-4</position>
+		<position>banner-left</position>
+		<position>banner-right</position>
+		<position>breadcrumbs</position>
+		<position>website-info</position>
+		<position>footer-links</position>
+	</positions>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.tpl_liquidus.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_liquidus.sys.ini</language>
+	</languages>
+
+	<config addfieldpath="/templates/liquidus/libraries/joomla/form/fields">
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="theme" type="folderlist" directory="templates/liquidus/themes" hide_none="1" hide_default="1" default="default"
+					label="LQD_THEME_LABEL" description="LQD_THEME_DESC" />
+
+				<field type="spacer" hr="true" />
+
+				<field name="logo" type="media" default="logo.png" hide_default="1"
+					label="LQD_LOGO_LABEL" description="LQD_LOGO_DESC" />
+
+				<field name="title" type="text" default="The universal web template system for PHP-powered mobile web site, mobile web application"
+					size="44" filter="string" label="LQD_TITLE_LABEL" description="LQD_TITLE_DESC" />
+
+				<field name="description" type="text" default="" size="44" filter="string"
+					label="LQD_DESCRIPTION_LABEL" description="LQD_DESCRIPTION_DESC" />
+
+				<field name="site-logo" type="selectpositions" default="default:logo:if-empty|wap:logo-wap:if-empty" theme_field="theme"
+					label="LQD_SITE_LOGO_LABEL" description="LQD_SITE_LOGO_DESC" />
+
+				<field type="spacer" hr="true" />
+
+				<field name="system-message" type="selectpositions" default="default:main-content:prepend" theme_field="theme"
+					label="LQD_SYSTEM_MESSAGE_LABEL" description="LQD_SYSTEM_MESSAGE_DESC" />
+
+				<field name="component-output" type="selectpositions" default="default:main-content:if-empty" theme_field="theme"
+					label="LQD_COMPONENT_OUTPUT_LABEL" description="LQD_COMPONENT_OUTPUT_DESC" />
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field name="cache-interval" type="text" class="validate-numeric" default="-1" size="44" filter="int"
+					label="LQD_CACHE_INTERVAL_LABEL" description="LQD_CACHE_INTERVAL_DESC" />
+
+				<field name="cache-directory" type="text" default="cache/tpl_liquidus" size="44" filter="string"
+					label="LQD_CACHE_DIRECTORY_LABEL" description="LQD_CACHE_DIRECTORY_DESC" />
+
+				<field type="spacer" hr="true" />
+
+				<field name="ui-switcher" type="selectpositions" default="default:quick-links-1:if-empty" theme_field="theme"
+					label="LQD_UI_SWITCHER_LABEL" description="LQD_UI_SWITCHER_DESC" />
+
+				<field name="font-resizer" type="selectpositions" default="default:quick-links-2:if-empty" theme_field="theme"
+					label="LQD_FONT_RESIZER_LABEL" description="LQD_FONT_RESIZER_DESC" />
+
+				<field name="skipto-links" type="selectpositions" default="" theme_field="theme"
+					label="LQD_SKIPTO_LINKS_LABEL" description="LQD_SKIPTO_LINKS_DESC" />
+
+				<field type="spacer" hr="true" />
+
+				<field name="tabbed-layout" type="selectpositions" default="" theme_field="theme" multi_selection="1" hide_injection="1"
+					label="LQD_TABBED_LAYOUT_LABEL" description="LQD_TABBED_LAYOUT_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

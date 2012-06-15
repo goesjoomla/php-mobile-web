@@ -28,4 +28,31 @@ if ( ! defined('LIQUIDUS'))
 	fCore::enableErrorHandling('html');
 	fCore::enableExceptionHandling('html');
 }
+
+// Initialize Joomla! 1.6 template parameters.
+$document = & JFactory::getDocument();
+
+if ( ! isset($document->params))
+{
+	$app              = JFactory::getApplication();
+	$document->params = $app->getTemplate(true)->params;
+}
+
+if ( ! $document->params->get('theme'))
+{
+	isset($document->params) OR $document->params = new JRegistry('');
+
+	$params = new LiquidusXml(dirname(__FILE__).DS.'templateDetails.xml');
+	$params = $params->xpath('config/fields[@name="params"]//field');
+
+	foreach ($params AS $param)
+	{
+		if ($param['name']) {
+			$document->params->def(
+				(string) $param['name'],
+				preg_match('/^\d+$/', (string) $param['default']) ? intval($param['default']) : (string) $param['default']
+			);
+		}
+	}
+}
 ?>
